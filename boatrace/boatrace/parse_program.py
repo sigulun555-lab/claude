@@ -7,11 +7,9 @@ BLOCK_BEGIN = re.compile(r"^(\d{2})BBGN")
 BLOCK_END = re.compile(r"^(\d{2})BEND")
 RACE_HEADER = re.compile(r"^\s*(\d{1,2})R\s+(.+?)\s+H(\d{4})m")
 DEADLINE = re.compile(r"締切予定\s*(\d{1,2}:\d{2})")
-ENTRY = re.compile(
-    r"^([1-6]) (\d{4})(.{4})(\d{2})(.{2})(\d{2})([AB][12])\s*"
-    r"(\d+\.\d+)\s+(\d+\.\d+)\s+(\d+\.\d+)\s+(\d+\.\d+)\s+"
-    r"(\d+)\s+(\d+\.\d+)\s+(\d+)\s+(\d+\.\d+)"
-)
+ENTRY_HEAD = re.compile(r"^([1-6]) (\d{4})(.{4})(\d{2})(.{2})(\d{2})([AB][12])")
+# 勝率以降は桁が詰まって隣とくっつくことがある(例: ボートNO 165)ため文字位置で切る
+COLUMNS = [(18, 23), (23, 29), (29, 34), (34, 40), (40, 43), (43, 49), (49, 52), (52, 58)]
 
 
 def parse_program(text: str, date: str):
@@ -43,8 +41,8 @@ def parse_program(text: str, date: str):
             }
             races.append(current)
             continue
-        if current and (m := ENTRY.match(line)):
-            g = m.groups()
+        if current and (m := ENTRY_HEAD.match(line)):
+            g = m.groups() + tuple(line[a:b].strip() for a, b in COLUMNS)
             entries.append({
                 "race_id": current["race_id"],
                 "boat": int(g[0]),

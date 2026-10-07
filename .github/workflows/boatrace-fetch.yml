@@ -1,5 +1,6 @@
 # boatrace/fetch_range.txt を書き換えてプッシュすると、GitHub上で公式データを取得し
-# boatrace-data ブランチに生データ(LZH)とDBを保存する。
+# boatrace-data ブランチに生データ(LZH)と集計結果を保存する。
+# DB は100MBを超えるので保存せず、生データから作り直す。
 name: boatrace-fetch
 
 on:
@@ -44,7 +45,7 @@ jobs:
       - name: boatrace-data ブランチへ保存
         working-directory: boatrace/data
         run: |
-          rm -rf .git
+          rm -rf .git boatrace.sqlite
           git init -q -b boatrace-data
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

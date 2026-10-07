@@ -26,6 +26,8 @@ def test_parse_program():
     assert (e["nat_win"], e["loc_2r"], e["motor_no"], e["motor_2r"], e["boat_no"]) == \
         (7.12, 55.00, 23, 38.46, 45)
     assert entries[5]["loc_win"] == 0.0
+    # ボートNOが3桁で隣の列とくっついていても読める
+    assert (entries[9]["motor_2r"], entries[9]["boat_no"], entries[9]["boat_2r"]) == (29.00, 165, 30.00)
 
 
 def test_parse_result():

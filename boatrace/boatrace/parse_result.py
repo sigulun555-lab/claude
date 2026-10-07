@@ -13,6 +13,8 @@ ENTRY = re.compile(
     r"(\S+)\s+(\S+)\s+(\S+)(?:\s+(.*?))?\s*$"
 )
 BET_TYPES = {"単勝", "複勝", "2連単", "2連複", "拡連複", "3連単", "3連複"}
+# 決まり手は各レースの列見出し行の末尾にある (例: "... レースタイム 逃げ")
+TECHNIQUE = re.compile(r"レースタイム\s*(\S+)?")
 PAYOUT_HEAD = re.compile(r"^\s*(単勝|複勝|2連単|2連複|拡連複|3連単|3連複)\s+(.*)$")
 PAYOUT_CONT = re.compile(r"^\s+([1-6]-.*)$")
 PAYOUT_ITEM = re.compile(r"([1-6](?:-[1-6]){0,2})\s+(\d+)(?:\s+人気\s+(\d+))?")
@@ -61,6 +63,10 @@ def parse_result(text: str, date: str):
             bet_type = None
             continue
         if current is None:
+            continue
+        if m := TECHNIQUE.search(line):
+            if m.group(1):
+                current["technique"] = m.group(1)
             continue
         if m := PAYOUT_HEAD.match(line):
             bet_type = m.group(1)
