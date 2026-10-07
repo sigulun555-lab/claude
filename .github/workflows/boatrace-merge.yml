@@ -1,0 +1,58 @@
+# boatrace-fetch で取得した生データ(artifact)と既存の boatrace-data をまとめ、
+# DB作成・集計・バックテストを行って boatrace-data ブランチへ保存する。
+# boatrace/merge_run.txt に boatrace-fetch の run id を書いてプッシュすると動く。
+name: boatrace-merge
+
+on:
+  push:
+    branches: [boatrace-app]
+    paths: [boatrace/merge_run.txt]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 既存データを復元
+        run: |
+          mkdir -p boatrace/data/raw
+          if git fetch -q origin boatrace-data; then
+            git archive FETCH_HEAD raw | tar -x -C boatrace/data || true
+          fi
+          echo "RUN_ID=$(cat boatrace/merge_run.txt)" >> "$GITHUB_ENV"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: raw-*
+          path: boatrace/data/raw
+          merge-multiple: true
+          run-id: ${{ env.RUN_ID }}
+          github-token: ${{ github.token }}
+      - name: DB作成と集計
+        working-directory: boatrace
+        run: |
+          ls data/raw | wc -l
+          pip install -q -r requirements.txt
+          read START END < fetch_range.txt
+          python -m boatrace.cli load "$START" "$END" --offline > /dev/null
+          python -m boatrace.cli baseline | tee data/baseline.txt
+          python -m boatrace.cli backtest | tee data/backtest.txt
+      - name: boatrace-data ブランチへ保存
+        if: always()
+        working-directory: boatrace/data
+        run: |
+          rm -f boatrace.sqlite
+          git init -q -b boatrace-data
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "boatrace data $(cat ../fetch_range.txt)"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" boatrace-data
