@@ -14,20 +14,34 @@ def _date(s):
     return date.fromisoformat(s)
 
 
+def _cached(kind, d, raw):
+    path = raw / f"{kind.lower()}{d:%y%m%d}.lzh"
+    return path if path.exists() else None
+
+
 def cmd_load(args):
     con = connect(args.db)
     raw = Path(args.raw_dir)
     for d in daterange(args.start, args.end):
         ymd = d.strftime("%Y%m%d")
-        b = fetch("B", d, raw, args.sleep)
+        get = (lambda k: _cached(k, d, raw)) if args.offline else (lambda k: fetch(k, d, raw, args.sleep))
+        b = get("B")
         if b:
             races, entries = parse_program(extract_text(b), ymd)
             save_program(con, races, entries)
-        k = fetch("K", d, raw, args.sleep)
+        k = get("K")
         if k:
             races_k, results, payouts = parse_result(extract_text(k), ymd)
             save_result(con, races_k, results, payouts)
         print(f"{d}: 番組 {'有' if b else '無'} / 成績 {'有' if k else '無'}")
+
+
+def cmd_fetch(args):
+    """ダウンロードだけ行う (DBには入れない)。"""
+    raw = Path(args.raw_dir)
+    for d in daterange(args.start, args.end):
+        got = [k for k in "BK" if fetch(k, d, raw, args.sleep)]
+        print(f"{d}: {''.join(got) or '開催なし'}", flush=True)
 
 
 def cmd_load_text(args):
@@ -88,7 +102,15 @@ def main(argv=None):
     s.add_argument("end", type=_date, help="終了日 YYYY-MM-DD")
     s.add_argument("--raw-dir", default="data/raw")
     s.add_argument("--sleep", type=float, default=1.0, help="リクエスト間隔(秒)")
+    s.add_argument("--offline", action="store_true", help="ダウンロードせず取得済みファイルだけ使う")
     s.set_defaults(func=cmd_load)
+
+    s = sub.add_parser("fetch", help="公式サイトから期間分をダウンロードするだけ")
+    s.add_argument("start", type=_date)
+    s.add_argument("end", type=_date)
+    s.add_argument("--raw-dir", default="data/raw")
+    s.add_argument("--sleep", type=float, default=1.0)
+    s.set_defaults(func=cmd_fetch)
 
     s = sub.add_parser("load-text", help="展開済みTXTファイルをDBへ")
     s.add_argument("files", nargs="+")

@@ -1,6 +1,6 @@
-# boatrace/fetch_range.txt を書き換えてプッシュすると、GitHub上で公式データを取得し
-# boatrace-data ブランチに生データ(LZH)と集計結果を保存する。
-# DB は100MBを超えるので保存せず、生データから作り直す。
+# boatrace/fetch_range.txt ("開始日 終了日") を書き換えてプッシュすると、GitHub上で
+# 公式データを月ごとに並行して取得し、boatrace-data ブランチに生データ(LZH)と
+# 集計結果を保存する。DB は100MBを超えるので保存せず、生データから作り直す。
 name: boatrace-fetch
 
 on:
@@ -13,39 +13,90 @@ permissions:
   contents: write
 
 jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      months: ${{ steps.m.outputs.months }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: m
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from datetime import date, timedelta
+          start, end = map(date.fromisoformat, open("boatrace/fetch_range.txt").read().split())
+          out, d = [], start
+          while d <= end:
+              nxt = (d.replace(day=1) + timedelta(days=32)).replace(day=1)
+              out.append({"start": str(d), "end": str(min(end, nxt - timedelta(days=1))), "name": d.strftime("%y%m")})
+              d = nxt
+          print("months=" + json.dumps(out))
+          PY
+
   fetch:
+    needs: plan
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        month: ${{ fromJson(needs.plan.outputs.months) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: 前回のデータを復元
+      - name: 取得済みのファイルを復元
         run: |
-          git fetch origin boatrace-data || true
-          if git rev-parse --verify -q origin/boatrace-data >/dev/null; then
-            mkdir -p boatrace/data
-            git --work-tree=boatrace/data checkout origin/boatrace-data -- . || true
-            git reset -q
+          mkdir -p boatrace/data/raw
+          if git fetch -q origin boatrace-data; then
+            git archive FETCH_HEAD raw | tar -x -C boatrace/data || true
           fi
-      - name: 取得と取り込み
+      - name: ダウンロード
         working-directory: boatrace
         run: |
-          pip install -r requirements.txt
+          pip install -q lhafile
+          python -m boatrace.cli fetch ${{ matrix.month.start }} ${{ matrix.month.end }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: raw-${{ matrix.month.name }}
+          path: boatrace/data/raw/[bk]${{ matrix.month.name }}??.lzh
+          if-no-files-found: ignore
+          retention-days: 3
+
+  merge:
+    needs: fetch
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 既存データと今回の取得分をまとめる
+        run: |
+          mkdir -p boatrace/data/raw
+          if git fetch -q origin boatrace-data; then
+            git archive FETCH_HEAD raw | tar -x -C boatrace/data || true
+          fi
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: raw-*
+          path: boatrace/data/raw
+          merge-multiple: true
+      - name: DB作成と集計
+        working-directory: boatrace
+        run: |
+          pip install -q -r requirements.txt
           read START END < fetch_range.txt
-          python -m boatrace.cli load "$START" "$END"
+          python -m boatrace.cli load "$START" "$END" --offline > /dev/null
           python -m boatrace.cli baseline | tee data/baseline.txt
-          python - <<'PY' | tee -a data/baseline.txt
-          import sqlite3
-          con = sqlite3.connect("data/boatrace.sqlite")
-          for t in ["races", "entries", "results", "payouts"]:
-              print(t, con.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0])
-          PY
+          python -m boatrace.cli backtest | tee data/backtest.txt
       - name: boatrace-data ブランチへ保存
         working-directory: boatrace/data
         run: |
-          rm -rf .git boatrace.sqlite
+          rm -f boatrace.sqlite
           git init -q -b boatrace-data
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
