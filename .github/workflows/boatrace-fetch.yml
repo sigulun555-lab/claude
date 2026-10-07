@@ -1,0 +1,53 @@
+# boatrace/fetch_range.txt を書き換えてプッシュすると、GitHub上で公式データを取得し
+# boatrace-data ブランチに生データ(LZH)とDBを保存する。
+name: boatrace-fetch
+
+on:
+  push:
+    branches: [boatrace-app]
+    paths: [boatrace/fetch_range.txt]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 前回のデータを復元
+        run: |
+          git fetch origin boatrace-data || true
+          if git rev-parse --verify -q origin/boatrace-data >/dev/null; then
+            mkdir -p boatrace/data
+            git --work-tree=boatrace/data checkout origin/boatrace-data -- . || true
+            git reset -q
+          fi
+      - name: 取得と取り込み
+        working-directory: boatrace
+        run: |
+          pip install -r requirements.txt
+          read START END < fetch_range.txt
+          python -m boatrace.cli load "$START" "$END"
+          python -m boatrace.cli baseline | tee data/baseline.txt
+          python - <<'PY' | tee -a data/baseline.txt
+          import sqlite3
+          con = sqlite3.connect("data/boatrace.sqlite")
+          for t in ["races", "entries", "results", "payouts"]:
+              print(t, con.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0])
+          PY
+      - name: boatrace-data ブランチへ保存
+        working-directory: boatrace/data
+        run: |
+          rm -rf .git
+          git init -q -b boatrace-data
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "boatrace data $(cat ../fetch_range.txt)"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" boatrace-data
