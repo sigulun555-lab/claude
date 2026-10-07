@@ -54,6 +54,30 @@ def cmd_baseline(args):
         print(f"  {name:<14} レース数 {n:>6}  的中率 {hit:6.1%}  回収率 {roi:6.1%}")
 
 
+def cmd_backtest(args):
+    from .backtest import run
+    from .features import build_features, load_frame
+
+    con = connect(args.db)
+    df = build_features(load_frame(con))
+    r = run(con, df, args.test_ratio)
+    print(f"学習: {r['n_train_races']}レース / テスト: {r['n_test_races']}レース ({r['train_until']}以降)")
+    print(f"■ 1着確率の精度 (logloss, 小さいほど良い)")
+    print(f"  モデル {r['logloss_model']:.4f}  /  枠番だけ {r['logloss_prior']:.4f}")
+    print("■ 確率上位を機械的に買った場合 (1点100円)")
+    for name, (hit, roi) in r["bets"].items():
+        print(f"  {name:<10} 的中率 {hit:6.1%}  回収率 {roi:6.1%}")
+    print("■ 本命の予想確率と実際の1着率")
+    for b, row in r["calibration"].iterrows():
+        print(f"  予想 {b}: 平均 {row['pred']:.1%} → 実際 {row['actual']:.1%} ({int(row['n'])}レース)")
+    print("■ 効いている特徴量 上位10")
+    for k, v in r["importance"].head(10).items():
+        print(f"  {k:<22} {v:,.0f}")
+    if args.save:
+        r["model"].save_model(args.save)
+        print(f"モデルを保存: {args.save}")
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(prog="boatrace", description="競艇予想アプリ")
     p.add_argument("--db", default="data/boatrace.sqlite")
@@ -73,6 +97,11 @@ def main(argv=None):
     s = sub.add_parser("baseline", help="ベースライン予想の的中率・回収率")
     s.add_argument("--venue", type=int, help="場コード 1-24")
     s.set_defaults(func=cmd_baseline)
+
+    s = sub.add_parser("backtest", help="モデルを学習して過去データで検証")
+    s.add_argument("--test-ratio", type=float, default=0.25, help="テストに使う期間の割合")
+    s.add_argument("--save", help="学習したモデルの保存先")
+    s.set_defaults(func=cmd_backtest)
 
     args = p.parse_args(argv)
     Path(args.db).parent.mkdir(parents=True, exist_ok=True)
