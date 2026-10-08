@@ -44,7 +44,12 @@ def cmd_fetch(args):
         print(f"{d}: {''.join(got) or '開催なし'}", flush=True)
 
 
-ODDS_PAGES = {"単勝": ("oddstf", "parse_tansho"), "3連単": ("odds3t", "parse_trifecta")}
+# 取得するページと、HTML から {券種: {組番: オッズ}} を返す読み取り関数
+ODDS_PAGES = {
+    "単勝": ("oddstf", lambda m, h: {"単勝": m.parse_tansho(h)}),
+    "2連単": ("odds2tf", lambda m, h: m.parse_exacta(h)),  # 2連複も同じページで取れる
+    "3連単": ("odds3t", lambda m, h: {"3連単": m.parse_trifecta(h)}),
+}
 
 
 def cmd_fetch_odds(args):
@@ -73,8 +78,9 @@ def cmd_fetch_odds(args):
             except Exception as e:  # 1レースの失敗で全体を止めない
                 print(f"失敗 {race_id}: {e}", flush=True)
                 continue
-            for combo, v in getattr(odds_mod, parser)(html).items():
-                w.writerow([race_id, args.bet_type, combo, v])
+            for bet_type, combos in parser(odds_mod, html).items():
+                for combo, v in combos.items():
+                    w.writerow([race_id, bet_type, combo, v])
             f.flush()
             if n % 200 == 0:
                 print(f"{n}/{len(todo)}", flush=True)

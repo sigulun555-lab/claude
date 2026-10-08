@@ -72,3 +72,28 @@ def parse_trifecta(html):
             out[f"{col}-{second[col]}-{third}"] = _num(odds)
             i += 2
     return out
+
+
+def _pair_table(html):
+    """6列(1着側の艇) × 5行で、各列が「相手艇 / オッズ」の並びの表。"""
+    out = {}
+    for row in re.findall(r"<tr>(.*?)</tr>", html, re.S):
+        cells = _cells(row)
+        if not any("oddsPoint" in c for c, _ in cells):
+            continue
+        for col in range(1, 7):
+            (_, other), (cls, odds) = cells[2 * col - 2], cells[2 * col - 1]
+            if "oddsPoint" in cls:
+                out[(col, int(other))] = _num(odds)
+    return out
+
+
+def parse_exacta(html):
+    """odds2tf ページから {'2連単': {'1-2': 2.8, ...}, '2連複': {'1-2': 1.9, ...}}。"""
+    i = html.find("2連単オッズ</span>")
+    j = html.find("2連複オッズ</span>")
+    if i < 0 or j < 0:
+        return {}
+    exacta = {f"{a}-{b}": v for (a, b), v in _pair_table(html[i:j]).items()}
+    quinella = {f"{min(a, b)}-{max(a, b)}": v for (a, b), v in _pair_table(html[j:]).items()}
+    return {"2連単": exacta, "2連複": quinella}
