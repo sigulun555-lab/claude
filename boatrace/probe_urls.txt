@@ -1,4 +1,2 @@
-https://www.boatrace.jp/robots.txt
-https://www.boatrace.jp/owpc/pc/site/sitepolicy/
-https://www.boatrace.jp/owpc/pc/race/oddstf?rno=1&jcd=24&hd=20260929
-https://www.boatrace.jp/owpc/pc/race/odds3t?rno=1&jcd=24&hd=20260929
+https://www.boatrace.jp/owpc/pc/extra/policy.html
+https://www.boatrace.jp/owpc/pc/extra/data/download.html
