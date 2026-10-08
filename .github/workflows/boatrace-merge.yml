@@ -32,6 +32,7 @@ jobs:
           fi
           echo "RUN_ID=$(cat boatrace/merge_run.txt)" >> "$GITHUB_ENV"
       - uses: actions/download-artifact@v4
+        continue-on-error: true  # 期限切れでも既存データだけで続ける
         with:
           pattern: raw-*
           path: boatrace/data/raw
