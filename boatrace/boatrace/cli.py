@@ -4,7 +4,7 @@ from pathlib import Path
 
 from . import VENUES
 from .baseline import course_win_rates, strategies
-from .db import connect, save_program, save_result
+from .db import connect, save_odds, save_program, save_result
 from .download import daterange, extract_text, fetch
 from .parse_program import parse_program
 from .parse_result import parse_result
@@ -42,6 +42,52 @@ def cmd_fetch(args):
     for d in daterange(args.start, args.end):
         got = [k for k in "BK" if fetch(k, d, raw, args.sleep)]
         print(f"{d}: {''.join(got) or '開催なし'}", flush=True)
+
+
+ODDS_PAGES = {"単勝": ("oddstf", "parse_tansho"), "3連単": ("odds3t", "parse_trifecta")}
+
+
+def cmd_fetch_odds(args):
+    """DBにあるレースの締切時オッズを公式サイトから取り、CSVに追記する(途中再開可)。"""
+    import csv
+    from . import odds as odds_mod
+
+    con = connect(args.db)
+    page, parser = ODDS_PAGES[args.bet_type]
+    out = Path(args.csv)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    done = set()
+    if out.exists():
+        with out.open() as f:
+            done = {row[0] for row in csv.reader(f)}
+    races = con.execute(
+        "SELECT race_id, date, venue, race_no FROM races WHERE date BETWEEN ? AND ? ORDER BY race_id",
+        [args.start.strftime("%Y%m%d"), args.end.strftime("%Y%m%d")]).fetchall()
+    todo = [r for r in races if r[0] not in done]
+    print(f"{args.bet_type}: 対象 {len(races)} レース / 取得済み {len(races) - len(todo)}", flush=True)
+    with out.open("a", newline="") as f:
+        w = csv.writer(f)
+        for n, (race_id, date, venue, race_no) in enumerate(todo, 1):
+            try:
+                html = odds_mod.fetch_page(page, date, venue, race_no, args.sleep)
+            except Exception as e:  # 1レースの失敗で全体を止めない
+                print(f"失敗 {race_id}: {e}", flush=True)
+                continue
+            for combo, v in getattr(odds_mod, parser)(html).items():
+                w.writerow([race_id, args.bet_type, combo, v])
+            f.flush()
+            if n % 200 == 0:
+                print(f"{n}/{len(todo)}", flush=True)
+
+
+def cmd_load_odds(args):
+    import csv
+    con = connect(args.db)
+    for p in args.files:
+        with open(p) as f:
+            rows = [(r, t, c, float(o) if o else None) for r, t, c, o in csv.reader(f)]
+        save_odds(con, rows)
+        print(f"取り込み: {p} ({len(rows)}件)")
 
 
 def cmd_load_text(args):
@@ -84,6 +130,10 @@ def cmd_backtest(args):
     print("■ 本命の予想確率と実際の1着率")
     for b, row in r["calibration"].iterrows():
         print(f"  予想 {b}: 平均 {row['pred']:.1%} → 実際 {row['actual']:.1%} ({int(row['n'])}レース)")
+    for bet_type, rows in r["ev"].items():
+        print(f"■ 期待値で絞って買った場合: {bet_type} (締切時オッズ, 1点100円)")
+        for th, n_races, n_bets, hit, roi in rows:
+            print(f"  期待値 {th:.1f}以上  {n_races:>5}レース {n_bets:>6}点  的中率 {hit:6.1%}  回収率 {roi:6.1%}")
     print("■ 効いている特徴量 上位10")
     for k, v in r["importance"].head(10).items():
         print(f"  {k:<22} {v:,.0f}")
@@ -111,6 +161,18 @@ def main(argv=None):
     s.add_argument("--raw-dir", default="data/raw")
     s.add_argument("--sleep", type=float, default=1.0)
     s.set_defaults(func=cmd_fetch)
+
+    s = sub.add_parser("fetch-odds", help="DBにあるレースの締切時オッズを取得してCSVへ")
+    s.add_argument("start", type=_date)
+    s.add_argument("end", type=_date)
+    s.add_argument("--bet-type", choices=list(ODDS_PAGES), default="単勝")
+    s.add_argument("--csv", required=True)
+    s.add_argument("--sleep", type=float, default=2.0)
+    s.set_defaults(func=cmd_fetch_odds)
+
+    s = sub.add_parser("load-odds", help="オッズCSVをDBへ")
+    s.add_argument("files", nargs="+")
+    s.set_defaults(func=cmd_load_odds)
 
     s = sub.add_parser("load-text", help="展開済みTXTファイルをDBへ")
     s.add_argument("files", nargs="+")

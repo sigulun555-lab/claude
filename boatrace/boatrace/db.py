@@ -51,6 +51,13 @@ CREATE TABLE IF NOT EXISTS payouts (
     popularity INTEGER,
     PRIMARY KEY (race_id, bet_type, combo)
 );
+CREATE TABLE IF NOT EXISTS odds (
+    race_id TEXT NOT NULL,
+    bet_type TEXT NOT NULL,
+    combo TEXT NOT NULL,
+    odds REAL,
+    PRIMARY KEY (race_id, bet_type, combo)
+);
 CREATE INDEX IF NOT EXISTS idx_races_date ON races(date);
 CREATE INDEX IF NOT EXISTS idx_entries_reg ON entries(reg_no);
 """
@@ -97,4 +104,10 @@ def save_result(con, races, results, payouts):
         )
     _upsert(con, "results", results)
     _upsert(con, "payouts", payouts)
+    con.commit()
+
+
+def save_odds(con, rows):
+    """rows: (race_id, bet_type, combo, odds) のリスト。"""
+    con.executemany("INSERT OR REPLACE INTO odds VALUES (?,?,?,?)", rows)
     con.commit()

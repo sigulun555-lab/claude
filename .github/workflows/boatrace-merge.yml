@@ -9,6 +9,8 @@ on:
     paths: [boatrace/merge_run.txt]
   workflow_dispatch:
 
+concurrency: boatrace-data
+
 permissions:
   contents: write
   actions: read
@@ -22,11 +24,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: 既存データを復元
+      - name: 既存データを復元 (生データ・オッズ)
         run: |
           mkdir -p boatrace/data/raw
           if git fetch -q origin boatrace-data; then
-            git archive FETCH_HEAD raw | tar -x -C boatrace/data || true
+            git archive FETCH_HEAD | tar -x -C boatrace/data || true
           fi
           echo "RUN_ID=$(cat boatrace/merge_run.txt)" >> "$GITHUB_ENV"
       - uses: actions/download-artifact@v4
@@ -43,6 +45,7 @@ jobs:
           pip install -q -r requirements.txt
           read START END < fetch_range.txt
           python -m boatrace.cli load "$START" "$END" --offline > /dev/null
+          if ls data/odds/*.csv >/dev/null 2>&1; then python -m boatrace.cli load-odds data/odds/*.csv; fi
           python -m boatrace.cli baseline | tee data/baseline.txt
           python -m boatrace.cli backtest | tee data/backtest.txt
       - name: boatrace-data ブランチへ保存

@@ -57,6 +57,7 @@ def run(con, df, test_ratio=0.25):
         top = max(probs["単勝"], key=probs["単勝"].get)
         calib.append((probs["単勝"][top], int(g.loc[g["boat"] == int(top), "rank"].iloc[0] == 1)))
 
+    ev = ev_backtest(con, test_df, paymap)
     n_races = len(calib)
     cal = pd.DataFrame(calib, columns=["p", "hit"])
     cal["bin"] = pd.cut(cal["p"], [0, .3, .4, .5, .6, .7, .8, 1])
@@ -69,5 +70,47 @@ def run(con, df, test_ratio=0.25):
         "bets": {k: (h / n_races if n_races else 0, r / s if s else 0) for k, (s, r, h) in bets.items()},
         "calibration": cal.groupby("bin", observed=True).agg(n=("hit", "size"), pred=("p", "mean"), actual=("hit", "mean")),
         "importance": pd.Series(model.feature_importance("gain"), index=model.feature_name()).sort_values(ascending=False),
+        "ev": ev,
         "model": model,
     }
+
+
+EV_THRESHOLDS = [1.0, 1.1, 1.2, 1.3, 1.5, 2.0]
+
+
+def ev_backtest(con, test_df, paymap, bet_types=("単勝", "3連単")):
+    """締切時オッズがあるレースで「期待値 = 確率 × オッズ」が閾値以上の買い目だけ買う。
+
+    戻り値: {券種: [(閾値, レース数, 点数, 的中率, 回収率), ...]}
+    """
+    odds = pd.read_sql_query("SELECT race_id, bet_type, combo, odds FROM odds", con)
+    odds = odds[odds["race_id"].isin(set(test_df["race_id"])) & odds["odds"].notna()]
+    if odds.empty:
+        return {}
+    by_race = {k: dict(zip(g["combo"], g["odds"])) for k, g in odds.groupby(["race_id", "bet_type"])}
+    races = {rid for rid, _ in by_race}
+    out = {}
+    for bet_type in bet_types:
+        stats = {th: [0, 0, 0, set()] for th in EV_THRESHOLDS}  # 点数, 払戻, 的中数, レース
+        for race_id, g in test_df[test_df["race_id"].isin(races)].groupby("race_id"):
+            o = by_race.get((race_id, bet_type))
+            if not o or len(g) < 6:
+                continue
+            probs = harville(dict(zip(g["boat"], g["p_win"])))[bet_type]
+            for combo, p in probs.items():
+                if combo not in o:
+                    continue
+                ev = p * o[combo]
+                ret = paymap.get((race_id, bet_type, combo), 0)
+                for th in EV_THRESHOLDS:
+                    if ev >= th:
+                        st = stats[th]
+                        st[0] += 1
+                        st[1] += ret
+                        st[2] += ret > 0
+                        st[3].add(race_id)
+        out[bet_type] = [
+            (th, len(r), n, h / n if n else 0, pay / (100 * n) if n else 0)
+            for th, (n, pay, h, r) in stats.items()
+        ]
+    return {k: v for k, v in out.items() if any(row[2] for row in v)}
