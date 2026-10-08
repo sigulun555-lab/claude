@@ -33,16 +33,25 @@ def predict_win_prob(model: lgb.Booster, df: pd.DataFrame) -> pd.Series:
     return raw / raw.groupby(df["race_id"]).transform("sum")
 
 
-def harville(p: dict) -> dict:
-    """1着確率 {艇: 確率} から全券種の的中確率を出す (Harville の公式)。
+# 2着・3着の補正 (Benter 方式)。学習期間の後半で最尤推定した値。
+# そのままの Harville (1.0, 1.0) だと本命寄りの組を来ると思いすぎ、大穴を低く見すぎる。
+GAMMA, DELTA = 0.672, 0.476
 
-    P(i-j-k) = p_i * p_j/(1-p_i) * p_k/(1-p_i-p_j)
+
+def harville(p: dict, gamma: float = GAMMA, delta: float = DELTA) -> dict:
+    """1着確率 {艇: 確率} から全券種の的中確率を出す (Harville の公式 + Benter の補正)。
+
+    P(i-j-k) = p_i * p_j^γ/Σ_{m≠i} p_m^γ * p_k^δ/Σ_{m≠i,j} p_m^δ
+    γ = δ = 1 のとき元の Harville の公式になる。
     """
     boats = sorted(p)
+    pg = {b: p[b] ** gamma for b in boats}
+    pd_ = {b: p[b] ** delta for b in boats}
+    sg, sd = sum(pg.values()), sum(pd_.values())
     tri = {}
     for i, j, k in permutations(boats, 3):
-        tri[(i, j, k)] = p[i] * p[j] / (1 - p[i]) * p[k] / (1 - p[i] - p[j])
-    exacta = {(i, j): p[i] * p[j] / (1 - p[i]) for i, j in permutations(boats, 2)}
+        tri[(i, j, k)] = p[i] * pg[j] / (sg - pg[i]) * pd_[k] / (sd - pd_[i] - pd_[j])
+    exacta = {(i, j): p[i] * pg[j] / (sg - pg[i]) for i, j in permutations(boats, 2)}
 
     out = {"単勝": {str(i): p[i] for i in boats}}
     out["2連単"] = {f"{i}-{j}": v for (i, j), v in exacta.items()}
