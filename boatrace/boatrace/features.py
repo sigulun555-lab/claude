@@ -21,6 +21,14 @@ FEATURES = [
 ]
 CATEGORICAL = ["venue"]
 
+# 朝の時点では分からない直前情報 (展示タイム・風・波) を除いた特徴量
+PRERACE_ONLY = {"exhibition", "exhibition_rank", "exhibition_diff", "wind_speed", "wave", "wind_sin", "wind_cos"}
+MORNING_FEATURES = [f for f in FEATURES if f not in PRERACE_ONLY]
+
+# 直前チェック用。公式サイトの風向き表示はレース場ごとのコースの向き基準で
+# 方角に直せないため、風向きだけ除く (展示タイム・風速・波は使う)。
+CHECK_FEATURES = [f for f in FEATURES if f not in ("wind_sin", "wind_cos")]
+
 
 def load_frame(con) -> pd.DataFrame:
     df = pd.read_sql_query("""

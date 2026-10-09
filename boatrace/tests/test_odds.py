@@ -27,3 +27,17 @@ def test_parse_exacta():
     assert odds["2連単"]["2-1"] == 6.8 and odds["2連単"]["6-1"] == 195.8
     assert odds["2連複"]["1-2"] == 1.9  # 払戻 190円
     assert odds["2連複"]["2-3"] == 14.6
+
+
+def test_parse_beforeinfo():
+    from boatrace.odds import parse_beforeinfo
+    info = parse_beforeinfo((FIX / "beforeinfo_20260929_24_01.html").read_text())
+    # 競走成績ファイルの展示タイムと一致
+    assert info["exhibition"] == {1: 6.93, 2: 6.94, 3: 6.98, 4: 6.97, 5: 6.9, 6: 6.95}
+    assert (info["wind_speed"], info["wave"], info["weather"]) == (1.0, 1.0, "晴")
+
+
+def test_parse_request():
+    from boatrace.check import parse_request
+    assert parse_request("2026-10-09 大村 8R") == ("20261009", 24, 8)
+    assert parse_request("2026-10-09 3 12") == ("20261009", 3, 12)

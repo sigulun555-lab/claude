@@ -172,6 +172,45 @@ def cmd_papertrade(args):
     print(report(Path(args.csv)))
 
 
+def cmd_sheet(args):
+    import lightgbm as lgb
+
+    from .features import build_features, load_frame
+    from .sheet import make_sheet
+
+    con = connect(args.db)
+    text = make_sheet(con, lgb.Booster(model_file=args.model), build_features(load_frame(con)),
+                      args.date.strftime("%Y%m%d"))
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(text)
+    print(text[:2000])
+
+
+def cmd_train(args):
+    from .features import CHECK_FEATURES, FEATURES, MORNING_FEATURES, build_features, load_frame
+    from .model import train
+
+    con = connect(args.db)
+    df = build_features(load_frame(con))
+    features = MORNING_FEATURES if args.morning else CHECK_FEATURES if args.check else FEATURES
+    model = train(df, features=features)
+    model.save_model(args.out)
+    print(f"学習: {df['date'].min()}〜{df['date'].max()} → {args.out}")
+
+
+def cmd_check(args):
+    import lightgbm as lgb
+
+    from .check import check_races, parse_request
+
+    con = connect(args.db)
+    lines = [l for l in Path(args.request).read_text().splitlines() if l.strip() and not l.startswith("#")]
+    text = check_races(con, lgb.Booster(model_file=args.model), [parse_request(l) for l in lines])
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(text)
+    print(text)
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(prog="boatrace", description="競艇予想アプリ")
     p.add_argument("--db", default="data/boatrace.sqlite")
@@ -211,6 +250,24 @@ def main(argv=None):
     s.add_argument("--model", required=True)
     s.add_argument("--csv", default="data/papertrade/picks.csv")
     s.set_defaults(func=cmd_papertrade)
+
+    s = sub.add_parser("sheet", help="朝の予想表 (Markdown) を作る")
+    s.add_argument("date", type=_date)
+    s.add_argument("--model", required=True)
+    s.add_argument("--out", required=True)
+    s.set_defaults(func=cmd_sheet)
+
+    s = sub.add_parser("train", help="全データでモデルを学習して保存")
+    s.add_argument("--out", required=True)
+    s.add_argument("--morning", action="store_true", help="直前情報を使わない朝用モデル")
+    s.add_argument("--check", action="store_true", help="風向きを使わない直前チェック用モデル")
+    s.set_defaults(func=cmd_train)
+
+    s = sub.add_parser("check", help="直前チェック (直前情報と今のオッズで買い/見送り)")
+    s.add_argument("--request", required=True, help="'YYYY-MM-DD 場名 R' を1行ずつ書いたファイル")
+    s.add_argument("--model", required=True)
+    s.add_argument("--out", required=True)
+    s.set_defaults(func=cmd_check)
 
     s = sub.add_parser("load-text", help="展開済みTXTファイルをDBへ")
     s.add_argument("files", nargs="+")

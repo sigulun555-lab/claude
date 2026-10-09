@@ -20,16 +20,16 @@ PARAMS = {
 }
 
 
-def train(df: pd.DataFrame, num_rounds: int = 600) -> lgb.Booster:
+def train(df: pd.DataFrame, num_rounds: int = 600, features=FEATURES) -> lgb.Booster:
     df = df[df["rank"].notna()]
-    data = lgb.Dataset(df[FEATURES], label=(df["rank"] == 1).astype(int),
+    data = lgb.Dataset(df[features], label=(df["rank"] == 1).astype(int),
                        categorical_feature=CATEGORICAL)
     return lgb.train(PARAMS, data, num_boost_round=num_rounds)
 
 
 def predict_win_prob(model: lgb.Booster, df: pd.DataFrame) -> pd.Series:
     """各艇の1着確率。レース内で合計が1になるように揃える。"""
-    raw = pd.Series(model.predict(df[FEATURES]), index=df.index)
+    raw = pd.Series(model.predict(df[model.feature_name()]), index=df.index)
     return raw / raw.groupby(df["race_id"]).transform("sum")
 
 

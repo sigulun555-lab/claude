@@ -1,0 +1,51 @@
+# 朝の予想表: 毎朝その日の全レースについて「この艇がこのオッズ以上なら単勝を買い」を作り、
+# boatrace-data ブランチの yosou/ に保存する (yosou/latest.md が最新)。
+# - schedule は既定ブランチ (main) にこのファイルがあるときだけ動く
+# - 手動で動かすときは boatrace/morning_date.txt に "YYYY-MM-DD" を書いてプッシュする
+name: boatrace-morning
+
+on:
+  schedule:
+    - cron: "37 22 * * *"  # 毎日 7:37 (日本時間)
+  push:
+    branches: [boatrace-app]
+    paths: [boatrace/morning_date.txt]
+
+permissions:
+  contents: write
+
+concurrency: boatrace-data
+
+jobs:
+  morning:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: boatrace-app
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: boatrace-data を取得
+        run: git clone -q --branch boatrace-data --depth 1 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" boatrace/data
+      - name: 番組表・成績の取得と予想表の作成
+        working-directory: boatrace
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then DAY=$(cat morning_date.txt); else DAY=$(TZ=Asia/Tokyo date +%F); fi
+          LAST=$(ls data/raw | grep '^k' | sort | tail -1 | sed 's/k\(..\)\(..\)\(..\).lzh/20\1-\2-\3/')
+          pip install -q -r requirements.txt
+          python -m boatrace.cli fetch "$(date -d "$LAST + 1 day" +%F)" "$DAY"
+          python -m boatrace.cli --db /tmp/bt.sqlite load 2025-10-01 "$DAY" --offline > /dev/null
+          python -m boatrace.cli --db /tmp/bt.sqlite sheet "$DAY" --model data/model/model_morning.txt \
+            --out "data/yosou/$DAY.md" > /dev/null
+          cp "data/yosou/$DAY.md" data/yosou/latest.md
+          echo "DAY=$DAY" >> "$GITHUB_ENV"
+      - name: 保存
+        working-directory: boatrace/data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add raw yosou
+          git commit -q -m "yosou $DAY" || exit 0
+          git push -q origin HEAD:boatrace-data

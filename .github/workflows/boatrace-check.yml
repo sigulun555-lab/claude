@@ -1,0 +1,45 @@
+# 直前チェック: boatrace/check_request.txt に "YYYY-MM-DD 場名 R" を1行ずつ書いてプッシュすると、
+# 直前情報 (展示タイム・風速・波) と今の単勝オッズを取って買い/見送りを判定し、
+# boatrace-data ブランチの check/latest.md に保存する。
+name: boatrace-check
+
+on:
+  push:
+    branches: [boatrace-app]
+    paths: [boatrace/check_request.txt]
+
+permissions:
+  contents: write
+
+concurrency: boatrace-data
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: boatrace-data を取得
+        run: git clone -q --branch boatrace-data --depth 1 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" boatrace/data
+      - name: 直前チェック
+        working-directory: boatrace
+        run: |
+          DAY=$(grep -v '^#' check_request.txt | head -1 | cut -d' ' -f1)
+          LAST=$(ls data/raw | grep '^k' | sort | tail -1 | sed 's/k\(..\)\(..\)\(..\).lzh/20\1-\2-\3/')
+          pip install -q -r requirements.txt
+          python -m boatrace.cli fetch "$(date -d "$LAST + 1 day" +%F)" "$DAY"
+          python -m boatrace.cli --db /tmp/bt.sqlite load 2025-10-01 "$DAY" --offline > /dev/null
+          python -m boatrace.cli --db /tmp/bt.sqlite check --request check_request.txt \
+            --model data/model/model_check.txt --out data/check/latest.md
+      - name: 保存
+        if: always()
+        working-directory: boatrace/data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add raw check 2>/dev/null || true
+          git commit -q -m "check $(date -u +%FT%H:%M)" || exit 0
+          git push -q origin HEAD:boatrace-data

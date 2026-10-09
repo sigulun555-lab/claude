@@ -97,3 +97,30 @@ def parse_exacta(html):
     exacta = {f"{a}-{b}": v for (a, b), v in _pair_table(html[i:j]).items()}
     quinella = {f"{min(a, b)}-{max(a, b)}": v for (a, b), v in _pair_table(html[j:]).items()}
     return {"2連単": exacta, "2連複": quinella}
+
+
+def parse_beforeinfo(html):
+    """直前情報ページから {'exhibition': {艇: 展示タイム}, 'wind_speed', 'wave', 'wind_code', 'weather'}。
+
+    wind_code は風向き画像の番号 (is-windN の N)。方角への対応は WIND_CODE_TO_DIR。
+    """
+    exhibition = {}
+    for body in re.findall(r'<tbody class="is-fs12[^"]*">(.*?)</tbody>', html, re.S):
+        cells = [TAG.sub("", t).replace("&nbsp;", "").strip()
+                 for t in re.findall(r"<td[^>]*>(.*?)</td>", body, re.S)]
+        if len(cells) > 4 and cells[0].isdigit():
+            exhibition[int(cells[0])] = _num(cells[4])
+
+    def label(title):
+        m = re.search(title + r'</span>\s*<span class="weather1_bodyUnitLabelData">\s*([\d.]+)', html)
+        return _num(m.group(1)) if m else None
+
+    wind = re.search(r"is-wind(\d+)", html)
+    weather = re.search(r'is-weather"?>.*?weather1_bodyUnitLabelTitle">([^<]+)<', html, re.S)
+    return {
+        "exhibition": exhibition,
+        "wind_speed": label("風速"),
+        "wave": label("波高"),
+        "wind_code": int(wind.group(1)) if wind else None,
+        "weather": weather.group(1).strip() if weather else None,
+    }
