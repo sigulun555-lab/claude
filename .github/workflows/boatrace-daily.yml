@@ -60,6 +60,7 @@ jobs:
       - name: 記録
         working-directory: boatrace
         run: |
+          mkdir -p data/papertrade
           python -m boatrace.cli --db /tmp/bt.sqlite load-odds data/odds/paper_*.csv > /dev/null
           python -m boatrace.cli --db /tmp/bt.sqlite papertrade "$START" "$END" \
             --model data/model/model.txt --csv data/papertrade/picks.csv | tee data/papertrade/report.txt
