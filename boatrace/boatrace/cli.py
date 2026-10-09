@@ -46,7 +46,12 @@ def cmd_fetch(args):
 
 # 取得するページと、HTML から {券種: {組番: オッズ}} を返す読み取り関数
 ODDS_PAGES = {
-    "単勝": ("oddstf", lambda m, h: {"単勝": m.parse_tansho(h)}),
+    # 単勝ページには複勝も載っている。複勝は幅の下限と上限を別の券種名で保存する
+    "単勝": ("oddstf", lambda m, h: {
+        "単勝": m.parse_tansho(h),
+        "複勝": {b: lo for b, (lo, hi) in m.parse_fukusho(h).items()},
+        "複勝上限": {b: hi for b, (lo, hi) in m.parse_fukusho(h).items()},
+    }),
     "2連単": ("odds2tf", lambda m, h: m.parse_exacta(h)),  # 2連複も同じページで取れる
     "3連単": ("odds3t", lambda m, h: {"3連単": m.parse_trifecta(h)}),
 }

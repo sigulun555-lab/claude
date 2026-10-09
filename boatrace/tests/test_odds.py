@@ -41,3 +41,12 @@ def test_parse_request():
     from boatrace.check import parse_request
     assert parse_request("2026-10-09 大村 8R") == ("20261009", 24, 8)
     assert parse_request("2026-10-09 3 12") == ("20261009", 3, 12)
+
+
+def test_parse_fukusho():
+    from boatrace.odds import parse_fukusho
+    odds = parse_fukusho((FIX / "oddstf_20260929_24_01.html").read_text())
+    assert len(odds) == 6
+    # 競走成績の複勝払戻は 1号艇100円・2号艇130円で、どちらも下限と一致
+    assert odds["1"] == (1.0, 1.1) and odds["2"] == (1.3, 2.1)
+    assert odds["3"] == (2.3, 3.8)

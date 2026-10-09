@@ -53,6 +53,22 @@ def parse_tansho(html):
     return out
 
 
+def parse_fukusho(html):
+    """{'1': (1.0, 1.1), ...}。複勝は「下限-上限」の幅で表示され、払戻はレース後に決まる。"""
+    start = html.find("複勝オッズ</span>")
+    if start < 0:
+        return {}
+    out, boat = {}, None
+    for cls, text in _cells(html[start:]):
+        if "is-boatColor" in cls and text.isdigit():
+            boat = text
+        elif "oddsPoint" in cls and boat:
+            lo, _, hi = text.partition("-")
+            out[boat] = (_num(lo), _num(hi))
+            boat = None
+    return out
+
+
 def parse_trifecta(html):
     """{'1-2-3': 10.4, ...}。6列(1着の艇) × 20行の表を読む。
 
