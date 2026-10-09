@@ -15,6 +15,7 @@ RULES = {
     "単勝EV1.2": "単勝で 期待値>=1.2、6号艇と50倍超は買わない",
     "2連単候補": "1着が上の単勝ルールで選ばれた艇で、2連単の 期待値>=1.2 かつ 50倍以下 (仮説の確認用)",
     "複勝EV1.1": "複勝 (2着以内) で、オッズの下限で計算した期待値>=1.1、6号艇は買わない (2026-10-09 追加)",
+    "2連複EV1.2": "2連複で 期待値>=1.2 かつ 50倍以下、6号艇を含む組は買わない (2026-10-09 追加)",
 }
 EV_MIN, ODDS_MAX = 1.2, 50.0
 FUKUSHO_EV_MIN = 1.1  # 複勝は払戻が幅のどこになるか分からないので、下限オッズで見る
@@ -60,6 +61,10 @@ def make_picks(con, model, feats: pd.DataFrame, date: str) -> list:
             o = omap.get((race_id, "複勝", combo))
             if o and p * o >= FUKUSHO_EV_MIN and combo != "6":
                 add("複勝EV1.1", "複勝", combo, p, o)
+        for combo, p in probs["2連複"].items():
+            o = omap.get((race_id, "2連複", combo))
+            if o and p * o >= EV_MIN and o <= ODDS_MAX and "6" not in combo.split("-"):
+                add("2連複EV1.2", "2連複", combo, p, o)
         for combo, p in probs["2連単"].items():
             o = omap.get((race_id, "2連単", combo))
             if o and combo.split("-")[0] in tansho_boats and p * o >= EV_MIN and o <= ODDS_MAX:
