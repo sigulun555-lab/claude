@@ -68,6 +68,12 @@ def cmd_fetch_odds(args):
     races = con.execute(
         "SELECT race_id, date, venue, race_no FROM races WHERE date BETWEEN ? AND ? ORDER BY race_id",
         [args.start.strftime("%Y%m%d"), args.end.strftime("%Y%m%d")]).fetchall()
+    if args.max_venues:
+        keep = set()
+        for date in sorted({r[1] for r in races}):
+            venues = sorted({r[2] for r in races if r[1] == date})[:args.max_venues]
+            keep |= {(date, v) for v in venues}
+        races = [r for r in races if (r[1], r[2]) in keep]
     todo = [r for r in races if r[0] not in done]
     print(f"{args.bet_type}: 対象 {len(races)} レース / 取得済み {len(races) - len(todo)}", flush=True)
     with out.open("a", newline="") as f:
@@ -148,6 +154,24 @@ def cmd_backtest(args):
         print(f"モデルを保存: {args.save}")
 
 
+def cmd_papertrade(args):
+    import lightgbm as lgb
+
+    from .features import build_features, load_frame
+    from .papertrade import make_picks, report, save_picks
+
+    con = connect(args.db)
+    model = lgb.Booster(model_file=args.model)
+    feats = build_features(load_frame(con))
+    for d in daterange(args.start, args.end):
+        ymd = d.strftime("%Y%m%d")
+        rows = make_picks(con, model, feats, ymd)
+        if rows:
+            save_picks(Path(args.csv), ymd, rows)
+        print(f"{d}: {len(rows)}点")
+    print(report(Path(args.csv)))
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(prog="boatrace", description="競艇予想アプリ")
     p.add_argument("--db", default="data/boatrace.sqlite")
@@ -174,11 +198,19 @@ def main(argv=None):
     s.add_argument("--bet-type", choices=list(ODDS_PAGES), default="単勝")
     s.add_argument("--csv", required=True)
     s.add_argument("--sleep", type=float, default=2.0)
+    s.add_argument("--max-venues", type=int, help="1日あたり場コードの小さい順にこの数の場だけ取る")
     s.set_defaults(func=cmd_fetch_odds)
 
     s = sub.add_parser("load-odds", help="オッズCSVをDBへ")
     s.add_argument("files", nargs="+")
     s.set_defaults(func=cmd_load_odds)
+
+    s = sub.add_parser("papertrade", help="固定ルールで買い目を記録し、累計成績を表示")
+    s.add_argument("start", type=_date)
+    s.add_argument("end", type=_date)
+    s.add_argument("--model", required=True)
+    s.add_argument("--csv", default="data/papertrade/picks.csv")
+    s.set_defaults(func=cmd_papertrade)
 
     s = sub.add_parser("load-text", help="展開済みTXTファイルをDBへ")
     s.add_argument("files", nargs="+")
