@@ -10,36 +10,56 @@ from .model import predict_win_prob
 from .papertrade import EV_MIN, ODDS_MAX
 
 
-def make_sheet(con, model, feats: pd.DataFrame, date: str) -> str:
+def sheet_data(con, model, feats: pd.DataFrame, date: str) -> dict:
+    """予想表のデータ。{date, venues: [{code, name, races: [{no, deadline, picks: [...]}]}]}"""
     day = feats[feats["date"] == date].copy()
     day = day[day.groupby("race_id")["boat"].transform("size") == 6]
+    out = {"date": f"{date[:4]}-{date[4:6]}-{date[6:]}", "venues": []}
     if day.empty:
-        return f"# {date[:4]}/{date[4:6]}/{date[6:]} の予想表\n\n対象レースがありません。\n"
+        return out
     day["p"] = predict_win_prob(model, day)
     deadline = dict(con.execute("SELECT race_id, deadline FROM races WHERE date = ?", [date]))
+    for venue, vg in day.groupby("venue", observed=True):
+        races = []
+        for race_id, g in vg.groupby("race_id"):
+            picks = []
+            for _, r in g.sort_values("p", ascending=False).iterrows():
+                need = EV_MIN / r["p"]
+                if r["boat"] == 6 or need > ODDS_MAX:
+                    continue
+                picks.append({"boat": int(r["boat"]), "name": r["name"], "grade": r["grade"],
+                              "p": round(float(r["p"]), 3), "need": round(need, 1)})
+                if len(picks) >= 3:
+                    break
+            races.append({"no": int(g["race_no"].iloc[0]), "deadline": deadline.get(race_id) or "",
+                          "picks": picks})
+        out["venues"].append({"code": int(venue), "name": VENUES.get(int(venue), str(venue)),
+                              "races": sorted(races, key=lambda r: r["no"])})
+    return out
 
+
+def to_markdown(data: dict) -> str:
+    d = data["date"].replace("-", "/")
+    if not data["venues"]:
+        return f"# {d} の予想表\n\n対象レースがありません。\n"
     lines = [
-        f"# {date[:4]}/{date[4:6]}/{date[6:]} の予想表 (単勝)",
+        f"# {d} の予想表 (単勝)",
         "",
         "締切前のオッズが **必要オッズ以上** なら買い、届かなければ見送り。",
         "展示タイムを使わない朝の予想です。気になるレースは「○○ ○R 直前」で直前チェックできます。",
         "",
     ]
-    for venue, vg in day.groupby("venue", observed=True):
-        lines += [f"## {VENUES.get(int(venue), venue)}", "",
+    for v in data["venues"]:
+        lines += [f"## {v['name']}", "",
                   "| R | 締切 | 艇 | 選手 | 勝つ確率 | 必要オッズ |", "|---|---|---|---|---|---|"]
-        for race_id, g in vg.groupby("race_id"):
-            g = g.sort_values("p", ascending=False)
-            shown = 0
-            for _, r in g.iterrows():
-                need = EV_MIN / r["p"]
-                if r["boat"] == 6 or need > ODDS_MAX:
-                    continue
-                lines.append(f"| {int(r['race_no'])} | {deadline.get(race_id) or ''} | {int(r['boat'])} | "
-                             f"{r['name']} | {r['p']:.0%} | **{need:.1f}倍** |")
-                shown += 1
-                if shown >= 3:
-                    break
+        for r in v["races"]:
+            for pk in r["picks"]:
+                lines.append(f"| {r['no']} | {r['deadline']} | {pk['boat']} | {pk['name']} | "
+                             f"{pk['p']:.0%} | **{pk['need']:.1f}倍** |")
         lines.append("")
     lines += ["---", "お金を賭けるかどうかはご自身の判断で。20歳未満は舟券を買えません。", ""]
     return "\n".join(lines)
+
+
+def make_sheet(con, model, feats: pd.DataFrame, date: str) -> str:
+    return to_markdown(sheet_data(con, model, feats, date))

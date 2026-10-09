@@ -176,14 +176,18 @@ def cmd_sheet(args):
     import lightgbm as lgb
 
     from .features import build_features, load_frame
-    from .sheet import make_sheet
+    import json
+
+    from .sheet import sheet_data, to_markdown
 
     con = connect(args.db)
-    text = make_sheet(con, lgb.Booster(model_file=args.model), build_features(load_frame(con)),
+    data = sheet_data(con, lgb.Booster(model_file=args.model), build_features(load_frame(con)),
                       args.date.strftime("%Y%m%d"))
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
-    Path(args.out).write_text(text)
-    print(text[:2000])
+    Path(args.out).write_text(to_markdown(data))
+    if args.json:
+        Path(args.json).write_text(json.dumps(data, ensure_ascii=False))
+    print(to_markdown(data)[:2000])
 
 
 def cmd_train(args):
@@ -255,6 +259,7 @@ def main(argv=None):
     s.add_argument("date", type=_date)
     s.add_argument("--model", required=True)
     s.add_argument("--out", required=True)
+    s.add_argument("--json", help="同じ内容をJSONでも保存する (予想表ページ用)")
     s.set_defaults(func=cmd_sheet)
 
     s = sub.add_parser("train", help="全データでモデルを学習して保存")

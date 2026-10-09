@@ -38,7 +38,7 @@ jobs:
           python -m boatrace.cli fetch "$(date -d "$LAST + 1 day" +%F)" "$DAY"
           python -m boatrace.cli --db /tmp/bt.sqlite load 2025-10-01 "$DAY" --offline > /dev/null
           python -m boatrace.cli --db /tmp/bt.sqlite sheet "$DAY" --model data/model/model_morning.txt \
-            --out "data/yosou/$DAY.md" > /dev/null
+            --out "data/yosou/$DAY.md" --json data/yosou/latest.json > /dev/null
           cp "data/yosou/$DAY.md" data/yosou/latest.md
           echo "DAY=$DAY" >> "$GITHUB_ENV"
       - name: 保存
