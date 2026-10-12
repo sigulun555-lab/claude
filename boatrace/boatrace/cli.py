@@ -1,5 +1,5 @@
 import argparse
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 from . import VENUES
@@ -36,10 +36,25 @@ def cmd_load(args):
         print(f"{d}: 番組 {'有' if b else '無'} / 成績 {'有' if k else '無'}")
 
 
+LOOKBACK_DAYS = 7  # 直近分を取るときは、取り損ねや未完成のファイルを直すためここまで遡る
+
+
+def _live_start(start, end):
+    """終了日が直近 (今日から2日以内) なら、開始日を LOOKBACK_DAYS 前まで広げる。
+
+    取得済みのファイルは再ダウンロードされないので、遡っても通信は増えない。
+    """
+    from .download import RECENT_DAYS, today_jst
+
+    if (today_jst() - end).days <= RECENT_DAYS:
+        return min(start, end - timedelta(days=LOOKBACK_DAYS))
+    return start
+
+
 def cmd_fetch(args):
     """ダウンロードだけ行う (DBには入れない)。"""
     raw = Path(args.raw_dir)
-    for d in daterange(args.start, args.end):
+    for d in daterange(_live_start(args.start, args.end), args.end):
         got = [k for k in "BK" if fetch(k, d, raw, args.sleep)]
         print(f"{d}: {''.join(got) or '開催なし'}", flush=True)
 
@@ -168,7 +183,8 @@ def cmd_papertrade(args):
     con = connect(args.db)
     model = lgb.Booster(model_file=args.model)
     feats = build_features(load_frame(con))
-    for d in daterange(args.start, args.end):
+    # 直近の日は、結果が後から入ったものを採点し直す (オッズがない日は何もしない)
+    for d in daterange(_live_start(args.start, args.end), args.end):
         ymd = d.strftime("%Y%m%d")
         rows = make_picks(con, model, feats, ymd)
         if rows:
