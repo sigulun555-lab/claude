@@ -85,7 +85,7 @@ def parse_deba(html):
         rec = re.search(r"全(?:&nbsp;)*</td>(.*?)</tr>", chunk, flags=re.S)
         nums = re.findall(r"(\d+)-?\s*</td>", rec.group(1)) if rec else []
         rec = nums[:4] if len(nums) >= 4 else None
-        odds = re.search(r'class="odds_\w+ odds[^"]*"[^>]*>\s*([\d.]+)', chunk)
+        odds = re.search(r'class="odds_\w+[^"]*"[^>]*>\s*([\d.]+)', chunk)
         pop = re.search(r"\((\d+)人気\)", chunk)
         if not rec:
             continue
