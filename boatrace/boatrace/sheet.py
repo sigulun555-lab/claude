@@ -10,7 +10,7 @@ from .model import predict_win_prob
 from .papertrade import EV_MIN, ODDS_MAX
 
 
-CAND_NEED = 2.5  # 予想1位の必要オッズがこれ以上のレース = 1位が一本かぶりでなく、⭐(オッズ2.5倍以上)になりやすい
+CAND_NEED = 2.7  # 予想1位の必要オッズがこれ以上のレース = 1位が一本かぶりでなく、⭐(オッズ2.7倍以上)になりやすい
 
 
 def is_candidate(race: dict) -> bool:
