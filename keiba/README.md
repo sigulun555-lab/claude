@@ -21,13 +21,17 @@
 
 ※ 実際の馬券購入ではなく、記録上の検証です。
 
-## 記録するもの（毎日）
+## 仕組み（2026-10-14 改善版⑤）
 
-| 記録 | 内容 | ファイル |
-|---|---|---|
-| 全レースのスクリーニング | 最上位の馬連1点の確度が10%以上のレースを選出 | `logs/<日付>_screen.csv` |
-| 馬単10点 | 全レース横断で馬単の確度が高い順に10点（1点100円） | `logs/<日付>_exacta.csv` |
-| 日別の集計 | 的中・投資・払戻 | `logs/summary.csv`（`python3 keiba/screen.py summary` で累計） |
+| ファイル | 役割 |
+|---|---|
+| `history.py` | 過去と当日の全レース（出馬表・最終オッズ・払戻）を `data/history.jsonl` に貯める |
+| `ab_test.py` | 「市場のオッズだけ」に要素を1つずつ足して、別の期間で勝ち馬の予想が良くなるか確かめる。結果は `ab_report.md`、採用した要素は `model.json` |
+| `paper.py` | 締切時オッズで、全レースの馬連・馬単を3つの方法（旧式／市場／追加）で記録する。累計は `python3 keiba/paper.py summary` |
+| `diagnose.py` / `backtest.py` | 馬連が外れる原因の調査／過去の的中率・回収率の確認 |
+| `screen.py` | 旧式（全成績だけ）のスクリーニング。比較用に残してある |
+
+記録：`logs/<日付>_paper.csv`（上位10点の中身）、`logs/paper_summary.csv`（日別の集計）。
 
 ## 競艇との比較（30日分たまってから）
 競艇のペーパートレード：`git show origin/boatrace-data:papertrade/report.txt`
