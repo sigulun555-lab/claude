@@ -31,6 +31,7 @@ import history as H  # noqa: E402
 LOG = os.path.join(HERE, "logs")
 SUMMARY = os.path.join(LOG, "paper_summary.csv")
 TOPN = 10
+EV_MIN_PROB = 0.02   # 期待値で選ぶときは、確度2%以上の組だけ（極端な大穴のオッズの偶然に引っぱられないため）
 COLS = ["日付", "方法", "戦略", "点数", "的中", "投資", "払戻"]
 STRATS = {
     "馬連 確度1位（全レース）": ("馬連", "prob", "race"),
@@ -150,7 +151,8 @@ def run(day):
                         best[c["rid"]] = c
                 chosen = list(best.values())
             else:
-                chosen = sorted(allc, key=lambda c: -c[key])[:TOPN]
+                pool = [c for c in allc if c["prob"] >= EV_MIN_PROB] if key == "ev" else allc
+                chosen = sorted(pool, key=lambda c: -c[key])[:TOPN]
             out_rows.append({"日付": dstr, "方法": mname, "戦略": sname, "点数": len(chosen),
                              "的中": sum(c["hit"] for c in chosen), "投資": 100 * len(chosen),
                              "払戻": sum(c["pay"] for c in chosen)})
