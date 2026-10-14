@@ -72,6 +72,15 @@ ODDS_PAGES = {
 }
 
 
+def choose_venues(date: str, venues, n: int) -> set:
+    """その日に取る場を選ぶ。日付だけで決まる抽選なので、同じ日は何度実行しても同じ場になり、
+    特定の場(場コードの小さい場など)に偏らない。"""
+    import random
+
+    pool = sorted(venues)
+    return set(random.Random(date).sample(pool, min(n, len(pool))))
+
+
 def cmd_fetch_odds(args):
     """DBにあるレースの締切時オッズを公式サイトから取り、CSVに追記する(途中再開可)。"""
     import csv
@@ -91,7 +100,7 @@ def cmd_fetch_odds(args):
     if args.max_venues:
         keep = set()
         for date in sorted({r[1] for r in races}):
-            venues = sorted({r[2] for r in races if r[1] == date})[:args.max_venues]
+            venues = choose_venues(date, {r[2] for r in races if r[1] == date}, args.max_venues)
             keep |= {(date, v) for v in venues}
         races = [r for r in races if (r[1], r[2]) in keep]
     todo = [r for r in races if r[0] not in done]
@@ -262,7 +271,7 @@ def main(argv=None):
     s.add_argument("--bet-type", choices=list(ODDS_PAGES), default="単勝")
     s.add_argument("--csv", required=True)
     s.add_argument("--sleep", type=float, default=2.0)
-    s.add_argument("--max-venues", type=int, help="1日あたり場コードの小さい順にこの数の場だけ取る")
+    s.add_argument("--max-venues", type=int, help="1日あたりこの数の場だけ取る (日付から決まる抽選)")
     s.set_defaults(func=cmd_fetch_odds)
 
     s = sub.add_parser("load-odds", help="オッズCSVをDBへ")

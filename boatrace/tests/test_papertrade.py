@@ -16,3 +16,16 @@ def test_save_picks_replaces_same_day(tmp_path):
     assert len(lines) == 3 and ",4," in lines[1]
     text = report(path)
     assert "2点" in text and "回収率 600.0%" in text
+
+
+def test_choose_venues_is_deterministic_and_not_biased_to_low_codes():
+    from boatrace.cli import choose_venues
+    pool = set(range(1, 25))
+    assert choose_venues("20261014", pool, 2) == choose_venues("20261014", pool, 2)
+    assert len(choose_venues("20261014", pool, 2)) == 2
+    assert choose_venues("20261014", {5}, 2) == {5}
+    picked = set()
+    for day in range(1, 31):
+        picked |= choose_venues(f"202610{day:02d}", pool, 2)
+    assert len(picked) >= 15  # 1か月でほとんどの場が選ばれる (先頭2場に固定されない)
+    assert max(picked) > 12

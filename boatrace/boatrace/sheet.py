@@ -23,12 +23,15 @@ def sheet_data(con, model, feats: pd.DataFrame, date: str) -> dict:
         races = []
         for race_id, g in vg.groupby("race_id"):
             picks = []
-            for _, r in g.sort_values("p", ascending=False).iterrows():
+            g = g.sort_values("p", ascending=False)
+            top_boat = int(g.iloc[0]["boat"])
+            for _, r in g.iterrows():
                 need = EV_MIN / r["p"]
-                if r["boat"] == 6 or need > ODDS_MAX:
+                is_top = int(r["boat"]) == top_boat
+                if not is_top and (r["boat"] == 6 or need > ODDS_MAX):
                     continue
                 picks.append({"boat": int(r["boat"]), "name": r["name"], "grade": r["grade"],
-                              "p": round(float(r["p"]), 3), "need": round(need, 1)})
+                              "p": round(float(r["p"]), 3), "need": round(need, 1), "top": is_top})
                 if len(picks) >= 3:
                     break
             races.append({"no": int(g["race_no"].iloc[0]), "deadline": deadline.get(race_id) or "",
@@ -54,7 +57,8 @@ def to_markdown(data: dict) -> str:
                   "| R | 締切 | 艇 | 選手 | 勝つ確率 | 必要オッズ |", "|---|---|---|---|---|---|"]
         for r in v["races"]:
             for pk in r["picks"]:
-                lines.append(f"| {r['no']} | {r['deadline']} | {pk['boat']} | {pk['name']} | "
+                mark = " 〔予想1位〕" if pk.get("top") else ""
+                lines.append(f"| {r['no']} | {r['deadline']} | {pk['boat']} | {pk['name']}{mark} | "
                              f"{pk['p']:.0%} | **{pk['need']:.1f}倍** |")
         lines.append("")
     lines += ["---", "お金を賭けるかどうかはご自身の判断で。20歳未満は舟券を買えません。", ""]

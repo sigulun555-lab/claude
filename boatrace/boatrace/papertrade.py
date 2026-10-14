@@ -15,9 +15,11 @@ RULES = {
     "単勝EV1.2": "単勝で 期待値>=1.2、6号艇と50倍超は買わない",
     "2連単候補": "1着が上の単勝ルールで選ばれた艇で、2連単の 期待値>=1.2 かつ 50倍以下 (仮説の確認用)",
     "複勝EV1.1": "複勝 (2着以内) で、オッズの下限で計算した期待値>=1.1、6号艇は買わない (2026-10-09 追加)",
+    "⭐予想1位": "予想1位の艇で単勝オッズ2.5倍以上 (2026-10-14 追加)",
     "2連複EV1.2": "2連複で 期待値>=1.2 かつ 50倍以下、6号艇を含む組は買わない (2026-10-09 追加)",
 }
 EV_MIN, ODDS_MAX = 1.2, 50.0
+STAR_ODDS = 2.5  # 予想1位の艇で、単勝オッズがこれ以上なら ⭐
 FUKUSHO_EV_MIN = 1.1  # 複勝は払戻が幅のどこになるか分からないので、下限オッズで見る
 FIELDS = ["date", "race_id", "rule", "bet_type", "combo", "prob", "odds", "ev", "result", "payout"]
 
@@ -52,6 +54,10 @@ def make_picks(con, model, feats: pd.DataFrame, date: str) -> list:
                 "payout": "" if result is None else pay.get((race_id, bet_type, combo), 0),
             })
 
+        top = max(probs["単勝"], key=probs["単勝"].get)
+        o_top = omap.get((race_id, "単勝", top))
+        if o_top and o_top >= STAR_ODDS:
+            add("⭐予想1位", "単勝", top, probs["単勝"][top], o_top)
         for combo, p in probs["単勝"].items():
             o = omap.get((race_id, "単勝", combo))
             if o and p * o >= EV_MIN and combo != "6" and o <= ODDS_MAX:
