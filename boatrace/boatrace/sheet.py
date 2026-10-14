@@ -10,6 +10,15 @@ from .model import predict_win_prob
 from .papertrade import EV_MIN, ODDS_MAX
 
 
+CAND_NEED = 2.5  # 予想1位の必要オッズがこれ以上のレース = 1位が一本かぶりでなく、⭐(オッズ2.5倍以上)になりやすい
+
+
+def is_candidate(race: dict) -> bool:
+    """予想1位の必要オッズが CAND_NEED 以上のレースか (確認の目安の🔴)。"""
+    top = next((p for p in race["picks"] if p.get("top")), race["picks"][0] if race["picks"] else None)
+    return bool(top) and top["need"] >= CAND_NEED
+
+
 def sheet_data(con, model, feats: pd.DataFrame, date: str) -> dict:
     """予想表のデータ。{date, venues: [{code, name, races: [{no, deadline, picks: [...]}]}]}"""
     day = feats[feats["date"] == date].copy()
@@ -50,15 +59,19 @@ def to_markdown(data: dict) -> str:
         "",
         "締切前のオッズが **必要オッズ以上** なら買い、届かなければ見送り。",
         "展示タイムを使わない朝の予想です。気になるレースは「○○ ○R 直前」で直前チェックできます。",
+        f"🔴 = 予想1位の必要オッズが{CAND_NEED}倍以上のレース (⭐が出やすい確認の目安)。レース場名の横の数字は🔴の数。",
         "",
     ]
     for v in data["venues"]:
-        lines += [f"## {v['name']}", "",
+        n_cand = sum(is_candidate(r) for r in v["races"])
+        mark = f" 🔴{n_cand}" if n_cand else ""
+        lines += [f"## {v['name']}{mark}", "",
                   "| R | 締切 | 艇 | 選手 | 勝つ確率 | 必要オッズ |", "|---|---|---|---|---|---|"]
         for r in v["races"]:
             for pk in r["picks"]:
                 mark = " 〔予想1位〕" if pk.get("top") else ""
-                lines.append(f"| {r['no']} | {r['deadline']} | {pk['boat']} | {pk['name']}{mark} | "
+                rmark = " 🔴" if is_candidate(r) else ""
+                lines.append(f"| {r['no']}{rmark} | {r['deadline']} | {pk['boat']} | {pk['name']}{mark} | "
                              f"{pk['p']:.0%} | **{pk['need']:.1f}倍** |")
         lines.append("")
     lines += ["---", "お金を賭けるかどうかはご自身の判断で。20歳未満は舟券を買えません。", ""]
