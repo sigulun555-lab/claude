@@ -191,11 +191,14 @@ def cmd_papertrade(args):
 
     con = connect(args.db)
     model = lgb.Booster(model_file=args.model)
+    # 同じフォルダに直前チェック用モデルがあれば、オッズと合成するルールも記録する
+    chk = Path(args.model).with_name("model_check.txt")
+    model_check = lgb.Booster(model_file=str(chk)) if chk.exists() else None
     feats = build_features(load_frame(con))
     # 直近の日は、結果が後から入ったものを採点し直す (オッズがない日は何もしない)
     for d in daterange(_live_start(args.start, args.end), args.end):
         ymd = d.strftime("%Y%m%d")
-        rows = make_picks(con, model, feats, ymd)
+        rows = make_picks(con, model, feats, ymd, model_check)
         if rows:
             save_picks(Path(args.csv), ymd, rows)
         print(f"{d}: {len(rows)}点")

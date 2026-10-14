@@ -4,6 +4,7 @@ import pandas as pd
 from . import VENUES
 from .db import save_odds
 from .features import build_features, load_frame
+from .market import blend
 from .model import predict_win_prob
 from .odds import fetch_page, parse_beforeinfo, parse_tansho
 from .papertrade import EV_MIN, ODDS_MAX, STAR_ODDS
@@ -45,11 +46,15 @@ def check_races(con, model, requests, sleep=2.0) -> str:
             out += [title, "", "出走表が見つかりませんでした。", ""]
             continue
         g["p"] = predict_win_prob(model, g)
+        mix = blend(dict(zip(g["boat"], g["p"])), odds)
+        if mix:
+            g["p"] = g["boat"].map(lambda b: mix[int(b)])
         top_boat = int(g.loc[g["p"].idxmax(), "boat"])
         missing = [b for b in range(1, 7) if b not in info["exhibition"] or info["exhibition"][b] is None]
         out += [title, "",
                 f"風 {info['wind_speed'] or 0:.0f}m / 波 {info['wave'] or 0:.0f}cm"
-                + (" / 展示タイム未発表の艇あり (朝の予想に近い精度です)" if missing else ""),
+                + (" / 展示タイム未発表の艇あり (朝の予想に近い精度です)" if missing else "")
+                + (" / 確率は今のオッズと合成済み" if mix else " / オッズがそろわないため自前の予想のみ"),
                 "", "| 艇 | 選手 | 展示 | 勝つ確率 | 今のオッズ | 必要オッズ | 判定 |", "|---|---|---|---|---|---|---|"]
         for _, r in g.sort_values("boat").iterrows():
             o = odds.get(str(int(r["boat"])))

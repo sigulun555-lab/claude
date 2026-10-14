@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from .market import blend
 from .model import harville, predict_win_prob
 
 # 固定ルール (9月の検証で決めたもの。あとから変えない)
@@ -15,6 +16,7 @@ RULES = {
     "単勝EV1.2": "単勝で 期待値>=1.2、6号艇と50倍超は買わない",
     "2連単候補": "1着が上の単勝ルールで選ばれた艇で、2連単の 期待値>=1.2 かつ 50倍以下 (仮説の確認用)",
     "複勝EV1.1": "複勝 (2着以内) で、オッズの下限で計算した期待値>=1.1、6号艇は買わない (2026-10-09 追加)",
+    "合成EV1.2": "単勝で、今のオッズと合成した確率の期待値>=1.2 (6号艇・50倍超を除く) (2026-10-14 追加)",
     "⭐予想1位": "予想1位の艇で単勝オッズ2.5倍以上 (2026-10-14 追加)",
     "2連複EV1.2": "2連複で 期待値>=1.2 かつ 50倍以下、6号艇を含む組は買わない (2026-10-09 追加)",
 }
@@ -24,7 +26,7 @@ FUKUSHO_EV_MIN = 1.1  # 複勝は払戻が幅のどこになるか分からな�
 FIELDS = ["date", "race_id", "rule", "bet_type", "combo", "prob", "odds", "ev", "result", "payout"]
 
 
-def make_picks(con, model, feats: pd.DataFrame, date: str) -> list:
+def make_picks(con, model, feats: pd.DataFrame, date: str, model_check=None) -> list:
     """date (YYYYMMDD) のレースのうち、オッズがあるものについて固定ルールで買い目を作る。"""
     odds = pd.read_sql_query(
         "SELECT race_id, bet_type, combo, odds FROM odds WHERE race_id LIKE ? AND odds IS NOT NULL",
@@ -39,6 +41,8 @@ def make_picks(con, model, feats: pd.DataFrame, date: str) -> list:
     if day.empty:
         return []
     day["p_win"] = predict_win_prob(model, day)
+    if model_check is not None:
+        day["p_chk"] = predict_win_prob(model_check, day)
 
     rows = []
     for race_id, g in day.groupby("race_id"):
@@ -54,6 +58,13 @@ def make_picks(con, model, feats: pd.DataFrame, date: str) -> list:
                 "payout": "" if result is None else pay.get((race_id, bet_type, combo), 0),
             })
 
+        if model_check is not None:
+            mix = blend(dict(zip(g["boat"], g["p_chk"])),
+                        {b: omap.get((race_id, "単勝", str(b))) for b in range(1, 7)})
+            for b, pb in (mix or {}).items():
+                o = omap.get((race_id, "単勝", str(b)))
+                if b != 6 and o <= ODDS_MAX and pb * o >= EV_MIN:
+                    add("合成EV1.2", "単勝", str(b), pb, o)
         top = max(probs["単勝"], key=probs["単勝"].get)
         o_top = omap.get((race_id, "単勝", top))
         if o_top and o_top >= STAR_ODDS:

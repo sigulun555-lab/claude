@@ -18,7 +18,13 @@ FEATURES = [
     "nat_win_rank", "nat_win_diff", "motor_2r_rank", "exhibition_rank", "exhibition_diff",
     "recent_win", "recent_top2", "recent_avg_rank", "recent_n",
     "recent_win_same_boat", "recent_n_same_boat",
+    "recent_st", "recent_st_rank", "recent_st_diff", "recent_f", "recent_course",
+    "recent_win_venue", "recent_n_venue",
 ]
+# 追加前の特徴量 (比較用)
+BASE_FEATURES = [f for f in FEATURES if f not in (
+    "recent_st", "recent_st_rank", "recent_st_diff", "recent_f", "recent_course",
+    "recent_win_venue", "recent_n_venue")]
 CATEGORICAL = ["venue"]
 
 # 朝の時点では分からない直前情報 (展示タイム・風・波) を除いた特徴量
@@ -33,7 +39,7 @@ CHECK_FEATURES = [f for f in FEATURES if f not in ("wind_sin", "wind_cos")]
 def load_frame(con) -> pd.DataFrame:
     df = pd.read_sql_query("""
         SELECT e.*, r.date, r.venue, r.race_no, r.wind_dir, r.wind_speed, r.wave,
-               res.rank, res.rank_raw, res.exhibition
+               res.rank, res.rank_raw, res.exhibition, res.st, res.st_flag, res.course
         FROM entries e
         JOIN races r USING (race_id)
         LEFT JOIN results res ON res.race_id = e.race_id AND res.boat = e.boat
@@ -49,6 +55,10 @@ def _recent_form(df: pd.DataFrame) -> pd.DataFrame:
     df["_win"] = np.where(finished, (df["rank"] == 1).astype(float), np.nan)
     df["_top2"] = np.where(finished, (df["rank"] <= 2).astype(float), np.nan)
     df["_rank"] = df["rank"].astype(float)
+    # スタートタイミング (フライング・出遅れは除く)、フライング率、実際に入った進入コース
+    df["_st"] = df["st"].where(df["st_flag"].isna() & df["st"].between(0, 0.4))
+    df["_f"] = (df["st_flag"] == "F").astype(float).where(df["rank_raw"].notna())
+    df["_course"] = df["course"].astype(float)
 
     def roll(s):
         return s.shift().rolling(RECENT_N, min_periods=1).mean()
@@ -59,11 +69,18 @@ def _recent_form(df: pd.DataFrame) -> pd.DataFrame:
     df["recent_avg_rank"] = g["_rank"].transform(roll)
     df["recent_n"] = g.cumcount()
 
+    df["recent_st"] = g["_st"].transform(roll)
+    df["recent_f"] = g["_f"].transform(roll)
+    df["recent_course"] = g["_course"].transform(roll)
+    gv = df.groupby(["reg_no", "venue"])
+    df["recent_win_venue"] = gv["_win"].transform(roll)
+    df["recent_n_venue"] = gv.cumcount()
+
     # 同じ枠番での直近成績 (イン屋・アウト屋の傾向)
     g2 = df.groupby(["reg_no", "boat"])
     df["recent_win_same_boat"] = g2["_win"].transform(roll)
     df["recent_n_same_boat"] = g2.cumcount()
-    return df.drop(columns=["_win", "_top2", "_rank"])
+    return df.drop(columns=["_win", "_top2", "_rank", "_st", "_f", "_course"])
 
 
 def build_features(df: pd.DataFrame) -> pd.DataFrame:
@@ -84,5 +101,9 @@ def build_features(df: pd.DataFrame) -> pd.DataFrame:
     df["exhibition_diff"] = df["exhibition"] - race["exhibition"].transform("mean")
 
     df = _recent_form(df)
+    # スタートの速さのレース内での相対値 (_recent_form のあとで計算する)
+    race = df.groupby("race_id")
+    df["recent_st_rank"] = race["recent_st"].rank()
+    df["recent_st_diff"] = df["recent_st"] - race["recent_st"].transform("mean")
     df["venue"] = df["venue"].astype("category")
     return df.sort_values(["race_id", "boat"]).reset_index(drop=True)
