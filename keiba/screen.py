@@ -32,10 +32,21 @@ def jst_today():
     return datetime.now(timezone(timedelta(hours=9))).strftime("%Y%m%d")
 
 
-def load_zip():
-    req = urllib.request.Request(URL, headers={"User-Agent": "Mozilla/5.0"})
-    data = urllib.request.urlopen(req, timeout=60).read()
-    z = zipfile.ZipFile(io.BytesIO(data))
+def load_zip(retries=5):
+    """ZIPを取得する。サイト側が一時的にエラーページ(HTML)を返すことがあるので、数回やり直す。"""
+    import time
+    last = None
+    for i in range(retries):
+        try:
+            req = urllib.request.Request(URL, headers={"User-Agent": "Mozilla/5.0"})
+            data = urllib.request.urlopen(req, timeout=60).read()
+            z = zipfile.ZipFile(io.BytesIO(data))
+            break
+        except (zipfile.BadZipFile, OSError) as e:
+            last = e
+            time.sleep(10 * (i + 1))
+    else:
+        raise RuntimeError(f"データダウンロードを取得できませんでした: {last}")
     out = {}
     for name in z.namelist():
         kind = name.rsplit("_", 1)[-1].replace(".csv", "")
