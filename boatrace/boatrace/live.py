@@ -4,7 +4,9 @@
 公式サイトに負担をかけないよう、取るのは「今から WINDOW_MIN 分以内に締切になるレース」だけで、
 1件ずつ間隔を空けて取る。
 """
+from .market import blend
 from .odds import fetch_page, parse_tansho
+from .papertrade import EV_MIN
 
 WINDOW_MIN = 75  # 今から何分以内に締切になるレースのオッズを取るか
 
@@ -28,6 +30,15 @@ def select_races(sheet: dict, now_min: int, window: int = WINDOW_MIN):
     return sorted(out)
 
 
+def mixed_probs(pall, odds):
+    """朝の6艇ぶんの勝率と今のオッズを市場と合成した {艇: 勝率}。オッズが5艇未満・勝率がなければ None。"""
+    if not pall or len(odds) < 5:
+        return None
+    full = {str(b): odds.get(str(b), 0.0) for b in range(1, 7)}
+    mix = blend({int(b): p for b, p in pall.items()}, full)
+    return {str(b): p for b, p in mix.items()} if mix else None
+
+
 def fetch_live(sheet: dict, now, previous=None, window: int = WINDOW_MIN, sleep: float = 1.5,
                fetch=fetch_page) -> dict:
     """{date, asof, fetched, races: {"場コード|R": {at, odds: {艇: オッズ}}}}。
@@ -39,6 +50,7 @@ def fetch_live(sheet: dict, now, previous=None, window: int = WINDOW_MIN, sleep:
     result["errors"] = []
     date = sheet["date"].replace("-", "")
     targets = select_races(sheet, now.hour * 60 + now.minute, window)
+    pall = {f"{v['code']}|{r['no']}": r.get("pall") for v in sheet["venues"] for r in v["races"]}
     for _, code, no in targets:
         try:
             odds = parse_tansho(fetch("oddstf", date, code, no, sleep))
@@ -47,7 +59,11 @@ def fetch_live(sheet: dict, now, previous=None, window: int = WINDOW_MIN, sleep:
             continue
         valid = {b: o for b, o in odds.items() if o and o > 0}
         if valid:
-            result["races"][f"{code}|{no}"] = {"at": now.strftime("%H:%M"), "odds": valid}
+            entry = {"at": now.strftime("%H:%M"), "odds": valid}
+            mix = mixed_probs(pall.get(f"{code}|{no}"), valid)
+            if mix:
+                entry["mix"] = {b: {"p": round(p, 3), "need": round(EV_MIN / p, 1)} for b, p in mix.items()}
+            result["races"][f"{code}|{no}"] = entry
     result["asof"] = now.strftime("%H:%M")
     result["fetched"] = len(targets)
     return result

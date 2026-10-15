@@ -38,3 +38,13 @@ def test_fetch_live_merges_and_skips_invalid():
     res2 = fetch_live(SHEET, later, previous=res, fetch=lambda *a: html, sleep=0)
     assert res2["races"]["24|2"]["at"] == "10:50"          # 11:05 は過ぎているので取り直さない
     assert res2["races"]["24|4"]["at"] == "11:50"
+
+
+def test_mixed_probs_needs_five_boats_and_sums_to_one():
+    from boatrace.live import mixed_probs
+    pall = {"1": 0.3, "2": 0.25, "3": 0.2, "4": 0.12, "5": 0.1, "6": 0.03}
+    odds = {"1": 1.2, "2": 6.1, "4": 12.3, "5": 4.1, "6": 24.7}
+    mix = mixed_probs(pall, odds)
+    assert mix and abs(sum(mix.values()) - 1) < 1e-9 and mix["1"] > 0.3
+    assert mixed_probs(pall, {"1": 1.2, "2": 6.1}) is None
+    assert mixed_probs(None, odds) is None

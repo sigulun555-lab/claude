@@ -43,8 +43,10 @@ def sheet_data(con, model, feats: pd.DataFrame, date: str) -> dict:
                               "p": round(float(r["p"]), 3), "need": round(need, 1), "top": is_top})
                 if len(picks) >= 3:
                     break
+            # 6艇ぶんの勝率: 毎時のオッズ取得で市場と合成するのに使う
+            pall = {str(int(b)): round(float(q), 4) for b, q in zip(g["boat"], g["p"])}
             races.append({"no": int(g["race_no"].iloc[0]), "deadline": deadline.get(race_id) or "",
-                          "picks": picks})
+                          "picks": picks, "pall": pall})
         out["venues"].append({"code": int(venue), "name": VENUES.get(int(venue), str(venue)),
                               "races": sorted(races, key=lambda r: r["no"])})
     return out
