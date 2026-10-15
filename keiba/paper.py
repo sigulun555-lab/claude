@@ -78,7 +78,8 @@ def market_p(race):
 
 def plus_p(race, model):
     names = model["features"]
-    X, mask, _ = AB.pack([dict(race, win=race["hs"][0]["no"])], names, model["jockey"] or None, loo=False)
+    X, mask, _ = AB.pack([dict(race, win=race["hs"][0]["no"])], names, model["jockey"] or None, loo=False,
+                         gs=model.get("gate_stats") or None)
     p = AB.predict(X, mask, np.array(model["beta"]), np.array(model["mu"]), np.array(model["sd"]))[0]
     return norm({h["no"]: float(p[i]) for i, h in enumerate(race["hs"])})
 

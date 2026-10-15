@@ -46,6 +46,7 @@ FEATURES = {
     "gate": "馬番（内→外）",
     "rest": "前走からの間隔（日の対数）",
     "jk_rate": "騎手の1着率（学習期間のみで計算）",
+    "course_gate": "競馬場×距離ごとの枠（内・中・外）の有利不利（学習期間のみで計算）",
 }
 
 
@@ -96,7 +97,26 @@ def jockey_stats(races):
     return st
 
 
-def build(race, jk=None, loo=False):
+def gate_bucket(no, n):
+    return 0 if no <= 3 else (2 if no > n - 3 else 1)
+
+
+def gate_key(race, no):
+    return f"{race['code']}|{race['dist']}|{gate_bucket(no, race['n'])}"
+
+
+def gate_stats(races):
+    """競馬場×距離×枠の位置ごとに [実際の勝ち数, 全馬が同じ確率なら期待される勝ち数]。"""
+    st = {}
+    for r in races:
+        for h in r["hs"]:
+            s = st.setdefault(gate_key(r, h["no"]), [0.0, 0.0])
+            s[0] += h["no"] == r["win"]
+            s[1] += 1.0 / r["n"]
+    return st
+
+
+def build(race, jk=None, loo=False, gs=None):
     """1レースの要素行列 (n, F) と、基準の log(市場の勝率) を返す。"""
     hs = race["hs"]
     n = len(hs)
@@ -130,6 +150,12 @@ def build(race, jk=None, loo=False):
             except ValueError:
                 days = 30
         cols["rest"][i] = math.log(days)
+        if gs is not None:
+            w, e = gs.get(gate_key(race, h["no"]), [0.0, 0.0])
+            if loo and e > 0:
+                w -= h["no"] == race["win"]
+                e -= 1.0 / race["n"]
+            cols["course_gate"][i] = math.log((w + 5.0) / (e + 5.0))
         if jk is not None:
             w, t = jk.get(h["jk"], [0, 0])
             if loo and t > 0:
@@ -139,13 +165,13 @@ def build(race, jk=None, loo=False):
     return m, cols
 
 
-def pack(races, names, jk=None, loo=False):
+def pack(races, names, jk=None, loo=False, gs=None):
     R = len(races)
     X = np.zeros((R, NMAX, 1 + len(names)))
     mask = np.zeros((R, NMAX), bool)
     y = np.zeros(R, int)
     for ri, r in enumerate(races):
-        m, cols = build(r, jk, loo)
+        m, cols = build(r, jk, loo, gs)
         n = len(r["hs"])
         X[ri, :n, 0] = m
         for j, nm in enumerate(names):
@@ -216,8 +242,9 @@ def walk_forward(races, names, folds=5):
         if len(train) < 50 or not test:
             continue
         jk = jockey_stats(train) if "jk_rate" in names else None
-        Xtr, mtr, ytr = pack(train, names, jk, loo=True)
-        Xte, mte, yte = pack(test, names, jk, loo=False)
+        gs = gate_stats(train) if "course_gate" in names else None
+        Xtr, mtr, ytr = pack(train, names, jk, loo=True, gs=gs)
+        Xte, mte, yte = pack(test, names, jk, loo=False, gs=gs)
         mu, sd = stats(Xtr, mtr)
         beta = fit(Xtr, mtr, ytr, mu, sd)
         p = predict(Xte, mte, beta, mu, sd)
@@ -265,12 +292,13 @@ def main(write=True):
     # 採用した要素で、全期間を使って係数を決める
     names = adopted
     jk = jockey_stats(races) if "jk_rate" in names else None
-    X, mask, y = pack(races, names, jk, loo=True)
+    gs = gate_stats(races) if "course_gate" in names else None
+    X, mask, y = pack(races, names, jk, loo=True, gs=gs)
     mu, sd = stats(X, mask)
     beta = fit(X, mask, y, mu, sd)
     model = {"updated": date.today().isoformat(), "races": len(races), "features": names,
              "beta": beta.tolist(), "mu": mu.tolist(), "sd": sd.tolist(),
-             "jockey": jk if jk else {}}
+             "jockey": jk if jk else {}, "gate_stats": gs if gs else {}}
     out.append(f"\n基準の係数（市場の勝率の指数）：{beta[0]:.3f}"
                + ("　採用した要素の係数：" + "、".join(f"{n}={b:+.3f}" for n, b in zip(names, beta[1:])) if names else "　採用した要素：なし"))
     text = "\n".join(out) + "\n"
