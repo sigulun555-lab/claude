@@ -30,8 +30,8 @@ def market_probs(odds: dict):
 
 def blend(p: dict, odds: dict):
     """自前の勝率 {艇: p} と単勝オッズ {艇: odds} から、合成した勝率 {艇: p'} を返す。作れなければ None。"""
-    q = market_probs(odds)
     p = {int(b): float(v) for b, v in p.items()}
+    q = market_probs(odds) or _market_probs_one_missing(odds, p)
     if q is None or set(p) != set(q) or min(p.values()) <= 0:
         return None
     z = {b: MODEL_WEIGHT * math.log(p[b]) + MARKET_WEIGHT * math.log(q[b]) for b in p}
@@ -39,3 +39,21 @@ def blend(p: dict, odds: dict):
     e = {b: math.exp(v - top) for b, v in z.items()}
     s = sum(e.values())
     return {b: v / s for b, v in e.items()}
+
+
+def _market_probs_one_missing(odds: dict, p: dict):
+    """1艇だけオッズが未発表(0.0など)のとき、その艇には自前の確率をそのまま当てはめ、
+    残りの5艇のオッズから市場の勝率を作る。2艇以上欠けていれば None。"""
+    try:
+        known = {int(b): 1.0 / float(o) for b, o in odds.items() if o is not None and float(o) > 0}
+    except (TypeError, ValueError):
+        return None
+    missing = [b for b in p if b not in known]
+    if len(known) != 5 or len(missing) != 1 or len(odds) != 6:
+        return None
+    m = missing[0]
+    rest = 1.0 - p[m]
+    total = sum(known.values())
+    q = {b: v / total * rest for b, v in known.items()}
+    q[m] = p[m]
+    return q

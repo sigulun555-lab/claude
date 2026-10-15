@@ -20,3 +20,12 @@ def test_blend_pulls_toward_market_and_sums_to_one():
     assert mix[2] > p[2]            # 市場に引っぱられて2号艇は上がる
     assert mix[1] < p[1]
     assert blend(p, {1: 4.0}) is None
+
+
+def test_blend_with_one_missing_odds_uses_model_for_that_boat():
+    p = {1: 0.3, 2: 0.25, 3: 0.2, 4: 0.12, 5: 0.1, 6: 0.03}
+    odds = {1: 1.2, 2: 6.1, 3: 0.0, 4: 12.3, 5: 4.1, 6: 24.7}
+    mix = blend(p, odds)
+    assert mix is not None and abs(sum(mix.values()) - 1) < 1e-9
+    assert mix[1] > p[1]  # 市場が1号艇を強く見ているので引き上がる
+    assert blend(p, {**odds, 6: 0.0}) is None  # 2艇欠けたら作らない
