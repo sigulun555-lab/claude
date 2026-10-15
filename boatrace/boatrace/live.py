@@ -1,0 +1,53 @@
+"""毎時のオッズ取得: 朝の予想表の各レースのうち、これから締切になるレースの今の単勝オッズを取る。
+
+朝の予想表の「必要オッズ」と、実際のオッズのズレを見るためのもの。
+公式サイトに負担をかけないよう、取るのは「今から WINDOW_MIN 分以内に締切になるレース」だけで、
+1件ずつ間隔を空けて取る。
+"""
+from .odds import fetch_page, parse_tansho
+
+WINDOW_MIN = 75  # 今から何分以内に締切になるレースのオッズを取るか
+
+
+def to_minutes(hhmm):
+    try:
+        h, m = hhmm.split(":")
+        return int(h) * 60 + int(m)
+    except (AttributeError, ValueError):
+        return None
+
+
+def select_races(sheet: dict, now_min: int, window: int = WINDOW_MIN):
+    """[(締切の分, 場コード, R番号)] を締切の早い順に返す。締切を過ぎたレースは含めない。"""
+    out = []
+    for v in sheet["venues"]:
+        for r in v["races"]:
+            dl = to_minutes(r.get("deadline"))
+            if dl is not None and now_min <= dl <= now_min + window:
+                out.append((dl, v["code"], r["no"]))
+    return sorted(out)
+
+
+def fetch_live(sheet: dict, now, previous=None, window: int = WINDOW_MIN, sleep: float = 1.5,
+               fetch=fetch_page) -> dict:
+    """{date, asof, fetched, races: {"場コード|R": {at, odds: {艇: オッズ}}}}。
+
+    同じ日の前回の結果があれば引き継ぎ、取り直したレースだけ新しい値にする。
+    欠場などでオッズが 0 や空の艇は含めない。
+    """
+    result = previous if previous and previous.get("date") == sheet["date"] else {"date": sheet["date"], "races": {}}
+    result["errors"] = []
+    date = sheet["date"].replace("-", "")
+    targets = select_races(sheet, now.hour * 60 + now.minute, window)
+    for _, code, no in targets:
+        try:
+            odds = parse_tansho(fetch("oddstf", date, code, no, sleep))
+        except Exception as e:  # 1レースの失敗で全体を止めない
+            result["errors"].append(f"{code}|{no}: {e}")
+            continue
+        valid = {b: o for b, o in odds.items() if o and o > 0}
+        if valid:
+            result["races"][f"{code}|{no}"] = {"at": now.strftime("%H:%M"), "odds": valid}
+    result["asof"] = now.strftime("%H:%M")
+    result["fetched"] = len(targets)
+    return result

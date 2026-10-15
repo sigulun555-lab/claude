@@ -248,6 +248,28 @@ def cmd_check(args):
     print(text)
 
 
+def cmd_live(args):
+    """朝の予想表の、これから締切のレースの今の単勝オッズを取る (毎時のオッズ取得)。"""
+    import json
+    from datetime import datetime
+
+    from .live import fetch_live
+    from .download import JST
+
+    sheet = json.loads(Path(args.sheet).read_text())
+    now = datetime.fromisoformat(args.now) if args.now else datetime.now(JST)
+    if sheet["date"] != now.strftime("%Y-%m-%d"):
+        print(f"予想表は {sheet['date']} の分で、今日 ({now:%Y-%m-%d}) の分ではないので何もしません")
+        return
+    out = Path(args.out)
+    previous = json.loads(out.read_text()) if out.exists() else None
+    result = fetch_live(sheet, now, previous, window=args.window, sleep=args.sleep)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(result, ensure_ascii=False))
+    print(f"{result['asof']} 時点: {result['fetched']}レースを対象に、{len(result['races'])}レース分のオッズを保存"
+          + (f" (失敗 {len(result['errors'])}件)" if result["errors"] else ""))
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(prog="boatrace", description="競艇予想アプリ")
     p.add_argument("--db", default="data/boatrace.sqlite")
@@ -300,6 +322,14 @@ def main(argv=None):
     s.add_argument("--morning", action="store_true", help="直前情報を使わない朝用モデル")
     s.add_argument("--check", action="store_true", help="風向きを使わない直前チェック用モデル")
     s.set_defaults(func=cmd_train)
+
+    s = sub.add_parser("live", help="これから締切のレースの今の単勝オッズを取る (毎時のオッズ取得)")
+    s.add_argument("--sheet", required=True, help="朝の予想表のJSON (yosou/latest.json)")
+    s.add_argument("--out", required=True)
+    s.add_argument("--window", type=int, default=75, help="今から何分以内に締切のレースを取るか")
+    s.add_argument("--sleep", type=float, default=1.5)
+    s.add_argument("--now", help="テスト用: 現在時刻 (ISO形式)")
+    s.set_defaults(func=cmd_live)
 
     s = sub.add_parser("check", help="直前チェック (直前情報と今のオッズで買い/見送り)")
     s.add_argument("--request", required=True, help="'YYYY-MM-DD 場名 R' を1行ずつ書いたファイル")
