@@ -1,10 +1,2 @@
-https://www.boatrace.jp/owpc/pc/race/beforeinfo?rno=12&jcd=02&hd=20261005
-https://www.boatrace.jp/owpc/pc/race/beforeinfo?rno=12&jcd=05&hd=20261005
-https://www.boatrace.jp/owpc/pc/race/beforeinfo?rno=12&jcd=09&hd=20261005
-https://www.boatrace.jp/owpc/pc/race/beforeinfo?rno=12&jcd=10&hd=20261005
-https://www.boatrace.jp/owpc/pc/race/beforeinfo?rno=12&jcd=11&hd=20261005
-https://www.boatrace.jp/owpc/pc/race/beforeinfo?rno=12&jcd=12&hd=20261005
-https://www.boatrace.jp/owpc/pc/race/beforeinfo?rno=12&jcd=13&hd=20261005
-https://www.boatrace.jp/owpc/pc/race/beforeinfo?rno=12&jcd=18&hd=20261005
-https://www.boatrace.jp/owpc/pc/race/beforeinfo?rno=12&jcd=19&hd=20261005
-https://www.boatrace.jp/owpc/pc/race/beforeinfo?rno=12&jcd=20&hd=20261005
+https://www.boatrace.jp/owpc/pc/race/oddstf?rno=4&jcd=02&hd=20261015
+https://www.boatrace.jp/owpc/pc/race/beforeinfo?rno=4&jcd=02&hd=20261015
