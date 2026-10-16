@@ -7,8 +7,10 @@
 from .market import blend
 from .odds import fetch_page, parse_tansho
 from .papertrade import EV_MIN
+from .sheet import is_candidate
 
-WINDOW_MIN = 75  # 今から何分以内に締切になるレースのオッズを取るか
+WINDOW_MIN = 20  # 今から何分以内に締切になるレースのオッズを取るか (締切の直前のオッズが一番正確)
+LEAD_MIN = 2     # 締切まであと何分より近いレースは取らない (取っても予想表に間に合わない)
 
 
 def to_minutes(hhmm):
@@ -19,13 +21,18 @@ def to_minutes(hhmm):
         return None
 
 
-def select_races(sheet: dict, now_min: int, window: int = WINDOW_MIN):
-    """[(締切の分, 場コード, R番号)] を締切の早い順に返す。締切を過ぎたレースは含めない。"""
+def select_races(sheet: dict, now_min: int, window: int = WINDOW_MIN, lead: int = 0, cand_only: bool = False):
+    """[(締切の分, 場コード, R番号)] を締切の早い順に返す。締切を過ぎたレースは含めない。
+
+    締切まで lead〜window 分のレースだけ。cand_only なら🔴 (予想1位の必要オッズが高いレース) だけ。
+    """
     out = []
     for v in sheet["venues"]:
         for r in v["races"]:
+            if cand_only and not is_candidate(r):
+                continue
             dl = to_minutes(r.get("deadline"))
-            if dl is not None and now_min <= dl <= now_min + window:
+            if dl is not None and now_min + lead <= dl <= now_min + window:
                 out.append((dl, v["code"], r["no"]))
     return sorted(out)
 
@@ -40,7 +47,7 @@ def mixed_probs(pall, odds):
 
 
 def fetch_live(sheet: dict, now, previous=None, window: int = WINDOW_MIN, sleep: float = 1.5,
-               fetch=fetch_page) -> dict:
+               fetch=fetch_page, lead: int = LEAD_MIN, cand_only: bool = True) -> dict:
     """{date, asof, fetched, races: {"場コード|R": {at, odds: {艇: オッズ}}}}。
 
     同じ日の前回の結果があれば引き継ぎ、取り直したレースだけ新しい値にする。
@@ -49,7 +56,7 @@ def fetch_live(sheet: dict, now, previous=None, window: int = WINDOW_MIN, sleep:
     result = previous if previous and previous.get("date") == sheet["date"] else {"date": sheet["date"], "races": {}}
     result["errors"] = []
     date = sheet["date"].replace("-", "")
-    targets = select_races(sheet, now.hour * 60 + now.minute, window)
+    targets = select_races(sheet, now.hour * 60 + now.minute, window, lead, cand_only)
     pall = {f"{v['code']}|{r['no']}": r.get("pall") for v in sheet["venues"] for r in v["races"]}
     for _, code, no in targets:
         try:

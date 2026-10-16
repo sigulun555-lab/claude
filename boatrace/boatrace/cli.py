@@ -263,7 +263,8 @@ def cmd_live(args):
         return
     out = Path(args.out)
     previous = json.loads(out.read_text()) if out.exists() else None
-    result = fetch_live(sheet, now, previous, window=args.window, sleep=args.sleep)
+    result = fetch_live(sheet, now, previous, window=args.window, sleep=args.sleep, lead=args.lead,
+                        cand_only=not args.all_races)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(result, ensure_ascii=False))
     print(f"{result['asof']} 時点: {result['fetched']}レースを対象に、{len(result['races'])}レース分のオッズを保存"
@@ -326,7 +327,9 @@ def main(argv=None):
     s = sub.add_parser("live", help="これから締切のレースの今の単勝オッズを取る (毎時のオッズ取得)")
     s.add_argument("--sheet", required=True, help="朝の予想表のJSON (yosou/latest.json)")
     s.add_argument("--out", required=True)
-    s.add_argument("--window", type=int, default=75, help="今から何分以内に締切のレースを取るか")
+    s.add_argument("--window", type=int, default=20, help="今から何分以内に締切のレースを取るか")
+    s.add_argument("--lead", type=int, default=2, help="締切まであと何分より近いレースは取らないか")
+    s.add_argument("--all-races", action="store_true", help="🔴だけでなく全レースを取る")
     s.add_argument("--sleep", type=float, default=1.5)
     s.add_argument("--now", help="テスト用: 現在時刻 (ISO形式)")
     s.set_defaults(func=cmd_live)
