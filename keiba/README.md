@@ -28,6 +28,8 @@
 | `history.py` | 過去と当日の全レース（出馬表・最終オッズ・払戻）を `data/history.jsonl` に貯める |
 | `ab_test.py` | 「市場のオッズだけ」に要素を1つずつ足して、別の期間で勝ち馬の予想が良くなるか確かめる。結果は `ab_report.md`、採用した要素は `model.json` |
 | `paper.py` | 締切時オッズで、全レースの馬連・馬単を3つの方法（旧式／市場／追加）で記録する。累計は `python3 keiba/paper.py summary` |
+| `odds_snapshot.py` | 朝・昼・夕（9:52・13:27・17:27）にその時点の単勝オッズを全レース分 `data/odds_snapshots.jsonl` に保存する |
+| `odds_move_test.py` | 「発走60分以上前→締切時」のオッズの変化を足すと予想が良くなるか確かめる（300レース・6日分たまったら判定。`ab_test.py` から呼ばれる） |
 | `diagnose.py` / `backtest.py` | 馬連が外れる原因の調査／過去の的中率・回収率の確認 |
 | `screen.py` | 旧式（全成績だけ）のスクリーニング。比較用に残してある |
 

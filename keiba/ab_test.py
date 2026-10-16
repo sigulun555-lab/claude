@@ -24,6 +24,7 @@ from datetime import date
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
 DATA = os.path.join(HERE, "data", "history.jsonl")
 REPORT = os.path.join(HERE, "ab_report.md")
 MODEL = os.path.join(HERE, "model.json")
@@ -301,6 +302,11 @@ def main(write=True):
              "jockey": jk if jk else {}, "gate_stats": gs if gs else {}}
     out.append(f"\n基準の係数（市場の勝率の指数）：{beta[0]:.3f}"
                + ("　採用した要素の係数：" + "、".join(f"{n}={b:+.3f}" for n, b in zip(names, beta[1:])) if names else "　採用した要素：なし"))
+    try:
+        import odds_move_test as OM
+        out.extend(OM.section(races))
+    except Exception as e:  # 朝のオッズの保存がまだないときなど
+        out.append(f"\n## オッズの変化\n- 試せませんでした：{e}")
     text = "\n".join(out) + "\n"
     print(text)
     if write:
