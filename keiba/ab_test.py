@@ -52,6 +52,11 @@ FEATURES = {
 BANEI_ONLY = {
     "kin_ratio": "負担重量÷馬体重（そのレースの平均との差）＝ソリの重さの割合",
     "kin_baba": "負担重量の差 × 馬場水分（水分が高い日にソリが軽い馬が有利か）",
+    "b_kin_change": "ソリ重量の前走比（今回−前走。増えたら不利か）",
+    "b_kin_avg3": "ソリ重量の近3走平均との差（今回−近3走の平均）",
+    "b_diff_last": "前走の勝ち馬との差（秒の対数。小さいほど接戦）",
+    "b_diff_avg3": "近3走の勝ち馬との差（秒の対数の平均）",
+    "b_baba_gap": "前走との馬場水分の差の大きさ（条件が変わったか）",
 }
 ALL_FEATURES = {**FEATURES, **BANEI_ONLY}
 
@@ -61,7 +66,7 @@ def features_for(group):
     f = dict(FEATURES)
     if group == "ばんえい":
         f.update(BANEI_ONLY)
-        for k in ("age", "sex_f", "venue_win", "dist_win", "course_gate", "recent3", "last1", "rest"):
+        for k in ("age", "sex_f", "venue_win", "dist_win", "course_gate"):
             f.pop(k, None)  # ばんえいでは意味が薄い・データが取れない要素
     return f
 
@@ -178,6 +183,19 @@ def build(race, jk=None, loo=False, gs=None):
             except ValueError:
                 days = 30
         cols["rest"][i] = math.log(days)
+        rb = h.get("runs_b") or []
+        if rb:
+            ks = [r[7] for r in rb[:3] if r[7]]
+            if rb[0][7] and h["kin"]:
+                cols["b_kin_change"][i] = h["kin"] - rb[0][7]
+            if ks and h["kin"]:
+                cols["b_kin_avg3"][i] = h["kin"] - sum(ks) / len(ks)
+            ds = [math.log1p(r[9]) for r in rb[:3] if r[9] is not None]
+            if rb[0][9] is not None:
+                cols["b_diff_last"][i] = math.log1p(rb[0][9])
+            cols["b_diff_avg3"][i] = (sum(ds) / len(ds)) if ds else 2.5
+            if race.get("baba") is not None and rb[0][2] is not None:
+                cols["b_baba_gap"][i] = abs(race["baba"] - rb[0][2])
         if gs is not None:
             w, e = gs.get(gate_key(race, h["no"]), [0.0, 0.0])
             if loo and e > 0:
