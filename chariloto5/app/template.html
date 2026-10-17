@@ -1,0 +1,390 @@
+<title>チャリロト5 予想</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* レイアウト: 1カラムの作業台。上から「入力 → 予想 → 買い方 → 検証」と流れる */
+:root {
+  --bg: #f3f5f8;
+  --surface: #ffffff;
+  --ink: #161a22;
+  --muted: #5d6676;
+  --line: #d9dee7;
+  --accent: #2652c9;
+  --accent-soft: #e5ecfb;
+  --warn: #9a5b00;
+  --warn-soft: #fff4e0;
+  --good: #1d7a46;
+  --font-display: "Dela Gothic One", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --font-num: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  /* 競輪の車番カラー */
+  --c1: #ffffff; --t1: #161a22;
+  --c2: #1b1b1b; --t2: #ffffff;
+  --c3: #e0262c; --t3: #ffffff;
+  --c4: #1f56c7; --t4: #ffffff;
+  --c5: #f5d000; --t5: #161a22;
+  --c6: #189a4a; --t6: #ffffff;
+  --c7: #f28a1a; --t7: #161a22;
+  --c8: #f37fb0; --t8: #161a22;
+  --c9: #7b3fb0; --t9: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11141a; --surface: #1a1f28; --ink: #e9edf4; --muted: #9aa4b5; --line: #2c3341;
+    --accent: #86a8ff; --accent-soft: #1e2a47; --warn: #f2b45a; --warn-soft: #33270f; --good: #5fd08f;
+    --c2: #000000; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11141a; --surface: #1a1f28; --ink: #e9edf4; --muted: #9aa4b5; --line: #2c3341;
+  --accent: #86a8ff; --accent-soft: #1e2a47; --warn: #f2b45a; --warn-soft: #33270f; --good: #5fd08f;
+  --c2: #000000; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 15px; line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+}
+.wrap { max-width: 860px; margin: 0 auto; display: grid; gap: 28px; }
+header { padding-top: 28px; display: grid; gap: 8px; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(28px, 6vw, 40px); line-height: 1.2; margin: 0; letter-spacing: 0.02em; }
+h1 .five { color: var(--accent); }
+h2 { font-size: 19px; margin: 0; text-wrap: balance; display: flex; align-items: baseline; gap: 10px; }
+h2 .step { font-family: var(--font-num); font-size: 12px; color: var(--accent); letter-spacing: 0.08em; }
+.lead { margin: 0; color: var(--muted); max-width: 62ch; }
+section { display: grid; gap: 14px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.note { background: var(--warn-soft); color: var(--ink); border-left: 4px solid var(--warn); border-radius: 6px; padding: 12px 14px; font-size: 14px; }
+.note strong { color: var(--warn); }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+label { font-size: 13px; color: var(--muted); display: grid; gap: 4px; }
+select, input[type="text"], input[type="number"] {
+  font: inherit; font-size: 15px; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; min-height: 36px;
+}
+input[type="text"] { font-family: var(--font-num); width: 100%; }
+button {
+  font: inherit; font-weight: 700; font-size: 14px; border-radius: 6px; padding: 8px 14px; min-height: 38px;
+  border: 1px solid var(--accent); background: var(--accent); color: var(--surface); cursor: pointer;
+}
+button.ghost { background: transparent; color: var(--accent); }
+button:focus-visible, select:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.races { display: grid; gap: 12px; }
+.race-head { display: flex; flex-wrap: wrap; gap: 10px; align-items: end; justify-content: space-between; }
+.race-title { font-family: var(--font-display); font-weight: 400; font-size: 20px; }
+.race-title small { font-family: var(--font-body); font-size: 13px; color: var(--muted); margin-left: 6px; }
+.grades { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 8px; }
+.grade-cell { display: flex; align-items: center; gap: 6px; }
+.grade-cell select { flex: 1; min-width: 0; padding: 4px; }
+.chip {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 28px; height: 28px; border-radius: 50%; font-family: var(--font-num); font-weight: 600; font-size: 14px;
+  border: 1.5px solid var(--ink);
+}
+.chip.sm { width: 24px; height: 24px; font-size: 12px; }
+.chip.c1 { background: var(--c1); color: var(--t1); } .chip.c2 { background: var(--c2); color: var(--t2); }
+.chip.c3 { background: var(--c3); color: var(--t3); } .chip.c4 { background: var(--c4); color: var(--t4); }
+.chip.c5 { background: var(--c5); color: var(--t5); } .chip.c6 { background: var(--c6); color: var(--t6); }
+.chip.c7 { background: var(--c7); color: var(--t7); } .chip.c8 { background: var(--c8); color: var(--t8); }
+.chip.c9 { background: var(--c9); color: var(--t9); }
+.chip.picked { box-shadow: 0 0 0 3px var(--accent); }
+.bars { display: grid; gap: 6px; }
+.bar-row { display: grid; grid-template-columns: 28px 1fr 56px; gap: 10px; align-items: center; }
+.bar-track { height: 14px; background: var(--bg); border-radius: 3px; overflow: hidden; border: 1px solid var(--line); }
+.bar-fill { height: 100%; background: var(--accent); opacity: 0.35; }
+.bar-row.picked .bar-fill { opacity: 1; }
+.pct { font-family: var(--font-num); font-size: 13px; text-align: right; font-variant-numeric: tabular-nums; }
+.win-mark { font-size: 12px; color: var(--good); font-weight: 700; }
+.pred-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.pred-card h3 { margin: 0 0 6px; font-size: 15px; display: flex; justify-content: space-between; gap: 8px; }
+.mode { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.mode button { border: 0; border-radius: 0; background: transparent; color: var(--muted); font-weight: 500; }
+.mode button[aria-pressed="true"] { background: var(--accent); color: var(--surface); font-weight: 700; }
+input[type="range"] { width: 100%; accent-color: var(--accent); }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr)); gap: 10px; }
+.kpi { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; display: grid; gap: 2px; min-width: 0; }
+.kpi .k { overflow-wrap: anywhere; }
+.kpi .k { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+.kpi .v { font-family: var(--font-num); font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.kpi.main .v { color: var(--accent); }
+.picks { display: grid; gap: 8px; }
+.pick-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.pick-row .r { font-family: var(--font-num); font-size: 13px; width: 40px; color: var(--muted); }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+th { font-size: 12px; color: var(--muted); font-weight: 500; }
+th:first-child, td:first-child { text-align: left; }
+td.num { font-family: var(--font-num); }
+.hit { color: var(--good); font-weight: 700; }
+.err { color: var(--warn); font-size: 13px; }
+footer { color: var(--muted); font-size: 13px; display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 16px; }
+footer p { margin: 0; max-width: 70ch; }
+@media (prefers-reduced-motion: no-preference) { .bar-fill { transition: width .25s ease; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>チャリロト<span class="five">5</span> 予想</h1>
+    <p class="lead">その日の最後の5レース、それぞれの1着を全部当てるくじです。出走表の「級班」と「並び」を入れると、各選手が1着になる確率を出し、予算の中で的中率がいちばん高くなる買い方を選びます。</p>
+    <div class="note"><strong>先にお伝えしたいこと。</strong> 5レースすべての1着を当てるのは、統計を使っても難しいです。過去25日の検証では、1点買いで当たった日はありませんでした。点数を増やすほど的中率は上がりますが、そのぶん費用も増えます。キャリーオーバーがない日は、払戻の合計が売上の75%なので、たくさん買うほど平均では損をします。</div>
+  </header>
+
+  <section aria-labelledby="s-input">
+    <h2 id="s-input"><span class="step">STEP 1</span>出走内容を入れる</h2>
+    <div class="panel">
+      <div class="row">
+        <label for="sample">過去の開催を読み込む（答え合わせ用）
+          <select id="sample"></select>
+        </label>
+        <button type="button" class="ghost" id="clear">空の入力にする</button>
+      </div>
+      <p class="lead" style="font-size:13px">並びは周回予想の形で、ラインごとに「/」で区切って入れます。例: <code>1 5 / 2 6 / 8 7 3 / 4 9</code>（先頭が先行する選手です）。</p>
+    </div>
+    <div class="races" id="races"></div>
+  </section>
+
+  <section aria-labelledby="s-pred">
+    <h2 id="s-pred"><span class="step">STEP 2</span>1着になる確率</h2>
+    <div class="pred-grid" id="pred"></div>
+  </section>
+
+  <section aria-labelledby="s-plan">
+    <h2 id="s-plan"><span class="step">STEP 3</span>買い方を決める</h2>
+    <div class="panel">
+      <div class="row">
+        <div class="mode" role="group" aria-label="決め方">
+          <button type="button" id="mode-budget" aria-pressed="true">予算から決める</button>
+          <button type="button" id="mode-target" aria-pressed="false">的中率から決める</button>
+        </div>
+      </div>
+      <div id="budget-box">
+        <label for="budget">買う点数の上限: <strong id="budget-label"></strong></label>
+        <input type="range" id="budget" min="0" max="100" step="1" value="45">
+      </div>
+      <div id="target-box" hidden>
+        <label for="target">目標の的中率: <strong id="target-label"></strong></label>
+        <input type="range" id="target" min="5" max="99" step="1" value="50">
+      </div>
+      <div class="kpis" id="kpis"></div>
+      <div class="picks" id="picks"></div>
+      <p class="err" id="plan-note"></p>
+    </div>
+  </section>
+
+  <section aria-labelledby="s-bt">
+    <h2 id="s-bt"><span class="step">検証</span>過去25日で試した結果</h2>
+    <p class="lead">予想する日のデータを学習に使わない方法（1日抜き交差検証）で、その日の買い目を出して答え合わせをしました。払戻の見込みは「キャリーオーバー＋売上×75%」を、他の的中口数に自分の1口を足した数で割った概算です。</p>
+    <div class="panel">
+      <div class="kpis" id="bt-kpis"></div>
+      <div class="table-wrap"><table id="bt-table"></table></div>
+    </div>
+    <div class="panel">
+      <h3 style="margin:0;font-size:15px">開催ごとの結果</h3>
+      <div class="table-wrap"><table id="day-table"></table></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>データ: チャリロト.com のレース結果（__RANGE__、__NDAYS__開催・__NRACES__レース）。予想モデルは条件付きロジット（車番・ラインの位置・級班・ラインの人数から、レース内で1着になる確率を出す統計モデル）です。</p>
+    <p>的中率はモデルの見積もりで、保証ではありません。車券の購入は20歳になってから。のめり込みが心配なときは、チャリロト.com の購入限度額の設定を使えます。</p>
+  </footer>
+</div>
+
+<script id="app-data" type="application/json">__DATA__</script>
+<script>
+(() => {
+  const DATA = JSON.parse(document.getElementById("app-data").textContent);
+  const MODEL = DATA.model, DAYS = DATA.days, BT = DATA.backtest;
+  const F = MODEL.features, W = MODEL.weights;
+  const GRADES = ["SS", "S1", "S2", "A1", "A2", "A3", "L1"];
+  const GRADE_RANK = Object.fromEntries(GRADES.map((g, i) => [g, i]));
+  const $ = (id) => document.getElementById(id);
+  const yen = (n) => n.toLocaleString("ja-JP") + "円";
+  const pct = (p) => p >= 0.1 ? (p * 100).toFixed(1) + "%" : p >= 0.001 ? (p * 100).toFixed(2) + "%" : (p * 100).toFixed(4) + "%";
+  const chip = (car, cls = "") => `<span class="chip c${car} ${cls}">${car}</span>`;
+
+  // ---------- 状態 ----------
+  let races = [];   // [{race, size, lines:"", grades:[...], winners:[]}]
+  let mode = "budget";
+
+  function linesToText(lines) { return lines.map((l) => l.join(" ")).join(" / "); }
+  function parseLines(text, size) {
+    const groups = text.split(/[\/|｜／]/).map((g) => (g.match(/[1-9]/g) || []).map(Number)).filter((g) => g.length);
+    const seen = new Set(), errs = [];
+    groups.flat().forEach((c) => { if (c > size) errs.push(`${c}番車はいません`); if (seen.has(c)) errs.push(`${c}番車が2回あります`); seen.add(c); });
+    for (let c = 1; c <= size; c++) if (!seen.has(c)) groups.push([c]); // 書かれていない車は単騎
+    return { groups, errs };
+  }
+
+  // ---------- モデル(Python の featurize と同じ計算) ----------
+  function positionOf(car, groups) {
+    for (const g of groups) {
+      const i = g.indexOf(car);
+      if (i < 0) continue;
+      if (g.length === 1) return ["単騎", 1];
+      return [i === 0 ? "先頭" : i === 1 ? "番手" : "3番手以降", g.length];
+    }
+    return ["単騎", 1];
+  }
+  function predictRace(r) {
+    const { groups } = parseLines(r.lines, r.size);
+    const best = Math.min(...r.grades.slice(0, r.size).map((g) => GRADE_RANK[g] ?? 9));
+    const scores = [];
+    for (let car = 1; car <= r.size; car++) {
+      const x = new Array(F.length).fill(0);
+      if (car >= 2) x[F.indexOf("車番" + car)] = 1;
+      const [pos, len] = positionOf(car, groups);
+      if (pos !== "先頭") x[F.indexOf(pos)] = 1;
+      const gap = (GRADE_RANK[r.grades[car - 1]] ?? 9) - best;
+      if (gap === 1) x[F.indexOf("級班が最上位より1つ下")] = 1;
+      else if (gap >= 2) x[F.indexOf("級班が最上位より2つ以上下")] = 1;
+      if (len >= 3) x[F.indexOf("3人以上のライン")] = 1;
+      scores.push(x.reduce((s, v, i) => s + v * W[i], 0));
+    }
+    const m = Math.max(...scores), e = scores.map((s) => Math.exp(s - m)), z = e.reduce((a, b) => a + b, 0);
+    return e.map((v) => v / z);
+  }
+
+  // 各レースで確率の高い順に k 車を選ぶ。点数=Πk の中で的中確率=Π(上位k車の確率の和)を最大化する
+  function plans(probs) {
+    const order = probs.map((p) => p.map((v, i) => i).sort((a, b) => p[b] - p[a]));
+    const cum = probs.map((p, r) => { const c = [0]; order[r].forEach((i) => c.push(c[c.length - 1] + p[i])); return c; });
+    const out = [];
+    const rec = (r, ks, cost, hit) => {
+      if (r === probs.length) { out.push({ ks: ks.slice(), cost, hit }); return; }
+      for (let k = 1; k <= probs[r].length; k++) { ks.push(k); rec(r + 1, ks, cost * k, hit * cum[r][k]); ks.pop(); }
+    };
+    rec(0, [], 1, 1);
+    return { all: out, order };
+  }
+  function chooseByBudget(P, budget) {
+    let best = null;
+    for (const p of P.all) if (p.cost <= budget && (!best || p.hit > best.hit + 1e-12 || (Math.abs(p.hit - best.hit) < 1e-12 && p.cost < best.cost))) best = p;
+    return best;
+  }
+  function chooseByTarget(P, target) {
+    let best = null;
+    for (const p of P.all) if (p.hit >= target && (!best || p.cost < best.cost || (p.cost === best.cost && p.hit > best.hit))) best = p;
+    return best;
+  }
+  const budgetFromSlider = (v) => Math.max(1, Math.round(Math.pow(10, (v / 100) * Math.log10(10000))));
+
+  // ---------- 描画 ----------
+  function renderInputs() {
+    $("races").innerHTML = races.map((r, idx) => `
+      <div class="panel" data-idx="${idx}">
+        <div class="race-head">
+          <div class="race-title">${idx + 1}つ目<small>${r.race ? r.race + "R" : ""}</small></div>
+          <label for="size-${idx}">車立て
+            <select id="size-${idx}" data-k="size">${[5, 6, 7, 8, 9].map((n) => `<option ${n === r.size ? "selected" : ""}>${n}</option>`).join("")}</select>
+          </label>
+        </div>
+        <label for="lines-${idx}">並び（周回予想）
+          <input type="text" id="lines-${idx}" data-k="lines" value="${r.lines}" inputmode="numeric" autocomplete="off">
+        </label>
+        <span class="err" id="lerr-${idx}"></span>
+        <div class="grades">${Array.from({ length: r.size }, (_, i) => `
+          <div class="grade-cell">${chip(i + 1, "sm")}
+            <select id="g-${idx}-${i}" data-k="grade" data-car="${i}" aria-label="${i + 1}番車の級班">${GRADES.map((g) => `<option ${g === r.grades[i] ? "selected" : ""}>${g}</option>`).join("")}</select>
+          </div>`).join("")}
+        </div>
+      </div>`).join("");
+  }
+
+  function render() {
+    const probs = races.map(predictRace);
+    races.forEach((r, idx) => { const e = parseLines(r.lines, r.size).errs; const el = $("lerr-" + idx); if (el) el.textContent = e.join("、"); });
+    const P = plans(probs);
+    let plan, note = "";
+    if (mode === "budget") {
+      const b = budgetFromSlider(+$("budget").value);
+      $("budget-label").textContent = `${b.toLocaleString()}点（${yen(b * 100)}）`;
+      plan = chooseByBudget(P, b);
+    } else {
+      const t = +$("target").value / 100;
+      $("target-label").textContent = `${Math.round(t * 100)}%`;
+      plan = chooseByTarget(P, t) || P.all[P.all.length - 1];
+    }
+    const picked = plan.ks.map((k, r) => P.order[r].slice(0, k));
+    const total = probs.reduce((a, p) => a * p.length, 1);
+
+    $("pred").innerHTML = probs.map((p, r) => {
+      const rows = p.map((v, i) => ({ car: i + 1, v })).sort((a, b) => b.v - a.v);
+      const wins = races[r].winners || [];
+      return `<div class="panel pred-card"><h3><span>${r + 1}つ目 ${races[r].race ? races[r].race + "R" : ""}</span>${wins.length ? `<span class="win-mark">実際の1着 ${wins.join("・")}番</span>` : ""}</h3>
+        <div class="bars">${rows.map(({ car, v }) => `<div class="bar-row ${picked[r].includes(car - 1) ? "picked" : ""}">${chip(car, "sm")}
+          <div class="bar-track"><div class="bar-fill" style="width:${(v / rows[0].v) * 100}%"></div></div><span class="pct">${(v * 100).toFixed(1)}%</span></div>`).join("")}</div></div>`;
+    }).join("");
+
+    const cost = plan.cost * 100;
+    $("kpis").innerHTML = `
+      <div class="kpi main"><span class="k">的中率（見積もり）</span><span class="v">${pct(plan.hit)}</span></div>
+      <div class="kpi"><span class="k">点数</span><span class="v">${plan.cost.toLocaleString()}点</span></div>
+      <div class="kpi"><span class="k">費用</span><span class="v">${yen(cost)}</span></div>
+      <div class="kpi"><span class="k">元を取るのに必要な1口の払戻</span><span class="v">${yen(Math.round(cost / plan.hit / 10) * 10)}</span></div>`;
+    $("picks").innerHTML = picked.map((pk, r) => `<div class="pick-row"><span class="r">${races[r].race ? races[r].race + "R" : r + 1 + "つ目"}</span>${pk.map((i) => {
+      const hitMark = (races[r].winners || []).includes(i + 1) ? "picked" : "";
+      return chip(i + 1, hitMark);
+    }).join("")}</div>`).join("");
+    const allHit = races.every((r, i) => r.winners && r.winners.length && r.winners.some((w) => picked[i].includes(w - 1)));
+    const hasAns = races.every((r) => r.winners && r.winners.length);
+    note = `100%にするには全通り ${total.toLocaleString()}点（${yen(total * 100)}）が必要です。`;
+    if (hasAns) note = (allHit ? "この買い方なら、この日は的中していました。" : "この買い方では、この日は外れていました。") + "（青い枠が実際の1着）" + note;
+    $("plan-note").textContent = note;
+  }
+
+  function renderBacktest() {
+    $("bt-kpis").innerHTML = `
+      <div class="kpi main"><span class="k">本命が1着になった率</span><span class="v">${(BT.race_top1_accuracy * 100).toFixed(0)}%</span></div>
+      <div class="kpi"><span class="k">でたらめに選んだ場合</span><span class="v">${(BT.avg_race_winner_prob_uniform * 100).toFixed(0)}%</span></div>
+      <div class="kpi"><span class="k">検証した開催</span><span class="v">${BT.days}日</span></div>`;
+    $("bt-table").innerHTML = `<thead><tr><th>点数の上限</th><th>見積もり的中率</th><th>実際に当たった日</th><th>費用の合計</th><th>払戻の見込み合計</th><th>回収率</th></tr></thead><tbody>${BT.by_budget.map((b) => `
+      <tr><td class="num">${b.budget.toLocaleString()}点</td><td class="num">${pct(b.pred_hit_rate)}</td><td class="num ${b.actual_hits ? "hit" : ""}">${b.actual_hits} / ${b.days}日</td>
+      <td class="num">${yen(b.total_cost)}</td><td class="num">${yen(b.total_payout_est)}</td><td class="num">${Math.round((b.total_payout_est / b.total_cost) * 100)}%</td></tr>`).join("")}</tbody>`;
+    $("day-table").innerHTML = `<thead><tr><th>開催</th><th>1着</th><th>売上</th><th>的中口数</th><th>1口の払戻</th><th>243点で</th><th>1000点で</th></tr></thead><tbody>${DAYS.map((d, i) => {
+      const c = d.chariloto5 || {}, pd = BT.per_day[i];
+      const at = (b) => { const p = pd.plans.find((x) => x.budget === b); return p && p.hit ? '<span class="hit">的中</span>' : "—"; };
+      return `<tr><td>${d.date.slice(5).replace("-", "/")} ${d.velodrome}</td><td>${d.c5_races.map((r) => r.winners.join("=")).join("-")}</td>
+        <td class="num">${c.sales != null ? yen(c.sales) : "—"}</td><td class="num">${c.hit_units ?? "—"}</td><td class="num">${c.payout ? yen(c.payout) : "—"}</td><td>${at(243)}</td><td>${at(1000)}</td></tr>`;
+    }).join("")}</tbody>`;
+  }
+
+  function loadDay(i) {
+    const d = DAYS[i];
+    races = d.c5_races.map((r) => ({ race: r.race, size: r.field_size, lines: linesToText(r.lines), grades: r.riders.map((x) => x.grade || "S2"), winners: r.winners }));
+    renderInputs(); render();
+  }
+  function clearAll() {
+    races = Array.from({ length: 5 }, () => ({ race: null, size: 7, lines: "", grades: Array(9).fill("A1"), winners: [] }));
+    $("sample").value = ""; renderInputs(); render();
+  }
+
+  // ---------- イベント ----------
+  $("sample").innerHTML = `<option value="">（選んでください）</option>` + DAYS.map((d, i) => `<option value="${i}">${d.date} ${d.velodrome} ${d.grade} ${d.day_label}</option>`).slice().reverse().join("");
+  $("sample").addEventListener("change", (e) => { if (e.target.value !== "") loadDay(+e.target.value); });
+  $("clear").addEventListener("click", clearAll);
+  $("races").addEventListener("input", (e) => {
+    const panel = e.target.closest("[data-idx]"); if (!panel) return;
+    const r = races[+panel.dataset.idx], k = e.target.dataset.k;
+    r.winners = [];
+    if (k === "size") { r.size = +e.target.value; while (r.grades.length < 9) r.grades.push(r.grades[0] || "A1"); renderInputs(); }
+    else if (k === "lines") r.lines = e.target.value;
+    else if (k === "grade") r.grades[+e.target.dataset.car] = e.target.value;
+    render();
+  });
+  $("budget").addEventListener("input", render);
+  $("target").addEventListener("input", render);
+  const setMode = (m) => { mode = m; $("mode-budget").setAttribute("aria-pressed", m === "budget"); $("mode-target").setAttribute("aria-pressed", m === "target"); $("budget-box").hidden = m !== "budget"; $("target-box").hidden = m !== "target"; render(); };
+  $("mode-budget").addEventListener("click", () => setMode("budget"));
+  $("mode-target").addEventListener("click", () => setMode("target"));
+
+  renderBacktest();
+  $("sample").value = String(DAYS.length - 1);
+  loadDay(DAYS.length - 1);
+})();
+</script>
