@@ -150,7 +150,7 @@ def run(day):
     os.makedirs(LOG, exist_ok=True)
     out_rows = []
     detail = []
-    for grp in ("平地", "ばんえい"):
+    for grp in ("ばんえい", "平地"):
         for mname in methods:
             for sname, (kind, key, scope) in STRATS.items():
                 allc = rows.get((grp, mname, kind), [])
@@ -188,7 +188,7 @@ def run(day):
 
 def show(rows, title):
     print(f"\n{title}（1点100円）")
-    for grp in ("平地", "ばんえい"):
+    for grp in ("ばんえい", "平地"):
         agg = defaultdict(lambda: [0, 0, 0, 0])
         for r in rows:
             if (r.get("グループ") or "平地") != grp:

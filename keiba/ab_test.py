@@ -338,7 +338,7 @@ def main(write=True):
            "- 評価：時間順の5分割で、前の期間で学習→次の期間で採点（後ろ4分割）",
            "- 数字は勝ち馬の対数損失の差（基準−追加。**プラスなら追加したほうが良い**）。誤差の目安つき"]
     models = {}
-    for group in ("平地", "ばんえい"):
+    for group in ("ばんえい", "平地"):
         models[group], _ = run_group(group, features_for(group), out)
     try:
         import odds_move_test as OM
