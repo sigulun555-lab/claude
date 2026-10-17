@@ -49,9 +49,28 @@ FEATURES = {
     "jk_rate": "騎手の1着率（学習期間のみで計算）",
     "course_gate": "競馬場×距離ごとの枠（内・中・外）の有利不利（学習期間のみで計算）",
 }
+BANEI_ONLY = {
+    "kin_ratio": "負担重量÷馬体重（そのレースの平均との差）＝ソリの重さの割合",
+    "kin_baba": "負担重量の差 × 馬場水分（水分が高い日にソリが軽い馬が有利か）",
+}
+ALL_FEATURES = {**FEATURES, **BANEI_ONLY}
 
 
-def load_races():
+def features_for(group):
+    """ばんえいは、ばんえい専用の要素も試す。"""
+    f = dict(FEATURES)
+    if group == "ばんえい":
+        f.update(BANEI_ONLY)
+        for k in ("age", "sex_f", "venue_win", "dist_win", "course_gate", "recent3", "last1", "rest"):
+            f.pop(k, None)  # ばんえいでは意味が薄い・データが取れない要素
+    return f
+
+
+def group_of(race):
+    return "ばんえい" if race["code"] == 3 else "平地"
+
+
+def load_races(group=None):
     races = []
     if not os.path.exists(DATA):
         sys.exit(f"{DATA} がありません。先に keiba/history.py で集めてください。")
@@ -69,6 +88,8 @@ def load_races():
         if win not in (a, b):
             continue
         r["win"], r["second"] = win, (b if win == a else a)
+        if group and group_of(r) != group:
+            continue
         races.append(r)
     races.sort(key=lambda r: (r["d"], r["code"], r["r"]))
     return races
@@ -126,8 +147,14 @@ def build(race, jk=None, loo=False, gs=None):
     kins = [h["kin"] for h in hs if h["kin"]]
     kmean = sum(kins) / len(kins) if kins else 0.0
     rd = date(2000 + int(race["d"][2:4]), int(race["d"][4:6]), int(race["d"][6:8]))
-    cols = {k: np.zeros(n) for k in FEATURES}
+    cols = {k: np.zeros(n) for k in ALL_FEATURES}
     cols["m2"] = m ** 2
+    ratios = np.array([(h["kin"] / h["wt"]) if h["kin"] and h["wt"] else 0.0 for h in hs])
+    rmean = ratios[ratios > 0].mean() if (ratios > 0).any() else 0.0
+    kd = np.array([(h["kin"] - kmean) if h["kin"] else 0.0 for h in hs])
+    baba = race.get("baba") or 1.0
+    cols["kin_ratio"] = np.where(ratios > 0, ratios - rmean, 0.0)
+    cols["kin_baba"] = kd * baba
     for i, h in enumerate(hs):
         cols["form_win"][i] = math.log(smooth(h["all"], n))
         cols["form_place"][i] = math.log(smooth_place(h["all"], n))
@@ -256,18 +283,21 @@ def walk_forward(races, names, folds=5):
     return np.concatenate(losses), np.concatenate(fold_ids)
 
 
-def main(write=True):
-    races = load_races()
+MODEL_FILES = {"平地": MODEL, "ばんえい": os.path.join(HERE, "model_banei.json")}
+
+
+def run_group(group, feats, out):
+    """1グループ（平地／ばんえい）の比べっこ。表を out に追記し、採用した要素のモデルを返す。"""
+    races = load_races(group)
     days = sorted({r["d"] for r in races})
-    out = [f"# 「追加する／追加しない」の比べっこ\n",
-           f"- データ：{len(races)}レース（{days[0]}〜{days[-1]}）。基準は「市場の単勝オッズだけ」",
-           "- 評価：時間順の5分割で、前の期間で学習→次の期間で採点（後ろ4分割）",
-           "- 数字は勝ち馬の対数損失の差（基準−追加。**プラスなら追加したほうが良い**）。誤差の目安つき\n",
-           "| 要素 | 内容 | 良くなった幅 | 誤差 | 倍率(t) | 良くなった分割 | 判定 |", "|---|---|---|---|---|---|---|"]
-    base, fold_ids = walk_forward(races, [])
+    out.append(f"\n## 【{group}】{len(races)}レース（{days[0]}〜{days[-1]}）" if races else f"\n## 【{group}】データなし")
+    if len(races) < 150:
+        out.append(f"- データ不足（{len(races)}レース。150レース以上で判定）")
+        return None, races
+    out += ["| 要素 | 内容 | 良くなった幅 | 誤差 | 倍率(t) | 良くなった分割 | 判定 |", "|---|---|---|---|---|---|---|"]
+    base, _ = walk_forward(races, [])
     adopted = []
-    results = {}
-    for nm, desc in FEATURES.items():
+    for nm, desc in feats.items():
         loss, f2 = walk_forward(races, [nm])
         d = base - loss
         se = d.std(ddof=1) / math.sqrt(len(d))
@@ -275,7 +305,6 @@ def main(write=True):
         good = sum(1 for k in sorted(set(f2)) if d[f2 == k].mean() > 0)
         nf = len(set(f2))
         ok = t >= 2.5 and good >= max(3, nf - 1)
-        results[nm] = (d.mean(), se, t, good, nf, ok)
         if ok:
             adopted.append(nm)
         out.append(f"| {nm} | {desc} | {d.mean():+.4f} | ±{se:.4f} | {t:+.1f} | {good}/{nf} | "
@@ -285,34 +314,45 @@ def main(write=True):
         d = base - loss
         se = d.std(ddof=1) / math.sqrt(len(d))
         out.append(f"\n採用した要素をまとめて追加：良くなった幅 {d.mean():+.4f}（±{se:.4f}、{d.mean() / se:+.1f}倍）")
-    loss_all, _ = walk_forward(races, list(FEATURES))
+    loss_all, _ = walk_forward(races, list(feats))
     d = base - loss_all
     se = d.std(ddof=1) / math.sqrt(len(d))
-    out.append(f"\n参考：全要素を入れた場合 {d.mean():+.4f}（±{se:.4f}、{d.mean() / se:+.1f}倍）"
-               f"／基準の損失 {base.mean():.4f}")
-    # 採用した要素で、全期間を使って係数を決める
+    out.append(f"\n参考：全要素を入れた場合 {d.mean():+.4f}（±{se:.4f}、{d.mean() / se:+.1f}倍）／基準の損失 {base.mean():.4f}")
     names = adopted
     jk = jockey_stats(races) if "jk_rate" in names else None
     gs = gate_stats(races) if "course_gate" in names else None
     X, mask, y = pack(races, names, jk, loo=True, gs=gs)
     mu, sd = stats(X, mask)
     beta = fit(X, mask, y, mu, sd)
-    model = {"updated": date.today().isoformat(), "races": len(races), "features": names,
+    model = {"updated": date.today().isoformat(), "group": group, "races": len(races), "features": names,
              "beta": beta.tolist(), "mu": mu.tolist(), "sd": sd.tolist(),
              "jockey": jk if jk else {}, "gate_stats": gs if gs else {}}
     out.append(f"\n基準の係数（市場の勝率の指数）：{beta[0]:.3f}"
                + ("　採用した要素の係数：" + "、".join(f"{n}={b:+.3f}" for n, b in zip(names, beta[1:])) if names else "　採用した要素：なし"))
+    return model, races
+
+
+def main(write=True):
+    out = ["# 「追加する／追加しない」の比べっこ\n",
+           "- 基準は「市場の単勝オッズだけ」。平地（ばんえい以外）とばんえいを別々に試す",
+           "- 評価：時間順の5分割で、前の期間で学習→次の期間で採点（後ろ4分割）",
+           "- 数字は勝ち馬の対数損失の差（基準−追加。**プラスなら追加したほうが良い**）。誤差の目安つき"]
+    models = {}
+    for group in ("平地", "ばんえい"):
+        models[group], _ = run_group(group, features_for(group), out)
     try:
         import odds_move_test as OM
-        out.extend(OM.section(races))
+        out.extend(OM.section(load_races()))
     except Exception as e:  # 朝のオッズの保存がまだないときなど
         out.append(f"\n## オッズの変化\n- 試せませんでした：{e}")
     text = "\n".join(out) + "\n"
     print(text)
     if write:
         open(REPORT, "w", encoding="utf-8").write(text)
-        json.dump(model, open(MODEL, "w", encoding="utf-8"), ensure_ascii=False)
-        print(f"保存：{REPORT} / {MODEL}")
+        for group, model in models.items():
+            if model is not None:
+                json.dump(model, open(MODEL_FILES[group], "w", encoding="utf-8"), ensure_ascii=False)
+        print(f"保存：{REPORT} / {'・'.join(os.path.basename(MODEL_FILES[g]) for g, m in models.items() if m)}")
 
 
 if __name__ == "__main__":

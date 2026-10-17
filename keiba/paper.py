@@ -32,7 +32,11 @@ LOG = os.path.join(HERE, "logs")
 SUMMARY = os.path.join(LOG, "paper_summary.csv")
 TOPN = 10
 EV_MIN_PROB = 0.02   # 期待値で選ぶときは、確度2%以上の組だけ（極端な大穴のオッズの偶然に引っぱられないため）
-COLS = ["日付", "方法", "戦略", "点数", "的中", "投資", "払戻"]
+COLS = ["日付", "グループ", "方法", "戦略", "点数", "的中", "投資", "払戻"]
+
+
+def group_of(race):
+    return "ばんえい" if race["code"] == 3 else "平地"
 STRATS = {
     "馬連 確度1位（全レース）": ("馬連", "prob", "race"),
     "馬単 確度1位（全レース）": ("馬単", "prob", "race"),
@@ -94,8 +98,9 @@ def pair_probs(p, kind):
     return out
 
 
-def load_model():
-    path = os.path.join(HERE, "model.json")
+def load_model(group="平地"):
+    name = "model.json" if group == "平地" else "model_banei.json"
+    path = os.path.join(HERE, name)
     if not os.path.exists(path):
         return None
     m = json.load(open(path, encoding="utf-8"))
@@ -114,11 +119,14 @@ def run(day):
         f.writelines(l for l in keep if json.loads(l)["d"] != dstr)
         for r in races:
             f.write(json.dumps(r, ensure_ascii=False, separators=(",", ":")) + "\n")
-    model = load_model()
+    models = {g: load_model(g) for g in ("平地", "ばんえい")}
     methods = {"旧式（全成績）": old_p, "市場（基準）": market_p}
-    if model:
-        methods["追加（市場＋採用要素）"] = lambda r: plus_p(r, model)
-    rows = defaultdict(list)  # (方法, 戦略) -> [(日内の並べ替え値, レース, 組, 確度, オッズ, 的中, 払戻)]
+    if any(models.values()):
+        def plus(r):
+            m = models.get(group_of(r))
+            return plus_p(r, m) if m else market_p(r)
+        methods["追加（市場＋採用要素）"] = plus
+    rows = defaultdict(list)  # (グループ, 方法, 券種) -> 候補の組のリスト（ばんえいと平地は別々に集計）
     n_ok = 0
     for race in races:
         if any(h["odds"] is None for h in race["hs"]) or "馬単" not in race["pay"]:
@@ -136,38 +144,40 @@ def run(day):
                     if o is None:
                         continue
                     hit = combo == actual[kind][0]
-                    rows[(mname, kind)].append({"race": f"{race['v']}{race['r']}R", "combo": combo, "prob": prob,
+                    rows[(group_of(race), mname, kind)].append({"race": f"{race['v']}{race['r']}R", "combo": combo, "prob": prob,
                                                 "odds": o, "ev": prob * o, "hit": hit,
                                                 "pay": actual[kind][1] if hit else 0, "rid": (race["code"], race["r"])})
     os.makedirs(LOG, exist_ok=True)
     out_rows = []
     detail = []
-    for mname in methods:
-        for sname, (kind, key, scope) in STRATS.items():
-            allc = rows[(mname, kind)]
-            if scope == "race":
-                best = {}
-                for c in allc:
-                    if c["rid"] not in best or c[key] > best[c["rid"]][key]:
-                        best[c["rid"]] = c
-                chosen = list(best.values())
-            else:
-                pool = [c for c in allc if c["prob"] >= EV_MIN_PROB] if key == "ev" else allc
-                chosen = sorted(pool, key=lambda c: -c[key])[:TOPN]
-            out_rows.append({"日付": dstr, "方法": mname, "戦略": sname, "点数": len(chosen),
-                             "的中": sum(c["hit"] for c in chosen), "投資": 100 * len(chosen),
-                             "払戻": sum(c["pay"] for c in chosen)})
-            for c in chosen:
-                if scope == "day":
-                    detail.append([mname, sname, c["race"], "-".join(map(str, c["combo"])), round(c["prob"] * 100, 1),
-                                   c["odds"], round(c["ev"], 2), "的中" if c["hit"] else "", c["pay"]])
+    for grp in ("平地", "ばんえい"):
+        for mname in methods:
+            for sname, (kind, key, scope) in STRATS.items():
+                allc = rows.get((grp, mname, kind), [])
+                if scope == "race":
+                    best = {}
+                    for c in allc:
+                        if c["rid"] not in best or c[key] > best[c["rid"]][key]:
+                            best[c["rid"]] = c
+                    chosen = list(best.values())
+                else:
+                    pool = [c for c in allc if c["prob"] >= EV_MIN_PROB] if key == "ev" else allc
+                    chosen = sorted(pool, key=lambda c: -c[key])[:TOPN]
+                out_rows.append({"日付": dstr, "グループ": grp, "方法": mname, "戦略": sname, "点数": len(chosen),
+                                 "的中": sum(c["hit"] for c in chosen), "投資": 100 * len(chosen),
+                                 "払戻": sum(c["pay"] for c in chosen)})
+                for c in chosen:
+                    if scope == "day":
+                        detail.append([grp, mname, sname, c["race"], "-".join(map(str, c["combo"])), round(c["prob"] * 100, 1),
+                                       c["odds"], round(c["ev"], 2), "的中" if c["hit"] else "", c["pay"]])
     with open(os.path.join(LOG, f"{dstr}_paper.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["方法", "戦略", "レース", "組", "確度%", "オッズ", "期待値", "結果", "払戻"])
+        w.writerow(["グループ", "方法", "戦略", "レース", "組", "確度%", "オッズ", "期待値", "結果", "払戻"])
         w.writerows(detail)
     old = []
     if os.path.exists(SUMMARY):
-        old = [r for r in csv.DictReader(open(SUMMARY, encoding="utf-8")) if r["日付"] != dstr]
+        old = [dict(r, グループ=r.get("グループ") or "平地") for r in csv.DictReader(open(SUMMARY, encoding="utf-8"))
+               if r["日付"] != dstr]
     with open(SUMMARY, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=COLS)
         w.writeheader()
@@ -177,19 +187,25 @@ def run(day):
 
 
 def show(rows, title):
-    agg = defaultdict(lambda: [0, 0, 0, 0])
-    for r in rows:
-        a = agg[(r["戦略"], r["方法"])]
-        a[0] += int(r["点数"])
-        a[1] += int(r["的中"])
-        a[2] += int(r["投資"])
-        a[3] += int(r["払戻"])
     print(f"\n{title}（1点100円）")
-    print(f"{'戦略':<22}{'方法':<18}{'点数':>6}{'的中':>5}{'的中率':>8}{'回収率':>8}")
-    last = None
-    for (s, m), (n, h, st, pay) in sorted(agg.items(), key=lambda x: (list(STRATS).index(x[0][0]), x[0][1])):
-        print(f"{s if s != last else '':<22}{m:<18}{n:>6}{h:>5}{(h / n * 100 if n else 0):>7.1f}%{(pay / st * 100 if st else 0):>7.0f}%")
-        last = s
+    for grp in ("平地", "ばんえい"):
+        agg = defaultdict(lambda: [0, 0, 0, 0])
+        for r in rows:
+            if (r.get("グループ") or "平地") != grp:
+                continue
+            a = agg[(r["戦略"], r["方法"])]
+            a[0] += int(r["点数"])
+            a[1] += int(r["的中"])
+            a[2] += int(r["投資"])
+            a[3] += int(r["払戻"])
+        if not agg or all(v[0] == 0 for v in agg.values()):
+            continue
+        print(f"\n【{grp}】")
+        print(f"{'戦略':<22}{'方法':<18}{'点数':>6}{'的中':>5}{'的中率':>8}{'回収率':>8}")
+        last = None
+        for (s_, m), (n, h, st, pay) in sorted(agg.items(), key=lambda x: (list(STRATS).index(x[0][0]), x[0][1])):
+            print(f"{s_ if s_ != last else '':<22}{m:<18}{n:>6}{h:>5}{(h / n * 100 if n else 0):>7.1f}%{(pay / st * 100 if st else 0):>7.0f}%")
+            last = s_
 
 
 def summary():

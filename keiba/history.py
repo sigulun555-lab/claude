@@ -4,9 +4,10 @@
   python3 keiba/history.py 2026-08-01 2026-10-13   # 期間を指定して追加（取得済みの日はとばす）
   python3 keiba/history.py today                    # 日本時間の今日（夜に全レースが終わってから）
   python3 keiba/history.py yesterday
+  python3 keiba/history.py venue 3 2026-08-01 2026-10-17   # 指定した競馬場（3=帯広）だけを、すでに集めた日にも追加
 
 keiba.go.jp の DebaTable（出馬表：その時点の成績・最終オッズ・人気・馬体重）と
-RefundMoneyList（払戻）を使う。ばんえい（帯広）は対象外。
+RefundMoneyList（払戻）を使う。ばんえい（帯広・コード3）も対象に含める（2026-10-17 追加）。
 1レース1行のJSON。1頭ごとに全成績・場・距離の成績と、近5走（着順・日付・頭数）を持つ。
 """
 import concurrent.futures as cf
@@ -21,7 +22,7 @@ from datetime import date, datetime, timedelta, timezone
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data", "history.jsonl")
 BASE = "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/"
-VENUES = {10: "盛岡", 11: "水沢", 18: "浦和", 19: "船橋", 20: "大井", 21: "川崎", 22: "金沢",
+VENUES = {3: "帯広", 10: "盛岡", 11: "水沢", 18: "浦和", 19: "船橋", 20: "大井", 21: "川崎", 22: "金沢",
           23: "笠松", 24: "名古屋", 27: "園田", 28: "姫路", 31: "高知", 32: "佐賀", 36: "門別"}
 
 
@@ -86,7 +87,9 @@ def parse_deba(html):
     head = text_of(html[:60000])
     m = re.search(r"(ダート|芝)\s*(\d{3,4})\s*ｍ", head)
     nm = re.search(r"<h3[^>]*>(.*?)</h3>", html, flags=re.S)
+    bm = re.search(r"馬場：([\d.]+)", head)
     out = {"dist": int(m.group(2)) if m else None, "surf": m.group(1) if m else None,
+           "baba": float(bm.group(1)) if bm else None,
            "name": re.sub(r"\s+", "", re.sub(r"<[^>]+>", "", nm.group(1))) if nm else "", "hs": []}
     for chunk in html.split('class="horseNum"')[1:]:
         m = re.match(r">\s*(\d+)\s*<", chunk)
@@ -119,10 +122,12 @@ def parse_deba(html):
     return out
 
 
-def collect_day(d):
+def collect_day(d, only=None):
     ds = d.strftime("%Y/%m/%d").replace("/", "%2F")
     out = []
     for code, vname in VENUES.items():
+        if only and code not in only:
+            continue
         rf = parse_refund(http(f"{BASE}RefundMoneyList?k_babaCode={code}&k_raceDate={ds}"))
         if not rf:
             continue
@@ -131,7 +136,7 @@ def collect_day(d):
             if len(page["hs"]) < 4:
                 continue
             out.append({"d": d.strftime("%Y%m%d"), "code": code, "v": vname, "r": r, "n": len(page["hs"]),
-                        "dist": page["dist"], "surf": page["surf"], "name": page["name"],
+                        "dist": page["dist"], "surf": page["surf"], "baba": page.get("baba"), "name": page["name"],
                         "hs": page["hs"], "pay": pay})
     return out
 
@@ -146,7 +151,28 @@ def jst(offset=0):
     return (datetime.now(timezone(timedelta(hours=9))) + timedelta(days=offset)).date()
 
 
+def backfill(code, start, end):
+    """すでに集めた日に、指定した競馬場（例：ばんえい=3）だけを追加する。"""
+    have = set()
+    if os.path.exists(DATA):
+        have = {(json.loads(l)["d"], json.loads(l)["code"]) for l in open(DATA, encoding="utf-8") if l.strip()}
+    days = [start + timedelta(n) for n in range((end - start).days + 1)]
+    days = [d for d in days if (d.strftime("%Y%m%d"), code) not in have]
+    total = 0
+    with cf.ThreadPoolExecutor(max_workers=3) as ex:
+        for d, races in zip(days, ex.map(lambda d: collect_day(d, only={code}), days)):
+            with open(DATA, "a", encoding="utf-8") as f:
+                for r in races:
+                    f.write(json.dumps(r, ensure_ascii=False, separators=(",", ":")) + "\n")
+            total += len(races)
+            if races:
+                print(f"{d} {len(races)}レース", flush=True)
+    print(f"追加 {total}レース（競馬場コード{code}）→ {DATA}")
+
+
 def main(args):
+    if args and args[0] == "venue":
+        return backfill(int(args[1]), date.fromisoformat(args[2]), date.fromisoformat(args[3]))
     if args and args[0] == "today":
         start = end = jst()
     elif args and args[0] == "yesterday":
