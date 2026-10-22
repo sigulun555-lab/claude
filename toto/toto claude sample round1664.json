@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "Claude (totoGOAL 究極予想エンジン)",
+  "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)",
+  "generatedAt": "2026-10-22T08:48:14.021Z",
+  "round": 1664,
+  "matchCount": 13,
+  "warnings": [
+    "負傷・出場停止情報は選手ごとの統計的リスク値のみであり、公式発表に基づく個別の欠場・出場停止情報ではありません。",
+    "データ出典の試合・チームごとの取得日時は構造化データとして保持していないため「未取得」としています。",
+    "予測モデルはこれまでの手動リサーチに基づくベースラインであり、的中を保証しません。"
+  ],
+  "predictions": [
+    {
+      "round": 1664,
+      "matchNumber": 1,
+      "homeTeam": "横浜F・マリノス",
+      "awayTeam": "東京ヴェルディ",
+      "probabilities": {
+        "0": 0.21640181733444808,
+        "1": 0.6447817265221243,
+        "2": 0.13881645614342777
+      },
+      "predictedAt": "2026-10-22T08:48:14.021Z",
+      "dataSource": {
+        "name": "Claude調査による手動リサーチ（toto公式ページの購入割合、Jリーグ公式結果・各チーム公式サイト等をWeb検索等で収集）",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "東京ヴェルディ",
+              "player": "森田晃樹",
+              "injuryRiskScore": 0.3
+            },
+            {
+              "team": "東京ヴェルディ",
+              "player": "寺沼星文",
+              "injuryRiskScore": 0.85
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)"
+    },
+    {
+      "round": 1664,
+      "matchNumber": 2,
+      "homeTeam": "京都サンガ",
+      "awayTeam": "鹿島アントラーズ",
+      "probabilities": {
+        "0": 0.22588570937659458,
+        "1": 0.22811040256914222,
+        "2": 0.5460038880542633
+      },
+      "predictedAt": "2026-10-22T08:48:14.021Z",
+      "dataSource": {
+        "name": "Claude調査による手動リサーチ（toto公式ページの購入割合、Jリーグ公式結果・各チーム公式サイト等をWeb検索等で収集）",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": []
+        }
+      },
+      "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)"
+    },
+    {
+      "round": 1664,
+      "matchNumber": 3,
+      "homeTeam": "V・ファーレン長崎",
+      "awayTeam": "サンフレッチェ広島",
+      "probabilities": {
+        "0": 0.2268492168137942,
+        "1": 0.21472467968439277,
+        "2": 0.5584261035018131
+      },
+      "predictedAt": "2026-10-22T08:48:14.021Z",
+      "dataSource": {
+        "name": "Claude調査による手動リサーチ（toto公式ページの購入割合、Jリーグ公式結果・各チーム公式サイト等をWeb検索等で収集）",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "V・ファーレン長崎",
+              "player": "ノーマン・キャンベル",
+              "injuryRiskScore": 0.8
+            },
+            {
+              "team": "サンフレッチェ広島",
+              "player": "浅野拓磨",
+              "injuryRiskScore": 0.4
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)"
+    },
+    {
+      "round": 1664,
+      "matchNumber": 4,
+      "homeTeam": "FC東京",
+      "awayTeam": "柏レイソル",
+      "probabilities": {
+        "0": 0.29768587557000403,
+        "1": 0.42048468947377987,
+        "2": 0.28182943495621604
+      },
+      "predictedAt": "2026-10-22T08:48:14.021Z",
+      "dataSource": {
+        "name": "Claude調査による手動リサーチ（toto公式ページの購入割合、Jリーグ公式結果・各チーム公式サイト等をWeb検索等で収集）",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "FC東京",
+              "player": "本間至恩",
+              "injuryRiskScore": 0.85
+            },
+            {
+              "team": "柏レイソル",
+              "player": "大久保智明",
+              "injuryRiskScore": 0.9
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)"
+    },
+    {
+      "round": 1664,
+      "matchNumber": 5,
+      "homeTeam": "名古屋グランパス",
+      "awayTeam": "セレッソ大阪",
+      "probabilities": {
+        "0": 0.2931877251032564,
+        "1": 0.47706149077598053,
+        "2": 0.2297507841207631
+      },
+      "predictedAt": "2026-10-22T08:48:14.021Z",
+      "dataSource": {
+        "name": "Claude調査による手動リサーチ（toto公式ページの購入割合、Jリーグ公式結果・各チーム公式サイト等をWeb検索等で収集）",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "セレッソ大阪",
+              "player": "奥田勇斗",
+              "injuryRiskScore": 0.6
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)"
+    },
+    {
+      "round": 1664,
+      "matchNumber": 6,
+      "homeTeam": "清水エスパルス",
+      "awayTeam": "FC町田ゼルビア",
+      "probabilities": {
+        "0": 0.21104698958154391,
+        "1": 0.2297593182136691,
+        "2": 0.559193692204787
+      },
+      "predictedAt": "2026-10-22T08:48:14.021Z",
+      "dataSource": {
+        "name": "Claude調査による手動リサーチ（toto公式ページの購入割合、Jリーグ公式結果・各チーム公式サイト等をWeb検索等で収集）",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": []
+        }
+      },
+      "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)"
+    },
+    {
+      "round": 1664,
+      "matchNumber": 7,
+      "homeTeam": "ファジアーノ岡山",
+      "awayTeam": "水戸ホーリーホック",
+      "probabilities": {
+        "0": 0.3774232277625568,
+        "1": 0.38238358271515904,
+        "2": 0.24019318952228408
+      },
+      "predictedAt": "2026-10-22T08:48:14.021Z",
+      "dataSource": {
+        "name": "Claude調査による手動リサーチ（toto公式ページの購入割合、Jリーグ公式結果・各チーム公式サイト等をWeb検索等で収集）",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "水戸ホーリーホック",
+              "player": "岩﨑",
+              "injuryRiskScore": 0.5
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)"
+    },
+    {
+      "round": 1664,
+      "matchNumber": 8,
+      "homeTeam": "アビスパ福岡",
+      "awayTeam": "ガンバ大阪",
+      "probabilities": {
+        "0": 0.48106076109679535,
+        "1": 0.2657964650621547,
+        "2": 0.25314277384105
+      },
+      "predictedAt": "2026-10-22T08:48:14.021Z",
+      "dataSource": {
+        "name": "Claude調査による手動リサーチ（toto公式ページの購入割合、Jリーグ公式結果・各チーム公式サイト等をWeb検索等で収集）",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "アビスパ福岡",
+              "player": "福島和毅",
+              "injuryRiskScore": 0.9
+            },
+            {
+              "team": "ガンバ大阪",
+              "player": "植中朝日",
+              "injuryRiskScore": 0.8
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)"
+    },
+    {
+      "round": 1664,
+      "matchNumber": 9,
+      "homeTeam": "浦和レッズ",
+      "awayTeam": "ジェフユナイテッド千葉",
+      "probabilities": {
+        "0": 0.19139159874184508,
+        "1": 0.6490137311060112,
+        "2": 0.15959467015214374
+      },
+      "predictedAt": "2026-10-22T08:48:14.021Z",
+      "dataSource": {
+        "name": "Claude調査による手動リサーチ（toto公式ページの購入割合、Jリーグ公式結果・各チーム公式サイト等をWeb検索等で収集）",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "ジェフユナイテッド千葉",
+              "player": "喜田陽",
+              "injuryRiskScore": 0.85
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)"
+    },
+    {
+      "round": 1664,
+      "matchNumber": 10,
+      "homeTeam": "川崎フロンターレ",
+      "awayTeam": "ヴィッセル神戸",
+      "probabilities": {
+        "0": 0.35492013742074857,
+        "1": 0.3449640091613423,
+        "2": 0.30011585341790914
+      },
+      "predictedAt": "2026-10-22T08:48:14.021Z",
+      "dataSource": {
+        "name": "Claude調査による手動リサーチ（toto公式ページの購入割合、Jリーグ公式結果・各チーム公式サイト等をWeb検索等で収集）",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": []
+        }
+      },
+      "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)"
+    },
+    {
+      "round": 1664,
+      "matchNumber": 11,
+      "homeTeam": "ベガルタ仙台",
+      "awayTeam": "FC今治",
+      "probabilities": {
+        "0": 0.224714627960694,
+        "1": 0.5492015467333898,
+        "2": 0.22608382530591614
+      },
+      "predictedAt": "2026-10-22T08:48:14.021Z",
+      "dataSource": {
+        "name": "Claude調査による手動リサーチ（toto公式ページの購入割合、Jリーグ公式結果・各チーム公式サイト等をWeb検索等で収集）",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": []
+        }
+      },
+      "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)"
+    },
+    {
+      "round": 1664,
+      "matchNumber": 12,
+      "homeTeam": "徳島ヴォルティス",
+      "awayTeam": "ヴァンラーレ八戸",
+      "probabilities": {
+        "0": 0.3187042890441459,
+        "1": 0.46099812115479694,
+        "2": 0.22029758980105718
+      },
+      "predictedAt": "2026-10-22T08:48:14.021Z",
+      "dataSource": {
+        "name": "Claude調査による手動リサーチ（toto公式ページの購入割合、Jリーグ公式結果・各チーム公式サイト等をWeb検索等で収集）",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "徳島ヴォルティス",
+              "player": "尾上瑠聖",
+              "injuryRiskScore": 0.3
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)"
+    },
+    {
+      "round": 1664,
+      "matchNumber": 13,
+      "homeTeam": "テゲバジャーロ宮崎",
+      "awayTeam": "ブラウブリッツ秋田",
+      "probabilities": {
+        "0": 0.37480786492493784,
+        "1": 0.40240328433921735,
+        "2": 0.22278885073584487
+      },
+      "predictedAt": "2026-10-22T08:48:14.021Z",
+      "dataSource": {
+        "name": "Claude調査による手動リサーチ（toto公式ページの購入割合、Jリーグ公式結果・各チーム公式サイト等をWeb検索等で収集）",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": []
+        }
+      },
+      "modelName": "Claude-totoGOAL-Engine V2 (独立ポアソン分布+市場オッズブレンド+Dixon-Coles低スコア補正, totoGOAL artifact版)"
+    }
+  ]
+}
