@@ -132,7 +132,7 @@ def settle(dstr):
             hit = pay["単勝"][0] == int(key)
             amt = pay["単勝"][1] if hit else 0
         elif kind == "複勝":
-            amt = pay["複勝"].get(key, 0)
+            amt = pay.get("複勝", {}).get(key, 0)
             hit = amt > 0
         elif kind == "馬連":
             hit = sorted(pay["馬連"][0]) == sorted(map(int, key.split("-")))
