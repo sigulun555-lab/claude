@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "Claude (totoGOAL 究極予想エンジン)",
+  "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)",
+  "generatedAt": "2026-10-22T16:09:48Z",
+  "round": 1665,
+  "marketType": "totoGOAL3",
+  "deadlineAt": "2026-10-24T04:50:00Z",
+  "matchCount": 3,
+  "warnings": [
+    "round1664.jsonのサンプルは通常toto（13試合・1=ホーム勝ち/0=引き分け/2=アウェイ勝ちの1X2方式）だったが、totoGOAL3は商品として異なり、指定された3試合それぞれについてホーム・アウェイ両チームの『自チームの得点数（0点/1点/2点/3点以上）』を当てる方式。probabilitiesのキーが{'0','1','2','3'}（4バケット、合計1）である点が1X2方式（{'1','0','2'}、合計1）と異なる。",
+    "matchNumberはtoto公式サイト（store.toto-dream.com、holdCntId=1665）の第1665回totoGOAL3対象試合ページで確認した表示順（1試合目=広島vs清水、2試合目=鹿島vs柏、3試合目=神戸vs町田、全試合10/24(土)開催）。",
+    "負傷・出場停止情報は選手ごとの統計的リスク値のみであり、公式発表に基づく個別の欠場・出場停止情報ではありません。",
+    "データ出典の試合・チームごとの取得日時は構造化データとして保持していないため「未取得」としています。",
+    "予測モデルはこれまでの手動リサーチに基づくベースラインであり、的中を保証しません。"
+  ],
+  "predictions": [
+    {
+      "round": 1665,
+      "matchNumber": 3,
+      "gameId": 55779,
+      "team": "ヴィッセル神戸",
+      "opponent": "FC町田ゼルビア",
+      "isHome": true,
+      "probabilities": { "0": 0.1478, "1": 0.2521, "2": 0.2457, "3": 0.3544 },
+      "predictedAt": "2026-10-22T16:09:48Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（totoGOAL 究極予想エンジン）のpredictScore()内部で使われているcalculateScoreProbabilities()・poissonProbability()・teamDatabaseの該当エントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 3,
+      "gameId": 55779,
+      "team": "FC町田ゼルビア",
+      "opponent": "ヴィッセル神戸",
+      "isHome": false,
+      "probabilities": { "0": 0.1318, "1": 0.2586, "2": 0.2631, "3": 0.3464 },
+      "predictedAt": "2026-10-22T16:09:48Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（totoGOAL 究極予想エンジン）のpredictScore()内部で使われているcalculateScoreProbabilities()・poissonProbability()・teamDatabaseの該当エントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 1,
+      "gameId": 55780,
+      "team": "サンフレッチェ広島",
+      "opponent": "清水エスパルス",
+      "isHome": true,
+      "probabilities": { "0": 0.1056, "1": 0.1874, "2": 0.2069, "3": 0.5001 },
+      "predictedAt": "2026-10-22T16:09:48Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（totoGOAL 究極予想エンジン）のpredictScore()内部で使われているcalculateScoreProbabilities()・poissonProbability()・teamDatabaseの該当エントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 1,
+      "gameId": 55780,
+      "team": "清水エスパルス",
+      "opponent": "サンフレッチェ広島",
+      "isHome": false,
+      "probabilities": { "0": 0.3088, "1": 0.361, "2": 0.212, "3": 0.1182 },
+      "predictedAt": "2026-10-22T16:09:48Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（totoGOAL 究極予想エンジン）のpredictScore()内部で使われているcalculateScoreProbabilities()・poissonProbability()・teamDatabaseの該当エントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 2,
+      "gameId": 55781,
+      "team": "鹿島アントラーズ",
+      "opponent": "柏レイソル",
+      "isHome": true,
+      "probabilities": { "0": 0.0865, "1": 0.1894, "2": 0.2259, "3": 0.4983 },
+      "predictedAt": "2026-10-22T16:09:48Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（totoGOAL 究極予想エンジン）のpredictScore()内部で使われているcalculateScoreProbabilities()・poissonProbability()・teamDatabaseの該当エントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 2,
+      "gameId": 55781,
+      "team": "柏レイソル",
+      "opponent": "鹿島アントラーズ",
+      "isHome": false,
+      "probabilities": { "0": 0.194, "1": 0.3175, "2": 0.2611, "3": 0.2274 },
+      "predictedAt": "2026-10-22T16:09:48Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（totoGOAL 究極予想エンジン）のpredictScore()内部で使われているcalculateScoreProbabilities()・poissonProbability()・teamDatabaseの該当エントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。",
+        "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
+      },
+      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)"
+    }
+  ]
+}
