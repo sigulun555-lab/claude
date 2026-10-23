@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "generatedBy": "Claude (totoGOAL3 アプリ実ロジック再現)",
   "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
   "generatedAt": "2026-10-22T18:09:12Z",
@@ -42,7 +42,14 @@
           ]
         }
       },
-      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "順位(standing)",
+        "得失点差(goalDiff)",
+        "recentFormの対象大会区分",
+        "両チームの負傷・出場停止・確定スタメン"
+      ]
     },
     {
       "round": 1665,
@@ -72,7 +79,14 @@
           ]
         }
       },
-      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "順位(standing)",
+        "得失点差(goalDiff)",
+        "recentFormの対象大会区分",
+        "両チームの負傷・出場停止・確定スタメン"
+      ]
     },
     {
       "round": 1665,
@@ -96,7 +110,14 @@
           "flagged": []
         }
       },
-      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "順位(standing)",
+        "得失点差(goalDiff)",
+        "recentFormの対象大会区分",
+        "両チームの負傷・出場停止・確定スタメン"
+      ]
     },
     {
       "round": 1665,
@@ -131,7 +152,14 @@
           ]
         }
       },
-      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "順位(standing)",
+        "得失点差(goalDiff)",
+        "recentFormの対象大会区分",
+        "両チームの負傷・出場停止・確定スタメン"
+      ]
     },
     {
       "round": 1665,
@@ -166,7 +194,14 @@
           ]
         }
       },
-      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "順位(standing)",
+        "得失点差(goalDiff)",
+        "recentFormの対象大会区分",
+        "両チームの負傷・出場停止・確定スタメン"
+      ]
     },
     {
       "round": 1665,
@@ -206,7 +241,14 @@
           ]
         }
       },
-      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "順位(standing)",
+        "得失点差(goalDiff)",
+        "recentFormの対象大会区分",
+        "両チームの負傷・出場停止・確定スタメン"
+      ]
     },
     {
       "round": 1665,
@@ -236,7 +278,38 @@
           ]
         }
       },
-      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "両チームの負傷・出場停止・確定スタメン"
+      ],
+      "externalVerification": {
+        "homeTeamStatus": {
+          "standing": 15,
+          "goalDiff": -7
+        },
+        "awayTeamStatus": {
+          "standing": 17,
+          "goalDiff": -8
+        },
+        "sources": [
+          {
+            "name": "J.League公式 ガンバ大阪 試合日程・結果",
+            "url": "https://www.jleague.jp/club/gosaka/day/",
+            "retrievedAt": "2026-10-23T00:00:00Z"
+          },
+          {
+            "name": "footballchannel.jp ガンバ大阪2026/27シーズン成績",
+            "url": "https://www.footballchannel.jp/2026/10/22/post993039/",
+            "retrievedAt": "2026-10-23T00:00:00Z"
+          },
+          {
+            "name": "J.League公式 京都サンガF.C. 試合結果",
+            "url": "https://www.jleague.jp/sp/club/kyoto/result/",
+            "retrievedAt": "2026-10-23T00:00:00Z"
+          }
+        ]
+      }
     },
     {
       "round": 1665,
@@ -260,7 +333,14 @@
           "flagged": []
         }
       },
-      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "順位(standing)",
+        "得失点差(goalDiff)",
+        "recentFormの対象大会区分",
+        "両チームの負傷・出場停止・確定スタメン"
+      ]
     },
     {
       "round": 1665,
@@ -284,7 +364,14 @@
           "flagged": []
         }
       },
-      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "順位(standing)",
+        "得失点差(goalDiff)",
+        "recentFormの対象大会区分",
+        "両チームの負傷・出場停止・確定スタメン"
+      ]
     },
     {
       "round": 1665,
@@ -314,7 +401,14 @@
           ]
         }
       },
-      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "順位(standing)",
+        "得失点差(goalDiff)",
+        "recentFormの対象大会区分",
+        "両チームの負傷・出場停止・確定スタメン"
+      ]
     },
     {
       "round": 1665,
@@ -338,7 +432,14 @@
           "flagged": []
         }
       },
-      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "順位(standing)",
+        "得失点差(goalDiff)",
+        "recentFormの対象大会区分",
+        "両チームの負傷・出場停止・確定スタメン"
+      ]
     },
     {
       "round": 1665,
@@ -362,7 +463,14 @@
           "flagged": []
         }
       },
-      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "順位(standing)",
+        "得失点差(goalDiff)",
+        "recentFormの対象大会区分",
+        "両チームの負傷・出場停止・確定スタメン"
+      ]
     },
     {
       "round": 1665,
@@ -392,7 +500,17 @@
           ]
         }
       },
-      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "順位(standing)",
+        "得失点差(goalDiff)",
+        "recentFormの対象大会区分",
+        "両チームの負傷・出場停止・確定スタメン"
+      ]
     }
+  ],
+  "revisionNotes": [
+    "2026-10-23: evidence+confidenceLevel revision. toto-lab predictions/round_1665_Claude.jsonl の -EVIDENCE-20261023 / -EVIDENCE-20261023-CONF-20261023b と同内容。各試合にconfidenceLevel('medium')とunconfirmed（未確認項目）を追加。試合7（ガンバ大阪 vs 京都サンガ）のみJ.League公式サイトで順位・得失点差を確認済みのためexternalVerificationを追加。"
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "generatedBy": "Claude (totoGOAL 究極予想エンジン)",
   "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)",
   "generatedAt": "2026-10-22T16:09:48Z",
@@ -22,13 +22,31 @@
       "team": "ヴィッセル神戸",
       "opponent": "FC町田ゼルビア",
       "isHome": true,
-      "probabilities": { "0": 0.1478, "1": 0.2521, "2": 0.2457, "3": 0.3544 },
+      "probabilities": {
+        "0": 0.1478,
+        "1": 0.2521,
+        "2": 0.2457,
+        "3": 0.3544
+      },
       "predictedAt": "2026-10-22T16:09:48Z",
       "dataSource": {
         "name": "Claude側totoGOAL3アプリ（totoGOAL 究極予想エンジン）のpredictScore()内部で使われているcalculateScoreProbabilities()・poissonProbability()・teamDatabaseの該当エントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。",
         "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
       },
-      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)"
+      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "両チームの負傷・出場停止・確定スタメン"
+      ],
+      "externalVerification": {
+        "standing": 4,
+        "goalDiff": 7,
+        "source": {
+          "name": "footballchannel.jp Jリーグ(J1)順位表",
+          "url": "https://www.footballchannel.jp/2026/10/21/post969132/",
+          "retrievedAt": "2026-10-23T09:00:00Z"
+        }
+      }
     },
     {
       "round": 1665,
@@ -37,13 +55,31 @@
       "team": "FC町田ゼルビア",
       "opponent": "ヴィッセル神戸",
       "isHome": false,
-      "probabilities": { "0": 0.1318, "1": 0.2586, "2": 0.2631, "3": 0.3464 },
+      "probabilities": {
+        "0": 0.1318,
+        "1": 0.2586,
+        "2": 0.2631,
+        "3": 0.3464
+      },
       "predictedAt": "2026-10-22T16:09:48Z",
       "dataSource": {
         "name": "Claude側totoGOAL3アプリ（totoGOAL 究極予想エンジン）のpredictScore()内部で使われているcalculateScoreProbabilities()・poissonProbability()・teamDatabaseの該当エントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。",
         "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
       },
-      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)"
+      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "両チームの負傷・出場停止・確定スタメン"
+      ],
+      "externalVerification": {
+        "standing": 1,
+        "goalDiff": 20,
+        "source": {
+          "name": "footballchannel.jp Jリーグ(J1)順位表",
+          "url": "https://www.footballchannel.jp/2026/10/21/post969132/",
+          "retrievedAt": "2026-10-23T09:00:00Z"
+        }
+      }
     },
     {
       "round": 1665,
@@ -52,13 +88,31 @@
       "team": "サンフレッチェ広島",
       "opponent": "清水エスパルス",
       "isHome": true,
-      "probabilities": { "0": 0.1056, "1": 0.1874, "2": 0.2069, "3": 0.5001 },
+      "probabilities": {
+        "0": 0.1056,
+        "1": 0.1874,
+        "2": 0.2069,
+        "3": 0.5001
+      },
       "predictedAt": "2026-10-22T16:09:48Z",
       "dataSource": {
         "name": "Claude側totoGOAL3アプリ（totoGOAL 究極予想エンジン）のpredictScore()内部で使われているcalculateScoreProbabilities()・poissonProbability()・teamDatabaseの該当エントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。",
         "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
       },
-      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)"
+      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "両チームの負傷・出場停止・確定スタメン"
+      ],
+      "externalVerification": {
+        "standing": 3,
+        "goalDiff": 15,
+        "source": {
+          "name": "footballchannel.jp Jリーグ(J1)順位表",
+          "url": "https://www.footballchannel.jp/2026/10/21/post969132/",
+          "retrievedAt": "2026-10-23T09:00:00Z"
+        }
+      }
     },
     {
       "round": 1665,
@@ -67,13 +121,31 @@
       "team": "清水エスパルス",
       "opponent": "サンフレッチェ広島",
       "isHome": false,
-      "probabilities": { "0": 0.3088, "1": 0.361, "2": 0.212, "3": 0.1182 },
+      "probabilities": {
+        "0": 0.3088,
+        "1": 0.361,
+        "2": 0.212,
+        "3": 0.1182
+      },
       "predictedAt": "2026-10-22T16:09:48Z",
       "dataSource": {
         "name": "Claude側totoGOAL3アプリ（totoGOAL 究極予想エンジン）のpredictScore()内部で使われているcalculateScoreProbabilities()・poissonProbability()・teamDatabaseの該当エントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。",
         "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
       },
-      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)"
+      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "両チームの負傷・出場停止・確定スタメン"
+      ],
+      "externalVerification": {
+        "standing": 11,
+        "goalDiff": -6,
+        "source": {
+          "name": "footballchannel.jp Jリーグ(J1)順位表",
+          "url": "https://www.footballchannel.jp/2026/10/21/post969132/",
+          "retrievedAt": "2026-10-23T09:00:00Z"
+        }
+      }
     },
     {
       "round": 1665,
@@ -82,13 +154,31 @@
       "team": "鹿島アントラーズ",
       "opponent": "柏レイソル",
       "isHome": true,
-      "probabilities": { "0": 0.0865, "1": 0.1894, "2": 0.2259, "3": 0.4983 },
+      "probabilities": {
+        "0": 0.0865,
+        "1": 0.1894,
+        "2": 0.2259,
+        "3": 0.4983
+      },
       "predictedAt": "2026-10-22T16:09:48Z",
       "dataSource": {
         "name": "Claude側totoGOAL3アプリ（totoGOAL 究極予想エンジン）のpredictScore()内部で使われているcalculateScoreProbabilities()・poissonProbability()・teamDatabaseの該当エントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。",
         "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
       },
-      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)"
+      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "両チームの負傷・出場停止・確定スタメン"
+      ],
+      "externalVerification": {
+        "standing": 6,
+        "goalDiff": 5,
+        "source": {
+          "name": "footballchannel.jp Jリーグ(J1)順位表",
+          "url": "https://www.footballchannel.jp/2026/10/21/post969132/",
+          "retrievedAt": "2026-10-23T09:00:00Z"
+        }
+      }
     },
     {
       "round": 1665,
@@ -97,13 +187,34 @@
       "team": "柏レイソル",
       "opponent": "鹿島アントラーズ",
       "isHome": false,
-      "probabilities": { "0": 0.194, "1": 0.3175, "2": 0.2611, "3": 0.2274 },
+      "probabilities": {
+        "0": 0.194,
+        "1": 0.3175,
+        "2": 0.2611,
+        "3": 0.2274
+      },
       "predictedAt": "2026-10-22T16:09:48Z",
       "dataSource": {
         "name": "Claude側totoGOAL3アプリ（totoGOAL 究極予想エンジン）のpredictScore()内部で使われているcalculateScoreProbabilities()・poissonProbability()・teamDatabaseの該当エントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。",
         "retrievedAt": "未取得（試合・チームごとの取得日時は構造化データとして保持していません）"
       },
-      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)"
+      "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust, totoGOAL3用)",
+      "confidenceLevel": "medium",
+      "unconfirmed": [
+        "両チームの負傷・出場停止・確定スタメン"
+      ],
+      "externalVerification": {
+        "standing": 5,
+        "goalDiff": 5,
+        "source": {
+          "name": "footballchannel.jp Jリーグ(J1)順位表",
+          "url": "https://www.footballchannel.jp/2026/10/21/post969132/",
+          "retrievedAt": "2026-10-23T09:00:00Z"
+        }
+      }
     }
+  ],
+  "revisionNotes": [
+    "2026-10-23: evidence+confidenceLevel revision. toto13側と同じ方針で、各エントリにconfidenceLevel('medium')とunconfirmedを追加。6チーム全てfootballchannel.jpのJ1順位表（2026-10-21時点）で順位・得失点差を確認し、externalVerificationとして追加。"
   ]
 }
