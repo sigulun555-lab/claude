@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "Claude (totoGOAL3 アプリ実ロジック再現)",
+  "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）",
+  "generatedAt": "2026-10-22T18:09:12Z",
+  "round": 1665,
+  "marketType": "toto13(1X2)",
+  "deadlineAt": "2026-10-24T04:50:00Z",
+  "matchCount": 13,
+  "warnings": [
+    "負傷・出場停止情報は選手ごとの統計的リスク値のみであり、公式発表に基づく個別の欠場・出場停止情報ではありません。",
+    "marketOdds（購入割合）は第1665回の該当13試合ペア分のエントリがアプリ側に存在しないため未使用（モデルの生の期待得点をそのまま使用）。",
+    "isCupRiskMatchは13試合すべてfalse（home/awayのleagueが一致、かつMANUAL_CUP_MATCHESにも登録なし。アプリのHTMLソースで確認済み）。",
+    "このJSONは本番アプリの予測モデル・補正ロジックを一切変更せず、外部で忠実に再現して計算したものです。"
+  ],
+  "predictions": [
+    {
+      "round": 1665,
+      "matchNumber": 1,
+      "homeTeam": "サンフレッチェ広島",
+      "awayTeam": "清水エスパルス",
+      "probabilities": {
+        "0": 0.1333,
+        "1": 0.7653,
+        "2": 0.1014
+      },
+      "predictedAt": "2026-10-22T18:09:12Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（claude.ai/code/artifact/2d0d0f2e-aece-437a-9bac-ea829805d7c4）のpredictScore()内部で使われているcalculateOutcomeProbabilitiesCore()（V2）・poissonProbability()・teamDatabaseの該当クラブのエントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。アプリ自体は変更していない（外部で同一ロジックを複製して実行）。",
+        "retrievedAt": "2026-10-22T18:09:12Z（アプリHTML内のteamDatabase記載時点の鮮度更新日は各チームのコメントに個別記載）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1、teamDatabase.starPlayers[].injuryRisk）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "サンフレッチェ広島",
+              "player": "浅野拓磨",
+              "injuryRiskScore": 0.4
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 2,
+      "homeTeam": "鹿島アントラーズ",
+      "awayTeam": "柏レイソル",
+      "probabilities": {
+        "0": 0.1601,
+        "1": 0.67,
+        "2": 0.1699
+      },
+      "predictedAt": "2026-10-22T18:09:12Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（claude.ai/code/artifact/2d0d0f2e-aece-437a-9bac-ea829805d7c4）のpredictScore()内部で使われているcalculateOutcomeProbabilitiesCore()（V2）・poissonProbability()・teamDatabaseの該当クラブのエントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。アプリ自体は変更していない（外部で同一ロジックを複製して実行）。",
+        "retrievedAt": "2026-10-22T18:09:12Z（アプリHTML内のteamDatabase記載時点の鮮度更新日は各チームのコメントに個別記載）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1、teamDatabase.starPlayers[].injuryRisk）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "柏レイソル",
+              "player": "大久保智明",
+              "injuryRiskScore": 0.9
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 3,
+      "homeTeam": "ヴィッセル神戸",
+      "awayTeam": "FC町田ゼルビア",
+      "probabilities": {
+        "0": 0.3554,
+        "1": 0.347,
+        "2": 0.2976
+      },
+      "predictedAt": "2026-10-22T18:09:12Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（claude.ai/code/artifact/2d0d0f2e-aece-437a-9bac-ea829805d7c4）のpredictScore()内部で使われているcalculateOutcomeProbabilitiesCore()（V2）・poissonProbability()・teamDatabaseの該当クラブのエントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。アプリ自体は変更していない（外部で同一ロジックを複製して実行）。",
+        "retrievedAt": "2026-10-22T18:09:12Z（アプリHTML内のteamDatabase記載時点の鮮度更新日は各チームのコメントに個別記載）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1、teamDatabase.starPlayers[].injuryRisk）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": []
+        }
+      },
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 4,
+      "homeTeam": "セレッソ大阪",
+      "awayTeam": "ジェフユナイテッド千葉",
+      "probabilities": {
+        "0": 0.2639,
+        "1": 0.5363,
+        "2": 0.1998
+      },
+      "predictedAt": "2026-10-22T18:09:12Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（claude.ai/code/artifact/2d0d0f2e-aece-437a-9bac-ea829805d7c4）のpredictScore()内部で使われているcalculateOutcomeProbabilitiesCore()（V2）・poissonProbability()・teamDatabaseの該当クラブのエントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。アプリ自体は変更していない（外部で同一ロジックを複製して実行）。",
+        "retrievedAt": "2026-10-22T18:09:12Z（アプリHTML内のteamDatabase記載時点の鮮度更新日は各チームのコメントに個別記載）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1、teamDatabase.starPlayers[].injuryRisk）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "セレッソ大阪",
+              "player": "奥田勇斗",
+              "injuryRiskScore": 0.6
+            },
+            {
+              "team": "ジェフユナイテッド千葉",
+              "player": "喜田陽",
+              "injuryRiskScore": 0.85
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 5,
+      "homeTeam": "FC東京",
+      "awayTeam": "水戸ホーリーホック",
+      "probabilities": {
+        "0": 0.2061,
+        "1": 0.5952,
+        "2": 0.1986
+      },
+      "predictedAt": "2026-10-22T18:09:12Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（claude.ai/code/artifact/2d0d0f2e-aece-437a-9bac-ea829805d7c4）のpredictScore()内部で使われているcalculateOutcomeProbabilitiesCore()（V2）・poissonProbability()・teamDatabaseの該当クラブのエントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。アプリ自体は変更していない（外部で同一ロジックを複製して実行）。",
+        "retrievedAt": "2026-10-22T18:09:12Z（アプリHTML内のteamDatabase記載時点の鮮度更新日は各チームのコメントに個別記載）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1、teamDatabase.starPlayers[].injuryRisk）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "FC東京",
+              "player": "本間至恩",
+              "injuryRiskScore": 0.85
+            },
+            {
+              "team": "水戸ホーリーホック",
+              "player": "岩﨑",
+              "injuryRiskScore": 0.5
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 6,
+      "homeTeam": "東京ヴェルディ",
+      "awayTeam": "アビスパ福岡",
+      "probabilities": {
+        "0": 0.4361,
+        "1": 0.1662,
+        "2": 0.3976
+      },
+      "predictedAt": "2026-10-22T18:09:12Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（claude.ai/code/artifact/2d0d0f2e-aece-437a-9bac-ea829805d7c4）のpredictScore()内部で使われているcalculateOutcomeProbabilitiesCore()（V2）・poissonProbability()・teamDatabaseの該当クラブのエントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。アプリ自体は変更していない（外部で同一ロジックを複製して実行）。",
+        "retrievedAt": "2026-10-22T18:09:12Z（アプリHTML内のteamDatabase記載時点の鮮度更新日は各チームのコメントに個別記載）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1、teamDatabase.starPlayers[].injuryRisk）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "東京ヴェルディ",
+              "player": "森田晃樹",
+              "injuryRiskScore": 0.3
+            },
+            {
+              "team": "東京ヴェルディ",
+              "player": "寺沼星文",
+              "injuryRiskScore": 0.85
+            },
+            {
+              "team": "アビスパ福岡",
+              "player": "福島和毅",
+              "injuryRiskScore": 0.9
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 7,
+      "homeTeam": "ガンバ大阪",
+      "awayTeam": "京都サンガ",
+      "probabilities": {
+        "0": 0.4833,
+        "1": 0.2524,
+        "2": 0.2643
+      },
+      "predictedAt": "2026-10-22T18:09:12Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（claude.ai/code/artifact/2d0d0f2e-aece-437a-9bac-ea829805d7c4）のpredictScore()内部で使われているcalculateOutcomeProbabilitiesCore()（V2）・poissonProbability()・teamDatabaseの該当クラブのエントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。アプリ自体は変更していない（外部で同一ロジックを複製して実行）。",
+        "retrievedAt": "2026-10-22T18:09:12Z（アプリHTML内のteamDatabase記載時点の鮮度更新日は各チームのコメントに個別記載）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1、teamDatabase.starPlayers[].injuryRisk）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "ガンバ大阪",
+              "player": "植中朝日",
+              "injuryRiskScore": 0.8
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 8,
+      "homeTeam": "名古屋グランパス",
+      "awayTeam": "横浜F・マリノス",
+      "probabilities": {
+        "0": 0.3156,
+        "1": 0.4357,
+        "2": 0.2486
+      },
+      "predictedAt": "2026-10-22T18:09:12Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（claude.ai/code/artifact/2d0d0f2e-aece-437a-9bac-ea829805d7c4）のpredictScore()内部で使われているcalculateOutcomeProbabilitiesCore()（V2）・poissonProbability()・teamDatabaseの該当クラブのエントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。アプリ自体は変更していない（外部で同一ロジックを複製して実行）。",
+        "retrievedAt": "2026-10-22T18:09:12Z（アプリHTML内のteamDatabase記載時点の鮮度更新日は各チームのコメントに個別記載）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1、teamDatabase.starPlayers[].injuryRisk）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": []
+        }
+      },
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 9,
+      "homeTeam": "川崎フロンターレ",
+      "awayTeam": "ファジアーノ岡山",
+      "probabilities": {
+        "0": 0.1874,
+        "1": 0.6183,
+        "2": 0.1943
+      },
+      "predictedAt": "2026-10-22T18:09:12Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（claude.ai/code/artifact/2d0d0f2e-aece-437a-9bac-ea829805d7c4）のpredictScore()内部で使われているcalculateOutcomeProbabilitiesCore()（V2）・poissonProbability()・teamDatabaseの該当クラブのエントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。アプリ自体は変更していない（外部で同一ロジックを複製して実行）。",
+        "retrievedAt": "2026-10-22T18:09:12Z（アプリHTML内のteamDatabase記載時点の鮮度更新日は各チームのコメントに個別記載）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1、teamDatabase.starPlayers[].injuryRisk）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": []
+        }
+      },
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 10,
+      "homeTeam": "浦和レッズ",
+      "awayTeam": "V・ファーレン長崎",
+      "probabilities": {
+        "0": 0.1819,
+        "1": 0.6856,
+        "2": 0.1324
+      },
+      "predictedAt": "2026-10-22T18:09:12Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（claude.ai/code/artifact/2d0d0f2e-aece-437a-9bac-ea829805d7c4）のpredictScore()内部で使われているcalculateOutcomeProbabilitiesCore()（V2）・poissonProbability()・teamDatabaseの該当クラブのエントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。アプリ自体は変更していない（外部で同一ロジックを複製して実行）。",
+        "retrievedAt": "2026-10-22T18:09:12Z（アプリHTML内のteamDatabase記載時点の鮮度更新日は各チームのコメントに個別記載）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1、teamDatabase.starPlayers[].injuryRisk）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "V・ファーレン長崎",
+              "player": "ノーマン・キャンベル",
+              "injuryRiskScore": 0.8
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 11,
+      "homeTeam": "ブラウブリッツ秋田",
+      "awayTeam": "FC今治",
+      "probabilities": {
+        "0": 0.418,
+        "1": 0.3215,
+        "2": 0.2605
+      },
+      "predictedAt": "2026-10-22T18:09:12Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（claude.ai/code/artifact/2d0d0f2e-aece-437a-9bac-ea829805d7c4）のpredictScore()内部で使われているcalculateOutcomeProbabilitiesCore()（V2）・poissonProbability()・teamDatabaseの該当クラブのエントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。アプリ自体は変更していない（外部で同一ロジックを複製して実行）。",
+        "retrievedAt": "2026-10-22T18:09:12Z（アプリHTML内のteamDatabase記載時点の鮮度更新日は各チームのコメントに個別記載）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1、teamDatabase.starPlayers[].injuryRisk）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": []
+        }
+      },
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 12,
+      "homeTeam": "サガン鳥栖",
+      "awayTeam": "ヴァンラーレ八戸",
+      "probabilities": {
+        "0": 0.3234,
+        "1": 0.4407,
+        "2": 0.2359
+      },
+      "predictedAt": "2026-10-22T18:09:12Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（claude.ai/code/artifact/2d0d0f2e-aece-437a-9bac-ea829805d7c4）のpredictScore()内部で使われているcalculateOutcomeProbabilitiesCore()（V2）・poissonProbability()・teamDatabaseの該当クラブのエントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。アプリ自体は変更していない（外部で同一ロジックを複製して実行）。",
+        "retrievedAt": "2026-10-22T18:09:12Z（アプリHTML内のteamDatabase記載時点の鮮度更新日は各チームのコメントに個別記載）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1、teamDatabase.starPlayers[].injuryRisk）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": []
+        }
+      },
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+    },
+    {
+      "round": 1665,
+      "matchNumber": 13,
+      "homeTeam": "カターレ富山",
+      "awayTeam": "北海道コンサドーレ札幌",
+      "probabilities": {
+        "0": 0.4297,
+        "1": 0.2461,
+        "2": 0.3242
+      },
+      "predictedAt": "2026-10-22T18:09:12Z",
+      "dataSource": {
+        "name": "Claude側totoGOAL3アプリ（claude.ai/code/artifact/2d0d0f2e-aece-437a-9bac-ea829805d7c4）のpredictScore()内部で使われているcalculateOutcomeProbabilitiesCore()（V2）・poissonProbability()・teamDatabaseの該当クラブのエントリ（2026-10-20＝第1664回開催日前日時点の鮮度更新値）を、アプリのソースから忠実に転記・再現して計算した値。アプリ自体は変更していない（外部で同一ロジックを複製して実行）。",
+        "retrievedAt": "2026-10-22T18:09:12Z（アプリHTML内のteamDatabase記載時点の鮮度更新日は各チームのコメントに個別記載）"
+      },
+      "injuryInfo": {
+        "suspensions": "未取得（出場停止ステータスを管理する機能がありません）",
+        "injuries": {
+          "status": "統計的な欠場リスク値（0〜1、teamDatabase.starPlayers[].injuryRisk）のみ保持。個別の負傷名・罹患日等の詳細情報は未取得",
+          "flagged": [
+            {
+              "team": "カターレ富山",
+              "player": "亀田歩夢",
+              "injuryRiskScore": 0.95
+            }
+          ]
+        }
+      },
+      "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2, Dixon-Coles低スコア補正+drawBoost込み, totoGOAL3 artifact版の実コードをそのまま複製）"
+    }
+  ]
+}
