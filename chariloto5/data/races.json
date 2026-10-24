@@ -2188,6 +2188,556 @@
   "source": "https://www.chariloto.com/keirin/results/61/2026-08-04"
  },
  {
+  "velodrome_code": 73,
+  "velodrome": "小松島",
+  "date": "2026-08-04",
+  "day_label": "初日",
+  "grade": "F1",
+  "num_races": 12,
+  "c5_races": [
+   {
+    "race": 8,
+    "name": "S級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "鈴木  裕",
+      "age": 41,
+      "pref": "千葉",
+      "term": 92,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": "S"
+     },
+     {
+      "car": 2,
+      "name": "隅田 洋介",
+      "age": 38,
+      "pref": "岡山",
+      "term": 107,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "佐藤 壮志",
+      "age": 22,
+      "pref": "熊本",
+      "term": 123,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "逃げ",
+      "sb": "B"
+     },
+     {
+      "car": 4,
+      "name": "西田 雅志",
+      "age": 48,
+      "pref": "広島",
+      "term": 82,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "宮崎 大空",
+      "age": 27,
+      "pref": "熊本",
+      "term": 115,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "坂本 亮馬",
+      "age": 41,
+      "pref": "福岡",
+      "term": 90,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "成清 貴之",
+      "age": 52,
+      "pref": "千葉",
+      "term": 73,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      7
+     ],
+     [
+      2
+     ],
+     [
+      3,
+      5,
+      6
+     ],
+     [
+      4
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": 2160,
+    "trifecta": 5390
+   },
+   {
+    "race": 9,
+    "name": "S級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "野崎 将史",
+      "age": 39,
+      "pref": "岡山",
+      "term": 109,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": "S"
+     },
+     {
+      "car": 2,
+      "name": "桐山敬太郎",
+      "age": 44,
+      "pref": "神奈",
+      "term": 88,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "小堺 浩二",
+      "age": 43,
+      "pref": "石川",
+      "term": 91,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "外田 心斗",
+      "age": 28,
+      "pref": "愛媛",
+      "term": 115,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": "B"
+     },
+     {
+      "car": 5,
+      "name": "川村 晃司",
+      "age": 50,
+      "pref": "京都",
+      "term": 85,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "栗本 武典",
+      "age": 30,
+      "pref": "千葉",
+      "term": 119,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "濱田 浩司",
+      "age": 47,
+      "pref": "愛媛",
+      "term": 81,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      4,
+      7,
+      1
+     ],
+     [
+      6,
+      2
+     ],
+     [
+      3,
+      5
+     ]
+    ],
+    "winners": [
+     4
+    ],
+    "exacta": 270,
+    "trifecta": 460
+   },
+   {
+    "race": 10,
+    "name": "S級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "小川 丈太",
+      "age": 31,
+      "pref": "徳島",
+      "term": 111,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": "S"
+     },
+     {
+      "car": 2,
+      "name": "佐藤 雅春",
+      "age": 39,
+      "pref": "宮城",
+      "term": 94,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "中村 一将",
+      "age": 50,
+      "pref": "兵庫",
+      "term": 86,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "三谷 政史",
+      "age": 43,
+      "pref": "奈良",
+      "term": 93,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "掛水 泰範",
+      "age": 42,
+      "pref": "高知",
+      "term": 98,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "佐々木亮太",
+      "age": 22,
+      "pref": "青森",
+      "term": 125,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 7,
+      "name": "今野 有樹",
+      "age": 29,
+      "pref": "愛媛",
+      "term": 115,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      5,
+      7
+     ],
+     [
+      6,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "winners": [
+     3
+    ],
+    "exacta": 4690,
+    "trifecta": 73890
+   },
+   {
+    "race": 11,
+    "name": "S級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "棚瀬 義大",
+      "age": 26,
+      "pref": "岐阜",
+      "term": 123,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": "SB"
+     },
+     {
+      "car": 2,
+      "name": "本郷 雄三",
+      "age": 38,
+      "pref": "熊本",
+      "term": 99,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "平原 啓多",
+      "age": 41,
+      "pref": "埼玉",
+      "term": 97,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "森川 大輔",
+      "age": 39,
+      "pref": "岐阜",
+      "term": 92,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "橋本 宇宙",
+      "age": 26,
+      "pref": "佐賀",
+      "term": 123,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "高橋 広大",
+      "age": 39,
+      "pref": "埼玉",
+      "term": 99,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "小笠原 光",
+      "age": 30,
+      "pref": "熊本",
+      "term": 117,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      4,
+      3
+     ],
+     [
+      5,
+      7,
+      2
+     ],
+     [
+      6
+     ]
+    ],
+    "winners": [
+     4
+    ],
+    "exacta": 2920,
+    "trifecta": 2970
+   },
+   {
+    "race": 12,
+    "name": "S級初特選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "河村 雅章",
+      "age": 43,
+      "pref": "東京",
+      "term": 92,
+      "grade": "S1",
+      "finish": 2,
+      "kimarite": "差し",
+      "sb": "S"
+     },
+     {
+      "car": 2,
+      "name": "小川真太郎",
+      "age": 34,
+      "pref": "徳島",
+      "term": 107,
+      "grade": "S1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "立部 楓真",
+      "age": 28,
+      "pref": "佐賀",
+      "term": 115,
+      "grade": "S1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "芦澤 辰弘",
+      "age": 38,
+      "pref": "茨城",
+      "term": 95,
+      "grade": "S1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "神田 紘輔",
+      "age": 40,
+      "pref": "大阪",
+      "term": 100,
+      "grade": "S1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "小川 賢人",
+      "age": 41,
+      "pref": "福岡",
+      "term": 103,
+      "grade": "S1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "菅原 大也",
+      "age": 35,
+      "pref": "神奈",
+      "term": 107,
+      "grade": "S1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": "B"
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      7,
+      1
+     ],
+     [
+      4
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      3,
+      6
+     ]
+    ],
+    "winners": [
+     5
+    ],
+    "exacta": 3390,
+    "trifecta": 7990
+   }
+  ],
+  "chariloto5": {
+   "carryover_in": 2850,
+   "sold_units": 5,
+   "sales": 500,
+   "hit_units": 0,
+   "carryover_out": 3225,
+   "winning_numbers": [
+    1,
+    4,
+    3,
+    4,
+    5
+   ],
+   "payout": null
+  },
+  "source": "https://www.chariloto.com/keirin/results/73/2026-08-04"
+ },
+ {
   "velodrome_code": 45,
   "velodrome": "豊橋",
   "date": "2026-08-05",
@@ -3288,6 +3838,557 @@
   "source": "https://www.chariloto.com/keirin/results/61/2026-08-05"
  },
  {
+  "velodrome_code": 73,
+  "velodrome": "小松島",
+  "date": "2026-08-05",
+  "day_label": "2日目",
+  "grade": "F1",
+  "num_races": 12,
+  "c5_races": [
+   {
+    "race": 8,
+    "name": "S級選抜",
+    "riders": [
+     {
+      "car": 1,
+      "name": "川村 晃司",
+      "age": 50,
+      "pref": "京都",
+      "term": 85,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": "B"
+     },
+     {
+      "car": 2,
+      "name": "掛水 泰範",
+      "age": 42,
+      "pref": "高知",
+      "term": 98,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": "S"
+     },
+     {
+      "car": 3,
+      "name": "佐藤 雅春",
+      "age": 39,
+      "pref": "宮城",
+      "term": 94,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "宮崎 大空",
+      "age": 27,
+      "pref": "熊本",
+      "term": 115,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "三谷 政史",
+      "age": 43,
+      "pref": "奈良",
+      "term": 93,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "高橋 広大",
+      "age": 39,
+      "pref": "埼玉",
+      "term": 99,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "田村  大",
+      "age": 28,
+      "pref": "宮崎",
+      "term": 119,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "逃げ",
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      7,
+      4,
+      2
+     ],
+     [
+      1
+     ],
+     [
+      5
+     ],
+     [
+      3
+     ],
+     [
+      6
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": 1960,
+    "trifecta": 10730
+   },
+   {
+    "race": 9,
+    "name": "S級選抜",
+    "riders": [
+     {
+      "car": 1,
+      "name": "西田 雅志",
+      "age": 48,
+      "pref": "広島",
+      "term": 82,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "成清 貴之",
+      "age": 52,
+      "pref": "千葉",
+      "term": 73,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "永井 哉多",
+      "age": 24,
+      "pref": "東京",
+      "term": 121,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "逃げ",
+      "sb": "B"
+     },
+     {
+      "car": 4,
+      "name": "野崎 将史",
+      "age": 39,
+      "pref": "岡山",
+      "term": 109,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "石川 裕二",
+      "age": 42,
+      "pref": "茨城",
+      "term": 99,
+      "grade": "S2",
+      "finish": null,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "桐山敬太郎",
+      "age": 44,
+      "pref": "神奈",
+      "term": 88,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "本郷 雄三",
+      "age": 38,
+      "pref": "熊本",
+      "term": 99,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": "S"
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      3,
+      5,
+      6
+     ],
+     [
+      7
+     ],
+     [
+      1
+     ],
+     [
+      4
+     ]
+    ],
+    "winners": [
+     7
+    ],
+    "exacta": 950,
+    "trifecta": 5820
+   },
+   {
+    "race": 10,
+    "name": "S級準決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "立部 楓真",
+      "age": 28,
+      "pref": "佐賀",
+      "term": 115,
+      "grade": "S1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": "SB"
+     },
+     {
+      "car": 2,
+      "name": "小川 丈太",
+      "age": 31,
+      "pref": "徳島",
+      "term": 111,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "松村 友和",
+      "age": 46,
+      "pref": "大阪",
+      "term": 88,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "宿口 潤平",
+      "age": 44,
+      "pref": "埼玉",
+      "term": 91,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "濱田 浩司",
+      "age": 47,
+      "pref": "愛媛",
+      "term": 81,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "中村 一将",
+      "age": 50,
+      "pref": "兵庫",
+      "term": 86,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "河村 雅章",
+      "age": 43,
+      "pref": "東京",
+      "term": 92,
+      "grade": "S1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      2,
+      5
+     ],
+     [
+      3,
+      6
+     ],
+     [
+      7,
+      4
+     ]
+    ],
+    "winners": [
+     2
+    ],
+    "exacta": 460,
+    "trifecta": 850
+   },
+   {
+    "race": 11,
+    "name": "S級準決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "芦澤 辰弘",
+      "age": 38,
+      "pref": "茨城",
+      "term": 95,
+      "grade": "S1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": "S"
+     },
+     {
+      "car": 2,
+      "name": "増原 正人",
+      "age": 43,
+      "pref": "広島",
+      "term": 98,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "棚瀬 義大",
+      "age": 26,
+      "pref": "岐阜",
+      "term": 123,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "逃げ",
+      "sb": "B"
+     },
+     {
+      "car": 4,
+      "name": "神田 紘輔",
+      "age": 40,
+      "pref": "大阪",
+      "term": 100,
+      "grade": "S1",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "菅原 大也",
+      "age": 35,
+      "pref": "神奈",
+      "term": 107,
+      "grade": "S1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "月森 亮輔",
+      "age": 34,
+      "pref": "岡山",
+      "term": 101,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "中田 健太",
+      "age": 36,
+      "pref": "埼玉",
+      "term": 99,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      5,
+      1,
+      7
+     ],
+     [
+      6,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "winners": [
+     3
+    ],
+    "exacta": 710,
+    "trifecta": 2410
+   },
+   {
+    "race": 12,
+    "name": "S級準決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "小川真太郎",
+      "age": 34,
+      "pref": "徳島",
+      "term": 107,
+      "grade": "S1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": "S"
+     },
+     {
+      "car": 2,
+      "name": "鈴木  裕",
+      "age": 41,
+      "pref": "千葉",
+      "term": 92,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "小川 賢人",
+      "age": 41,
+      "pref": "福岡",
+      "term": 103,
+      "grade": "S1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "佐藤 壮志",
+      "age": 22,
+      "pref": "熊本",
+      "term": 123,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "逃げ",
+      "sb": "B"
+     },
+     {
+      "car": 5,
+      "name": "外田 心斗",
+      "age": 28,
+      "pref": "愛媛",
+      "term": 115,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "平原 啓多",
+      "age": 41,
+      "pref": "埼玉",
+      "term": 97,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "森川 大輔",
+      "age": 39,
+      "pref": "岐阜",
+      "term": 92,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      5,
+      1,
+      7
+     ],
+     [
+      2
+     ],
+     [
+      4,
+      3,
+      6
+     ]
+    ],
+    "winners": [
+     3
+    ],
+    "exacta": 3090,
+    "trifecta": 11970
+   }
+  ],
+  "chariloto5": {
+   "carryover_in": 3225,
+   "sold_units": 18,
+   "sales": 1800,
+   "hit_units": 0,
+   "carryover_out": 4575,
+   "winning_numbers": [
+    1,
+    7,
+    2,
+    3,
+    3
+   ],
+   "payout": null
+  },
+  "source": "https://www.chariloto.com/keirin/results/73/2026-08-05"
+ },
+ {
   "velodrome_code": 45,
   "velodrome": "豊橋",
   "date": "2026-08-06",
@@ -3824,6 +4925,552 @@
    "payout": null
   },
   "source": "https://www.chariloto.com/keirin/results/45/2026-08-06"
+ },
+ {
+  "velodrome_code": 73,
+  "velodrome": "小松島",
+  "date": "2026-08-06",
+  "day_label": "最終日",
+  "grade": "F1",
+  "num_races": 12,
+  "c5_races": [
+   {
+    "race": 8,
+    "name": "S級特選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "森川 大輔",
+      "age": 39,
+      "pref": "岐阜",
+      "term": 92,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": "S"
+     },
+     {
+      "car": 2,
+      "name": "立部 楓真",
+      "age": 28,
+      "pref": "佐賀",
+      "term": 115,
+      "grade": "S1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 3,
+      "name": "宿口 潤平",
+      "age": 44,
+      "pref": "埼玉",
+      "term": 91,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "松尾  透",
+      "age": 41,
+      "pref": "福岡",
+      "term": 96,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "鈴木  裕",
+      "age": 41,
+      "pref": "千葉",
+      "term": 92,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "平原 啓多",
+      "age": 41,
+      "pref": "埼玉",
+      "term": 97,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "小堺 浩二",
+      "age": 43,
+      "pref": "石川",
+      "term": 91,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "差し",
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      7,
+      1
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      3,
+      6
+     ]
+    ],
+    "winners": [
+     4
+    ],
+    "exacta": 5300,
+    "trifecta": 16450
+   },
+   {
+    "race": 9,
+    "name": "S級特選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "永井 哉多",
+      "age": 24,
+      "pref": "東京",
+      "term": 121,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "松村 友和",
+      "age": 46,
+      "pref": "大阪",
+      "term": 88,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "増原 正人",
+      "age": 43,
+      "pref": "広島",
+      "term": 98,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "月森 亮輔",
+      "age": 34,
+      "pref": "岡山",
+      "term": 101,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": "S"
+     },
+     {
+      "car": 5,
+      "name": "芦澤 辰弘",
+      "age": 38,
+      "pref": "茨城",
+      "term": 95,
+      "grade": "S1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "中村 一将",
+      "age": 50,
+      "pref": "兵庫",
+      "term": 86,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "外田 心斗",
+      "age": 28,
+      "pref": "愛媛",
+      "term": 115,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "逃げ",
+      "sb": "B"
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      7,
+      4,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      6
+     ]
+    ],
+    "winners": [
+     7
+    ],
+    "exacta": 4360,
+    "trifecta": 21090
+   },
+   {
+    "race": 10,
+    "name": "S級特選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "菅原 大也",
+      "age": 35,
+      "pref": "神奈",
+      "term": 107,
+      "grade": "S1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 2,
+      "name": "田村  大",
+      "age": 28,
+      "pref": "宮崎",
+      "term": 119,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "河村 雅章",
+      "age": 43,
+      "pref": "東京",
+      "term": 92,
+      "grade": "S1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "中田 健太",
+      "age": 36,
+      "pref": "埼玉",
+      "term": 99,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": "S"
+     },
+     {
+      "car": 5,
+      "name": "本郷 雄三",
+      "age": 38,
+      "pref": "熊本",
+      "term": 99,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "高橋 広大",
+      "age": 39,
+      "pref": "埼玉",
+      "term": 99,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "川村 晃司",
+      "age": 50,
+      "pref": "京都",
+      "term": 85,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "捲くり",
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      3,
+      4,
+      6
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      7
+     ]
+    ],
+    "winners": [
+     4
+    ],
+    "exacta": 15430,
+    "trifecta": 102230
+   },
+   {
+    "race": 11,
+    "name": "A級決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "一丸 尚伍",
+      "age": 34,
+      "pref": "大分",
+      "term": 121,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "犬塚 貴之",
+      "age": 25,
+      "pref": "愛知",
+      "term": 117,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": "S"
+     },
+     {
+      "car": 3,
+      "name": "小笠原一真",
+      "age": 26,
+      "pref": "青森",
+      "term": 123,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "鷲田 佳史",
+      "age": 43,
+      "pref": "福井",
+      "term": 88,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "枝村 弘樹",
+      "age": 27,
+      "pref": "宮崎",
+      "term": 123,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "真木 寛斗",
+      "age": 23,
+      "pref": "愛知",
+      "term": 127,
+      "grade": "A2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "稲留 敦貴",
+      "age": 25,
+      "pref": "鹿児",
+      "term": 125,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": "B"
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      6,
+      2,
+      4
+     ],
+     [
+      7,
+      5,
+      1
+     ],
+     [
+      3
+     ]
+    ],
+    "winners": [
+     3
+    ],
+    "exacta": 800,
+    "trifecta": 16460
+   },
+   {
+    "race": 12,
+    "name": "S級決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "小川真太郎",
+      "age": 34,
+      "pref": "徳島",
+      "term": 107,
+      "grade": "S1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "小川 賢人",
+      "age": 41,
+      "pref": "福岡",
+      "term": 103,
+      "grade": "S1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "神田 紘輔",
+      "age": 40,
+      "pref": "大阪",
+      "term": 100,
+      "grade": "S1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "濱田 浩司",
+      "age": 47,
+      "pref": "愛媛",
+      "term": 81,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "棚瀬 義大",
+      "age": 26,
+      "pref": "岐阜",
+      "term": 123,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "佐藤 壮志",
+      "age": 22,
+      "pref": "熊本",
+      "term": 123,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 7,
+      "name": "小川 丈太",
+      "age": 31,
+      "pref": "徳島",
+      "term": 111,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "捲くり",
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      7,
+      1,
+      4
+     ],
+     [
+      6,
+      2
+     ],
+     [
+      5,
+      3
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": 1480,
+    "trifecta": 3240
+   }
+  ],
+  "chariloto5": {
+   "carryover_in": 4575,
+   "sold_units": 76,
+   "sales": 7600,
+   "hit_units": 0,
+   "carryover_out": 10275,
+   "winning_numbers": [
+    4,
+    7,
+    4,
+    3,
+    1
+   ],
+   "payout": null
+  },
+  "source": "https://www.chariloto.com/keirin/results/73/2026-08-06"
  },
  {
   "velodrome_code": 45,
@@ -25430,6 +27077,552 @@
   "source": "https://www.chariloto.com/keirin/results/61/2026-08-27"
  },
  {
+  "velodrome_code": 73,
+  "velodrome": "小松島",
+  "date": "2026-08-27",
+  "day_label": "初日",
+  "grade": "F2",
+  "num_races": 9,
+  "c5_races": [
+   {
+    "race": 5,
+    "name": "A級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "蒋野 翔太",
+      "age": 31,
+      "pref": "徳島",
+      "term": 115,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "上田  学",
+      "age": 55,
+      "pref": "愛媛",
+      "term": 69,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": "S"
+     },
+     {
+      "car": 3,
+      "name": "関根 彰人",
+      "age": 38,
+      "pref": "沖縄",
+      "term": 94,
+      "grade": "A2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "橋本 勝弘",
+      "age": 44,
+      "pref": "愛媛",
+      "term": 89,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "松尾 大樹",
+      "age": 45,
+      "pref": "長崎",
+      "term": 87,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "高鍋 邦彰",
+      "age": 39,
+      "pref": "福岡",
+      "term": 95,
+      "grade": "A2",
+      "finish": 2,
+      "kimarite": "逃げ",
+      "sb": "B"
+     },
+     {
+      "car": 7,
+      "name": "中野 真吾",
+      "age": 39,
+      "pref": "佐賀",
+      "term": 111,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      2,
+      4
+     ],
+     [
+      6,
+      3
+     ],
+     [
+      7,
+      5
+     ]
+    ],
+    "winners": [
+     2
+    ],
+    "exacta": 7930,
+    "trifecta": 36910
+   },
+   {
+    "race": 6,
+    "name": "A級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "名川  豊",
+      "age": 35,
+      "pref": "福岡",
+      "term": 99,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "利根 正明",
+      "age": 36,
+      "pref": "大分",
+      "term": 97,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "逃げ",
+      "sb": "SB"
+     },
+     {
+      "car": 3,
+      "name": "矢口啓一郎",
+      "age": 46,
+      "pref": "群馬",
+      "term": 86,
+      "grade": "A2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "桶谷 明誉",
+      "age": 37,
+      "pref": "広島",
+      "term": 94,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "須藤 直道",
+      "age": 54,
+      "pref": "群馬",
+      "term": 68,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "守安 政雄",
+      "age": 48,
+      "pref": "岡山",
+      "term": 94,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "大澤 裕之",
+      "age": 54,
+      "pref": "埼玉",
+      "term": 71,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      2,
+      1,
+      4,
+      6
+     ],
+     [
+      3,
+      5,
+      7
+     ]
+    ],
+    "winners": [
+     2
+    ],
+    "exacta": 510,
+    "trifecta": 1510
+   },
+   {
+    "race": 7,
+    "name": "A級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "中田 拓也",
+      "age": 30,
+      "pref": "広島",
+      "term": 127,
+      "grade": "A2",
+      "finish": 2,
+      "kimarite": "逃げ",
+      "sb": "B"
+     },
+     {
+      "car": 2,
+      "name": "寺師 幸成",
+      "age": 35,
+      "pref": "鹿児",
+      "term": 125,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": "S"
+     },
+     {
+      "car": 3,
+      "name": "吉永 好宏",
+      "age": 51,
+      "pref": "広島",
+      "term": 80,
+      "grade": "A1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "二條 祐也",
+      "age": 41,
+      "pref": "徳島",
+      "term": 97,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "藤野 貴章",
+      "age": 38,
+      "pref": "佐賀",
+      "term": 97,
+      "grade": "A2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "鈴木 愼二",
+      "age": 52,
+      "pref": "神奈",
+      "term": 74,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "松山 正和",
+      "age": 55,
+      "pref": "静岡",
+      "term": 76,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      3,
+      4
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      6
+     ],
+     [
+      7
+     ]
+    ],
+    "winners": [
+     2
+    ],
+    "exacta": 2090,
+    "trifecta": 7490
+   },
+   {
+    "race": 8,
+    "name": "A級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "富  弥昭",
+      "age": 54,
+      "pref": "山口",
+      "term": 76,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "多田 晃紀",
+      "age": 33,
+      "pref": "岡山",
+      "term": 103,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "捲くり",
+      "sb": "SB"
+     },
+     {
+      "car": 3,
+      "name": "松岡 孝高",
+      "age": 40,
+      "pref": "熊本",
+      "term": 98,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "緒方慎太朗",
+      "age": 27,
+      "pref": "熊本",
+      "term": 115,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "楢原 由将",
+      "age": 39,
+      "pref": "福岡",
+      "term": 94,
+      "grade": "A2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "藤田 洋平",
+      "age": 40,
+      "pref": "徳島",
+      "term": 93,
+      "grade": "A2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "米原 大輔",
+      "age": 46,
+      "pref": "沖縄",
+      "term": 86,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      2,
+      1,
+      6
+     ],
+     [
+      4,
+      3,
+      5
+     ],
+     [
+      7
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": 450,
+    "trifecta": 1400
+   },
+   {
+    "race": 9,
+    "name": "A級初特選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "今野 大輔",
+      "age": 32,
+      "pref": "岡山",
+      "term": 111,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "内山 雅貴",
+      "age": 31,
+      "pref": "静岡",
+      "term": 113,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": "S"
+     },
+     {
+      "car": 3,
+      "name": "山本 浩成",
+      "age": 28,
+      "pref": "福岡",
+      "term": 119,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 4,
+      "name": "松澤 敬輔",
+      "age": 38,
+      "pref": "北海",
+      "term": 97,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "松尾 勇吾",
+      "age": 27,
+      "pref": "熊本",
+      "term": 115,
+      "grade": "A1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "佐々木省司",
+      "age": 48,
+      "pref": "青森",
+      "term": 86,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "原井 剣也",
+      "age": 32,
+      "pref": "福岡",
+      "term": 119,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      3,
+      7,
+      5
+     ],
+     [
+      1
+     ],
+     [
+      2,
+      4,
+      6
+     ]
+    ],
+    "winners": [
+     2
+    ],
+    "exacta": 430,
+    "trifecta": 2070
+   }
+  ],
+  "chariloto5": {
+   "carryover_in": 1050,
+   "sold_units": 13,
+   "sales": 1300,
+   "hit_units": 0,
+   "carryover_out": 2025,
+   "winning_numbers": [
+    2,
+    2,
+    2,
+    1,
+    2
+   ],
+   "payout": null
+  },
+  "source": "https://www.chariloto.com/keirin/results/73/2026-08-27"
+ },
+ {
   "velodrome_code": 61,
   "velodrome": "玉野",
   "date": "2026-08-28",
@@ -25982,6 +28175,549 @@
   "source": "https://www.chariloto.com/keirin/results/61/2026-08-28"
  },
  {
+  "velodrome_code": 73,
+  "velodrome": "小松島",
+  "date": "2026-08-28",
+  "day_label": "2日目",
+  "grade": "F2",
+  "num_races": 9,
+  "c5_races": [
+   {
+    "race": 5,
+    "name": "A級選抜",
+    "riders": [
+     {
+      "car": 1,
+      "name": "櫻木 雄太",
+      "age": 25,
+      "pref": "福岡",
+      "term": 123,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": "S"
+     },
+     {
+      "car": 2,
+      "name": "川崎 健次",
+      "age": 47,
+      "pref": "神奈",
+      "term": 88,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "蒋野 翔太",
+      "age": 31,
+      "pref": "徳島",
+      "term": 115,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 4,
+      "name": "二條 祐也",
+      "age": 41,
+      "pref": "徳島",
+      "term": 97,
+      "grade": "A1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "藤野 貴章",
+      "age": 38,
+      "pref": "佐賀",
+      "term": 97,
+      "grade": "A2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "鈴木 愼二",
+      "age": 52,
+      "pref": "神奈",
+      "term": 74,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "藤田 洋平",
+      "age": 40,
+      "pref": "徳島",
+      "term": 93,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      6
+     ],
+     [
+      3,
+      4,
+      7
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": 780,
+    "trifecta": 2070
+   },
+   {
+    "race": 6,
+    "name": "A級選抜",
+    "riders": [
+     {
+      "car": 1,
+      "name": "安部 達也",
+      "age": 48,
+      "pref": "埼玉",
+      "term": 83,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "森田 康嗣",
+      "age": 44,
+      "pref": "北海",
+      "term": 89,
+      "grade": "A2",
+      "finish": 1,
+      "kimarite": "逃げ",
+      "sb": "SB"
+     },
+     {
+      "car": 3,
+      "name": "関根 彰人",
+      "age": 38,
+      "pref": "沖縄",
+      "term": 94,
+      "grade": "A2",
+      "finish": 2,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "橋本 勝弘",
+      "age": 44,
+      "pref": "愛媛",
+      "term": 89,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "内村 泰三",
+      "age": 52,
+      "pref": "山口",
+      "term": 72,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "守安 政雄",
+      "age": 48,
+      "pref": "岡山",
+      "term": 94,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "米原 大輔",
+      "age": 46,
+      "pref": "沖縄",
+      "term": 86,
+      "grade": "A2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      2,
+      1,
+      3,
+      7
+     ],
+     [
+      5
+     ],
+     [
+      6
+     ]
+    ],
+    "winners": [
+     2
+    ],
+    "exacta": 440,
+    "trifecta": 1160
+   },
+   {
+    "race": 7,
+    "name": "A級準決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "山本 浩成",
+      "age": 28,
+      "pref": "福岡",
+      "term": 119,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "逃げ",
+      "sb": "SB"
+     },
+     {
+      "car": 2,
+      "name": "松尾 勇吾",
+      "age": 27,
+      "pref": "熊本",
+      "term": 115,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "富  弥昭",
+      "age": 54,
+      "pref": "山口",
+      "term": 76,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "中田 拓也",
+      "age": 30,
+      "pref": "広島",
+      "term": 127,
+      "grade": "A2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "高橋 義秋",
+      "age": 39,
+      "pref": "大分",
+      "term": 96,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "利根 正明",
+      "age": 36,
+      "pref": "大分",
+      "term": 97,
+      "grade": "A1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "三好 陽一",
+      "age": 44,
+      "pref": "愛媛",
+      "term": 88,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      2
+     ],
+     [
+      6,
+      5
+     ],
+     [
+      4,
+      3,
+      7
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": 550,
+    "trifecta": 950
+   },
+   {
+    "race": 8,
+    "name": "A級準決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "今野 大輔",
+      "age": 32,
+      "pref": "岡山",
+      "term": 111,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "松澤 敬輔",
+      "age": 38,
+      "pref": "北海",
+      "term": 97,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "多田 晃紀",
+      "age": 33,
+      "pref": "岡山",
+      "term": 103,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "尾崎 悠生",
+      "age": 29,
+      "pref": "埼玉",
+      "term": 113,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "逃げ",
+      "sb": "B"
+     },
+     {
+      "car": 5,
+      "name": "寺師 幸成",
+      "age": 35,
+      "pref": "鹿児",
+      "term": 125,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "上田  学",
+      "age": 55,
+      "pref": "愛媛",
+      "term": 69,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "高鍋 邦彰",
+      "age": 39,
+      "pref": "福岡",
+      "term": 95,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      3,
+      1,
+      6
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      5,
+      7
+     ]
+    ],
+    "winners": [
+     4
+    ],
+    "exacta": 12580,
+    "trifecta": 26360
+   },
+   {
+    "race": 9,
+    "name": "A級準決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "内山 雅貴",
+      "age": 31,
+      "pref": "静岡",
+      "term": 113,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": "S"
+     },
+     {
+      "car": 2,
+      "name": "佐々木省司",
+      "age": 48,
+      "pref": "青森",
+      "term": 86,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "原井 剣也",
+      "age": 32,
+      "pref": "福岡",
+      "term": 119,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "名川  豊",
+      "age": 35,
+      "pref": "福岡",
+      "term": 99,
+      "grade": "A1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "成海 大聖",
+      "age": 27,
+      "pref": "大分",
+      "term": 123,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 6,
+      "name": "矢口啓一郎",
+      "age": 46,
+      "pref": "群馬",
+      "term": 86,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "仲松 勝太",
+      "age": 48,
+      "pref": "沖縄",
+      "term": 96,
+      "grade": "A2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      2,
+      6
+     ],
+     [
+      5,
+      3,
+      4,
+      7
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": 180,
+    "trifecta": 9780
+   }
+  ],
+  "chariloto5": {
+   "carryover_in": 2025,
+   "sold_units": 5,
+   "sales": 500,
+   "hit_units": 0,
+   "carryover_out": 2400,
+   "winning_numbers": [
+    1,
+    2,
+    1,
+    4,
+    1
+   ],
+   "payout": null
+  },
+  "source": "https://www.chariloto.com/keirin/results/73/2026-08-28"
+ },
+ {
   "velodrome_code": 81,
   "velodrome": "小倉",
   "date": "2026-08-28",
@@ -26528,6 +29264,562 @@
    "payout": null
   },
   "source": "https://www.chariloto.com/keirin/results/81/2026-08-28"
+ },
+ {
+  "velodrome_code": 73,
+  "velodrome": "小松島",
+  "date": "2026-08-29",
+  "day_label": "最終日",
+  "grade": "F2",
+  "num_races": 9,
+  "c5_races": [
+   {
+    "race": 5,
+    "name": "A級特選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "松尾 勇吾",
+      "age": 27,
+      "pref": "熊本",
+      "term": 115,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": "S"
+     },
+     {
+      "car": 2,
+      "name": "川崎 健次",
+      "age": 47,
+      "pref": "神奈",
+      "term": 88,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "矢口啓一郎",
+      "age": 46,
+      "pref": "群馬",
+      "term": 86,
+      "grade": "A2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 4,
+      "name": "寺師 幸成",
+      "age": 35,
+      "pref": "鹿児",
+      "term": 125,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "緒方慎太朗",
+      "age": 27,
+      "pref": "熊本",
+      "term": 115,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "仲松 勝太",
+      "age": 48,
+      "pref": "沖縄",
+      "term": 96,
+      "grade": "A2",
+      "finish": 2,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "関根 彰人",
+      "age": 38,
+      "pref": "沖縄",
+      "term": 94,
+      "grade": "A2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      5,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      4,
+      6,
+      7
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": 5350,
+    "trifecta": 32390
+   },
+   {
+    "race": 6,
+    "name": "A級特選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "松澤 敬輔",
+      "age": 38,
+      "pref": "北海",
+      "term": 97,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "名川  豊",
+      "age": 35,
+      "pref": "福岡",
+      "term": 99,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "森田 康嗣",
+      "age": 44,
+      "pref": "北海",
+      "term": 89,
+      "grade": "A2",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": "S"
+     },
+     {
+      "car": 4,
+      "name": "利根 正明",
+      "age": 36,
+      "pref": "大分",
+      "term": 97,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 5,
+      "name": "藤野 貴章",
+      "age": 38,
+      "pref": "佐賀",
+      "term": 97,
+      "grade": "A2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "高鍋 邦彰",
+      "age": 39,
+      "pref": "福岡",
+      "term": 95,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "中野 真吾",
+      "age": 39,
+      "pref": "佐賀",
+      "term": 111,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      7,
+      5
+     ],
+     [
+      2,
+      6
+     ]
+    ],
+    "winners": [
+     3
+    ],
+    "exacta": 540,
+    "trifecta": 1710
+   },
+   {
+    "race": 7,
+    "name": "A級特選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "原井 剣也",
+      "age": 32,
+      "pref": "福岡",
+      "term": 119,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "中田 拓也",
+      "age": 30,
+      "pref": "広島",
+      "term": 127,
+      "grade": "A2",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": "B"
+     },
+     {
+      "car": 3,
+      "name": "櫻木 雄太",
+      "age": 25,
+      "pref": "福岡",
+      "term": 123,
+      "grade": "A1",
+      "finish": null,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "高橋 義秋",
+      "age": 39,
+      "pref": "大分",
+      "term": 96,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "成海 大聖",
+      "age": 27,
+      "pref": "大分",
+      "term": 123,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "上田  学",
+      "age": 55,
+      "pref": "愛媛",
+      "term": 69,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": "S"
+     },
+     {
+      "car": 7,
+      "name": "三好 陽一",
+      "age": 44,
+      "pref": "愛媛",
+      "term": 88,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      3,
+      1
+     ],
+     [
+      2,
+      6,
+      7
+     ],
+     [
+      5,
+      4
+     ]
+    ],
+    "winners": [
+     2
+    ],
+    "exacta": 400,
+    "trifecta": 1850
+   },
+   {
+    "race": 8,
+    "name": "L級ガ決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "竹野 百香",
+      "age": 24,
+      "pref": "三重",
+      "term": 124,
+      "grade": "L1",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": "B"
+     },
+     {
+      "car": 2,
+      "name": "太田 瑛美",
+      "age": 25,
+      "pref": "三重",
+      "term": 120,
+      "grade": "L1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "飯田 風音",
+      "age": 25,
+      "pref": "埼玉",
+      "term": 120,
+      "grade": "L1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "當銘沙恵美",
+      "age": 27,
+      "pref": "愛知",
+      "term": 118,
+      "grade": "L1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "林 真奈美",
+      "age": 40,
+      "pref": "福岡",
+      "term": 110,
+      "grade": "L1",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "野口諭実可",
+      "age": 34,
+      "pref": "大分",
+      "term": 102,
+      "grade": "L1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "布居  光",
+      "age": 26,
+      "pref": "和歌",
+      "term": 118,
+      "grade": "L1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      4
+     ],
+     [
+      5
+     ],
+     [
+      7
+     ],
+     [
+      1
+     ],
+     [
+      2
+     ],
+     [
+      3
+     ],
+     [
+      6
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": 1080,
+    "trifecta": 2800
+   },
+   {
+    "race": 9,
+    "name": "A級決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "今野 大輔",
+      "age": 32,
+      "pref": "岡山",
+      "term": 111,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": "S"
+     },
+     {
+      "car": 2,
+      "name": "内山 雅貴",
+      "age": 31,
+      "pref": "静岡",
+      "term": 113,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "山本 浩成",
+      "age": 28,
+      "pref": "福岡",
+      "term": 119,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 4,
+      "name": "佐々木省司",
+      "age": 48,
+      "pref": "青森",
+      "term": 86,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "富  弥昭",
+      "age": 54,
+      "pref": "山口",
+      "term": 76,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "多田 晃紀",
+      "age": 33,
+      "pref": "岡山",
+      "term": 103,
+      "grade": "A1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "尾崎 悠生",
+      "age": 29,
+      "pref": "埼玉",
+      "term": 113,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      6,
+      1,
+      5
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      3
+     ],
+     [
+      7
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": 1230,
+    "trifecta": 4370
+   }
+  ],
+  "chariloto5": {
+   "carryover_in": 2400,
+   "sold_units": 97,
+   "sales": 9700,
+   "hit_units": 0,
+   "carryover_out": 9675,
+   "winning_numbers": [
+    1,
+    3,
+    2,
+    1,
+    1
+   ],
+   "payout": null
+  },
+  "source": "https://www.chariloto.com/keirin/results/73/2026-08-29"
  },
  {
   "velodrome_code": 81,
@@ -59242,6 +62534,552 @@
   "source": "https://www.chariloto.com/keirin/results/47/2026-10-03"
  },
  {
+  "velodrome_code": 73,
+  "velodrome": "小松島",
+  "date": "2026-10-03",
+  "day_label": "初日",
+  "grade": "F2",
+  "num_races": 7,
+  "c5_races": [
+   {
+    "race": 3,
+    "name": "A級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "小原 将通",
+      "age": 39,
+      "pref": "大分",
+      "term": 92,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "鶴  淳志",
+      "age": 26,
+      "pref": "福岡",
+      "term": 127,
+      "grade": "A2",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": "B"
+     },
+     {
+      "car": 3,
+      "name": "菅田 謙仁",
+      "age": 34,
+      "pref": "宮城",
+      "term": 109,
+      "grade": "A2",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": "S"
+     },
+     {
+      "car": 4,
+      "name": "平  総一",
+      "age": 55,
+      "pref": "熊本",
+      "term": 76,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "石黒  健",
+      "age": 50,
+      "pref": "広島",
+      "term": 81,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "吉岡伸太郎",
+      "age": 33,
+      "pref": "愛媛",
+      "term": 105,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "栗林  巧",
+      "age": 45,
+      "pref": "青森",
+      "term": 89,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      3,
+      7
+     ],
+     [
+      2,
+      1,
+      4
+     ],
+     [
+      6,
+      5
+     ]
+    ],
+    "winners": [
+     2
+    ],
+    "exacta": 2010,
+    "trifecta": 5990
+   },
+   {
+    "race": 4,
+    "name": "A級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "三ッ井 武",
+      "age": 41,
+      "pref": "神奈",
+      "term": 96,
+      "grade": "A2",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": "S"
+     },
+     {
+      "car": 2,
+      "name": "松坂 侑亮",
+      "age": 28,
+      "pref": "神奈",
+      "term": 115,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 3,
+      "name": "吉永 好宏",
+      "age": 51,
+      "pref": "広島",
+      "term": 80,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "在本 直樹",
+      "age": 49,
+      "pref": "岡山",
+      "term": 93,
+      "grade": "A2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "萱島 大介",
+      "age": 46,
+      "pref": "大分",
+      "term": 99,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "黒田  篤",
+      "age": 47,
+      "pref": "栃木",
+      "term": 88,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "助川翔太郎",
+      "age": 30,
+      "pref": "埼玉",
+      "term": 123,
+      "grade": "A1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      2,
+      1,
+      3
+     ],
+     [
+      4
+     ],
+     [
+      5
+     ],
+     [
+      7,
+      6
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": 650,
+    "trifecta": 900
+   },
+   {
+    "race": 5,
+    "name": "A級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "長井 優斗",
+      "age": 39,
+      "pref": "東京",
+      "term": 95,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "中山 拓人",
+      "age": 26,
+      "pref": "埼玉",
+      "term": 121,
+      "grade": "A2",
+      "finish": 2,
+      "kimarite": "逃げ",
+      "sb": "B"
+     },
+     {
+      "car": 3,
+      "name": "表原  周",
+      "age": 35,
+      "pref": "徳島",
+      "term": 100,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": "S"
+     },
+     {
+      "car": 4,
+      "name": "竹内 優也",
+      "age": 46,
+      "pref": "北海",
+      "term": 89,
+      "grade": "A2",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "三木 健正",
+      "age": 25,
+      "pref": "岡山",
+      "term": 125,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "板崎 佑矢",
+      "age": 38,
+      "pref": "愛媛",
+      "term": 101,
+      "grade": "A2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "佐々木孝司",
+      "age": 47,
+      "pref": "青森",
+      "term": 84,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      2,
+      1
+     ],
+     [
+      5,
+      3,
+      6
+     ],
+     [
+      7,
+      4
+     ]
+    ],
+    "winners": [
+     4
+    ],
+    "exacta": 3680,
+    "trifecta": 11830
+   },
+   {
+    "race": 6,
+    "name": "A級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "荻原 寿嗣",
+      "age": 32,
+      "pref": "北海",
+      "term": 119,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "吉川 嘉斗",
+      "age": 33,
+      "pref": "徳島",
+      "term": 105,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "神開 将暢",
+      "age": 53,
+      "pref": "福岡",
+      "term": 69,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "長松 大祐",
+      "age": 28,
+      "pref": "大分",
+      "term": 121,
+      "grade": "A2",
+      "finish": 2,
+      "kimarite": "逃げ",
+      "sb": "B"
+     },
+     {
+      "car": 5,
+      "name": "白川 有司",
+      "age": 52,
+      "pref": "福岡",
+      "term": 76,
+      "grade": "A2",
+      "finish": null,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "小谷 文康",
+      "age": 48,
+      "pref": "広島",
+      "term": 94,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "米澤 大輔",
+      "age": 51,
+      "pref": "徳島",
+      "term": 73,
+      "grade": "A2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      2,
+      7,
+      6
+     ],
+     [
+      4,
+      3,
+      5
+     ]
+    ],
+    "winners": [
+     2
+    ],
+    "exacta": 1080,
+    "trifecta": 2230
+   },
+   {
+    "race": 7,
+    "name": "A級初特選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "橋本 智昭",
+      "age": 44,
+      "pref": "宮城",
+      "term": 99,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": "S"
+     },
+     {
+      "car": 2,
+      "name": "望月 一成",
+      "age": 30,
+      "pref": "静岡",
+      "term": 111,
+      "grade": "A1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 3,
+      "name": "竹内  翼",
+      "age": 35,
+      "pref": "広島",
+      "term": 109,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "藤井  將",
+      "age": 32,
+      "pref": "広島",
+      "term": 113,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "飯田 辰哉",
+      "age": 53,
+      "pref": "千葉",
+      "term": 72,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "江守  昇",
+      "age": 51,
+      "pref": "千葉",
+      "term": 73,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "中村 雅仁",
+      "age": 44,
+      "pref": "熊本",
+      "term": 90,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      7
+     ],
+     [
+      2,
+      5,
+      6
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "winners": [
+     3
+    ],
+    "exacta": 550,
+    "trifecta": 7170
+   }
+  ],
+  "chariloto5": {
+   "carryover_in": 13050,
+   "sold_units": 1472,
+   "sales": 147200,
+   "hit_units": 3,
+   "carryover_out": 0,
+   "winning_numbers": [
+    2,
+    1,
+    4,
+    2,
+    3
+   ],
+   "payout": 41150
+  },
+  "source": "https://www.chariloto.com/keirin/results/73/2026-10-03"
+ },
+ {
   "velodrome_code": 31,
   "velodrome": "松戸",
   "date": "2026-10-04",
@@ -60476,6 +64314,552 @@
    "payout": null
   },
   "source": "https://www.chariloto.com/keirin/results/47/2026-10-04"
+ },
+ {
+  "velodrome_code": 73,
+  "velodrome": "小松島",
+  "date": "2026-10-04",
+  "day_label": "2日目",
+  "grade": "F2",
+  "num_races": 7,
+  "c5_races": [
+   {
+    "race": 3,
+    "name": "A級選抜",
+    "riders": [
+     {
+      "car": 1,
+      "name": "貝原 涼太",
+      "age": 29,
+      "pref": "栃木",
+      "term": 125,
+      "grade": "A1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": "SB"
+     },
+     {
+      "car": 2,
+      "name": "内山  拓",
+      "age": 43,
+      "pref": "福岡",
+      "term": 88,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "伊藤  奎",
+      "age": 27,
+      "pref": "福島",
+      "term": 115,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "表原  周",
+      "age": 35,
+      "pref": "徳島",
+      "term": 100,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "萱島 大介",
+      "age": 46,
+      "pref": "大分",
+      "term": 99,
+      "grade": "A2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "板崎 佑矢",
+      "age": 38,
+      "pref": "愛媛",
+      "term": 101,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "栗林  巧",
+      "age": 45,
+      "pref": "青森",
+      "term": 89,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      3,
+      7
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      4,
+      6
+     ]
+    ],
+    "winners": [
+     4
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 4,
+    "name": "A級選抜",
+    "riders": [
+     {
+      "car": 1,
+      "name": "原井 剣也",
+      "age": 32,
+      "pref": "福岡",
+      "term": 119,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "小原 将通",
+      "age": 39,
+      "pref": "大分",
+      "term": 92,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "神開 将暢",
+      "age": 53,
+      "pref": "福岡",
+      "term": 69,
+      "grade": "A2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "松坂 侑亮",
+      "age": 28,
+      "pref": "神奈",
+      "term": 115,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "逃げ",
+      "sb": "SB"
+     },
+     {
+      "car": 5,
+      "name": "在本 直樹",
+      "age": 49,
+      "pref": "岡山",
+      "term": 93,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "遠藤 勝行",
+      "age": 52,
+      "pref": "静岡",
+      "term": 73,
+      "grade": "A2",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "吉岡伸太郎",
+      "age": 33,
+      "pref": "愛媛",
+      "term": 105,
+      "grade": "A2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      4,
+      6
+     ],
+     [
+      1,
+      3,
+      2
+     ],
+     [
+      7,
+      5
+     ]
+    ],
+    "winners": [
+     4
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 5,
+    "name": "A級準決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "望月 一成",
+      "age": 30,
+      "pref": "静岡",
+      "term": 111,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "逃げ",
+      "sb": "B"
+     },
+     {
+      "car": 2,
+      "name": "藤井  將",
+      "age": 32,
+      "pref": "広島",
+      "term": 113,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "江守  昇",
+      "age": 51,
+      "pref": "千葉",
+      "term": 73,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "長井 優斗",
+      "age": 39,
+      "pref": "東京",
+      "term": 95,
+      "grade": "A1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "田川 翔琉",
+      "age": 28,
+      "pref": "熊本",
+      "term": 119,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": "S"
+     },
+     {
+      "car": 6,
+      "name": "吉永 好宏",
+      "age": 51,
+      "pref": "広島",
+      "term": 80,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "長松 大祐",
+      "age": 28,
+      "pref": "大分",
+      "term": 121,
+      "grade": "A2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      3,
+      4
+     ],
+     [
+      2,
+      6
+     ],
+     [
+      7,
+      5
+     ]
+    ],
+    "winners": [
+     3
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 6,
+    "name": "A級準決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "橋本 智昭",
+      "age": 44,
+      "pref": "宮城",
+      "term": 99,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "中村 雅仁",
+      "age": 44,
+      "pref": "熊本",
+      "term": 90,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "荻原 寿嗣",
+      "age": 32,
+      "pref": "北海",
+      "term": 119,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 4,
+      "name": "平石 浩之",
+      "age": 48,
+      "pref": "茨城",
+      "term": 87,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "山田 義彦",
+      "age": 40,
+      "pref": "埼玉",
+      "term": 92,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "西本健三郎",
+      "age": 24,
+      "pref": "茨城",
+      "term": 127,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "鶴  淳志",
+      "age": 26,
+      "pref": "福岡",
+      "term": 127,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      6,
+      4,
+      5
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      7,
+      2
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 7,
+    "name": "A級準決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "竹内  翼",
+      "age": 35,
+      "pref": "広島",
+      "term": 109,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "飯田 辰哉",
+      "age": 53,
+      "pref": "千葉",
+      "term": 72,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "吉川 嘉斗",
+      "age": 33,
+      "pref": "徳島",
+      "term": 105,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "中山 拓人",
+      "age": 26,
+      "pref": "埼玉",
+      "term": 121,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 5,
+      "name": "三ッ井 武",
+      "age": 41,
+      "pref": "神奈",
+      "term": 96,
+      "grade": "A2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": "S"
+     },
+     {
+      "car": 6,
+      "name": "菅田 謙仁",
+      "age": 34,
+      "pref": "宮城",
+      "term": 109,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "竹内 優也",
+      "age": 46,
+      "pref": "北海",
+      "term": 89,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      6,
+      7
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      4,
+      2,
+      5
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": null,
+    "trifecta": null
+   }
+  ],
+  "chariloto5": {
+   "carryover_in": 0,
+   "sold_units": 7,
+   "sales": 700,
+   "hit_units": 0,
+   "carryover_out": 525,
+   "winning_numbers": [
+    4,
+    4,
+    3,
+    1,
+    1
+   ],
+   "payout": null
+  },
+  "source": "https://www.chariloto.com/keirin/results/73/2026-10-04"
  },
  {
   "velodrome_code": 75,
@@ -62135,6 +66519,556 @@
    "payout": null
   },
   "source": "https://www.chariloto.com/keirin/results/53/2026-10-05"
+ },
+ {
+  "velodrome_code": 73,
+  "velodrome": "小松島",
+  "date": "2026-10-05",
+  "day_label": "最終日",
+  "grade": "F2",
+  "num_races": 7,
+  "c5_races": [
+   {
+    "race": 3,
+    "name": "A級一般",
+    "riders": [
+     {
+      "car": 1,
+      "name": "原井 剣也",
+      "age": 32,
+      "pref": "福岡",
+      "term": 119,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "小原 将通",
+      "age": 39,
+      "pref": "大分",
+      "term": 92,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "三木 健正",
+      "age": 25,
+      "pref": "岡山",
+      "term": 125,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": "SB"
+     },
+     {
+      "car": 4,
+      "name": "栗林  巧",
+      "age": 45,
+      "pref": "青森",
+      "term": 89,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "佐々木孝司",
+      "age": 47,
+      "pref": "青森",
+      "term": 84,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "山口  茂",
+      "age": 47,
+      "pref": "福島",
+      "term": 98,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "米澤 大輔",
+      "age": 51,
+      "pref": "徳島",
+      "term": 73,
+      "grade": "A2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      7
+     ],
+     [
+      5,
+      4,
+      6
+     ]
+    ],
+    "winners": [
+     1
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 4,
+    "name": "A級特選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "中山 拓人",
+      "age": 26,
+      "pref": "埼玉",
+      "term": 121,
+      "grade": "A2",
+      "finish": 2,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "山田 義彦",
+      "age": 40,
+      "pref": "埼玉",
+      "term": 92,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "神開 将暢",
+      "age": 53,
+      "pref": "福岡",
+      "term": 69,
+      "grade": "A2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "表原  周",
+      "age": 35,
+      "pref": "徳島",
+      "term": 100,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "鶴  淳志",
+      "age": 26,
+      "pref": "福岡",
+      "term": 127,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 6,
+      "name": "吉永 好宏",
+      "age": 51,
+      "pref": "広島",
+      "term": 80,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": "S"
+     },
+     {
+      "car": 7,
+      "name": "菅田 謙仁",
+      "age": 34,
+      "pref": "宮城",
+      "term": 109,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      7
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      5,
+      3
+     ],
+     [
+      4,
+      6
+     ]
+    ],
+    "winners": [
+     2
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 5,
+    "name": "A級特選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "吉川 嘉斗",
+      "age": 33,
+      "pref": "徳島",
+      "term": 105,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "長井 優斗",
+      "age": 39,
+      "pref": "東京",
+      "term": 95,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "飯田 裕次",
+      "age": 41,
+      "pref": "福岡",
+      "term": 97,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "西本健三郎",
+      "age": 24,
+      "pref": "茨城",
+      "term": 127,
+      "grade": "A2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 5,
+      "name": "森  柾斗",
+      "age": 26,
+      "pref": "徳島",
+      "term": 125,
+      "grade": "A2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "長松 大祐",
+      "age": 28,
+      "pref": "大分",
+      "term": 121,
+      "grade": "A2",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "竹内 優也",
+      "age": 46,
+      "pref": "北海",
+      "term": 89,
+      "grade": "A2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": "S"
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      4,
+      2
+     ],
+     [
+      7
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      6,
+      3
+     ]
+    ],
+    "winners": [
+     6
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 6,
+    "name": "A級特選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "中村 雅仁",
+      "age": 44,
+      "pref": "熊本",
+      "term": 90,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "荻原 寿嗣",
+      "age": 32,
+      "pref": "北海",
+      "term": 119,
+      "grade": "A1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "三ッ井 武",
+      "age": 41,
+      "pref": "神奈",
+      "term": 96,
+      "grade": "A2",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": "S"
+     },
+     {
+      "car": 4,
+      "name": "松坂 侑亮",
+      "age": 28,
+      "pref": "神奈",
+      "term": 115,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "逃げ",
+      "sb": "B"
+     },
+     {
+      "car": 5,
+      "name": "田川 翔琉",
+      "age": 28,
+      "pref": "熊本",
+      "term": 119,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "伊藤  奎",
+      "age": 27,
+      "pref": "福島",
+      "term": 115,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "遠藤 勝行",
+      "age": 52,
+      "pref": "静岡",
+      "term": 73,
+      "grade": "A2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      4,
+      3,
+      7
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      2,
+      6
+     ]
+    ],
+    "winners": [
+     3
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 7,
+    "name": "A級決勝",
+    "riders": [
+     {
+      "car": 1,
+      "name": "橋本 智昭",
+      "age": 44,
+      "pref": "宮城",
+      "term": 99,
+      "grade": "A1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "望月 一成",
+      "age": 30,
+      "pref": "静岡",
+      "term": 111,
+      "grade": "A1",
+      "finish": 5,
+      "kimarite": null,
+      "sb": "SB"
+     },
+     {
+      "car": 3,
+      "name": "竹内  翼",
+      "age": 35,
+      "pref": "広島",
+      "term": 109,
+      "grade": "A1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "藤井  將",
+      "age": 32,
+      "pref": "広島",
+      "term": 113,
+      "grade": "A1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "飯田 辰哉",
+      "age": 53,
+      "pref": "千葉",
+      "term": 72,
+      "grade": "A1",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "江守  昇",
+      "age": 51,
+      "pref": "千葉",
+      "term": 73,
+      "grade": "A1",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "平石 浩之",
+      "age": 48,
+      "pref": "茨城",
+      "term": 87,
+      "grade": "A1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      7
+     ],
+     [
+      2,
+      5,
+      6
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "winners": [
+     5
+    ],
+    "exacta": null,
+    "trifecta": null
+   }
+  ],
+  "chariloto5": {
+   "carryover_in": 525,
+   "sold_units": 2,
+   "sales": 200,
+   "hit_units": 0,
+   "carryover_out": 675,
+   "winning_numbers": [
+    1,
+    2,
+    6,
+    3,
+    5
+   ],
+   "payout": null
+  },
+  "source": "https://www.chariloto.com/keirin/results/73/2026-10-05"
  },
  {
   "velodrome_code": 75,
@@ -79141,5 +84075,507 @@
    "payout": null
   },
   "source": "https://www.chariloto.com/keirin/results/34/2026-10-24"
+ },
+ {
+  "velodrome_code": 73,
+  "velodrome": "小松島",
+  "date": "2026-10-24",
+  "day_label": "初日",
+  "grade": "F1",
+  "num_races": 12,
+  "c5_races": [
+   {
+    "race": 8,
+    "name": "S級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "原  大智",
+      "age": 29,
+      "pref": "宮城",
+      "term": 117,
+      "grade": "S2",
+      "finish": null,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "瀬戸 晋作",
+      "age": 33,
+      "pref": "長崎",
+      "term": 107,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 3,
+      "name": "川口公太朗",
+      "age": 36,
+      "pref": "岐阜",
+      "term": 98,
+      "grade": "S1",
+      "finish": 2,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "児玉虎之介",
+      "age": 25,
+      "pref": "岐阜",
+      "term": 123,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": "S"
+     },
+     {
+      "car": 5,
+      "name": "中園 和剛",
+      "age": 44,
+      "pref": "福岡",
+      "term": 89,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "伊藤 勝太",
+      "age": 38,
+      "pref": "愛知",
+      "term": 95,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "杉本 正隆",
+      "age": 40,
+      "pref": "茨城",
+      "term": 96,
+      "grade": "S1",
+      "finish": null,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      4,
+      3,
+      6
+     ],
+     [
+      1,
+      7
+     ],
+     [
+      2,
+      5
+     ]
+    ],
+    "winners": [
+     4
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 9,
+    "name": "S級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "貴志 修己",
+      "age": 30,
+      "pref": "和歌",
+      "term": 117,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "捲くり",
+      "sb": "SB"
+     },
+     {
+      "car": 2,
+      "name": "丸山 直樹",
+      "age": 40,
+      "pref": "埼玉",
+      "term": 93,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "福田 知也",
+      "age": 44,
+      "pref": "神奈",
+      "term": 88,
+      "grade": "S1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "室井 健一",
+      "age": 56,
+      "pref": "徳島",
+      "term": 69,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "堀内 俊介",
+      "age": 36,
+      "pref": "神奈",
+      "term": 107,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "岡田 亮太",
+      "age": 26,
+      "pref": "東京",
+      "term": 117,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "差し",
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "吉松 直人",
+      "age": 45,
+      "pref": "高知",
+      "term": 90,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      4,
+      7
+     ],
+     [
+      6,
+      2
+     ],
+     [
+      5,
+      3
+     ]
+    ],
+    "winners": [
+     6
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 10,
+    "name": "S級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "山本 拳也",
+      "age": 36,
+      "pref": "高知",
+      "term": 109,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "中村 一将",
+      "age": 50,
+      "pref": "兵庫",
+      "term": 86,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "木村  弘",
+      "age": 34,
+      "pref": "青森",
+      "term": 100,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 4,
+      "name": "高市 訓但",
+      "age": 38,
+      "pref": "愛媛",
+      "term": 97,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "川口 雄太",
+      "age": 29,
+      "pref": "徳島",
+      "term": 111,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "明田 春喜",
+      "age": 45,
+      "pref": "北海",
+      "term": 89,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "栗山 俊介",
+      "age": 38,
+      "pref": "奈良",
+      "term": 103,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      5,
+      1,
+      4
+     ],
+     [
+      2,
+      7
+     ],
+     [
+      3,
+      6
+     ]
+    ],
+    "winners": [
+     5
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 11,
+    "name": "S級予選",
+    "riders": [
+     {
+      "car": 1,
+      "name": "吉田 敏洋",
+      "age": 47,
+      "pref": "愛知",
+      "term": 85,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "大川  剛",
+      "age": 27,
+      "pref": "青森",
+      "term": 121,
+      "grade": "S1",
+      "finish": 1,
+      "kimarite": "捲くり",
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "鰐淵 圭佑",
+      "age": 43,
+      "pref": "群馬",
+      "term": 90,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "櫻井 正孝",
+      "age": 39,
+      "pref": "宮城",
+      "term": 100,
+      "grade": "S1",
+      "finish": 2,
+      "kimarite": "マーク",
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "高田 修汰",
+      "age": 27,
+      "pref": "福井",
+      "term": 115,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": "B"
+     },
+     {
+      "car": 6,
+      "name": "窪木 一茂",
+      "age": 37,
+      "pref": "福島",
+      "term": 119,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "梁島 邦友",
+      "age": 27,
+      "pref": "茨城",
+      "term": 117,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 7,
+    "lines": [
+     [
+      2,
+      4,
+      6
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      7,
+      3
+     ]
+    ],
+    "winners": [
+     2
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 12,
+    "name": "S級初特選",
+    "riders": [
+     {
+      "car": 3,
+      "name": "岩谷 拓磨",
+      "age": 29,
+      "pref": "福岡",
+      "term": 115,
+      "grade": "S1",
+      "finish": 1,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "村田 雅一",
+      "age": 42,
+      "pref": "兵庫",
+      "term": 90,
+      "grade": "S1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "伊藤 颯馬",
+      "age": 27,
+      "pref": "沖縄",
+      "term": 115,
+      "grade": "S1",
+      "finish": 2,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "field_size": 3,
+    "lines": [
+     [
+      6,
+      3,
+      4
+     ],
+     [
+      1,
+      7
+     ],
+     [
+      2,
+      5
+     ]
+    ],
+    "winners": [
+     3
+    ],
+    "exacta": null,
+    "trifecta": null
+   }
+  ],
+  "chariloto5": {
+   "carryover_in": 750,
+   "sold_units": 2,
+   "sales": 200,
+   "hit_units": 0,
+   "carryover_out": 900,
+   "winning_numbers": [
+    4,
+    6,
+    5,
+    2,
+    3
+   ],
+   "payout": null
+  },
+  "source": "https://www.chariloto.com/keirin/results/73/2026-10-24"
  }
 ]
