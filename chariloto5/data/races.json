@@ -14199,5 +14199,551 @@
    "payout": 18010
   },
   "source": "https://www.chariloto.com/keirin/results/53/2026-10-16"
+ },
+ {
+  "velodrome_code": 53,
+  "velodrome": "奈良",
+  "date": "2026-10-23",
+  "day_label": "初日",
+  "grade": "F1",
+  "num_races": 12,
+  "c5_races": [
+   {
+    "race": 8,
+    "name": "S級予選",
+    "field_size": 7,
+    "lines": [
+     [
+      7,
+      1,
+      4
+     ],
+     [
+      6,
+      2
+     ],
+     [
+      5,
+      3
+     ]
+    ],
+    "winners": [
+     7
+    ],
+    "riders": [
+     {
+      "car": 1,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S1",
+      "finish": 1,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 9,
+    "name": "S級予選",
+    "field_size": 7,
+    "lines": [
+     [
+      5,
+      3,
+      1,
+      6
+     ],
+     [
+      7,
+      4,
+      2
+     ]
+    ],
+    "winners": [
+     3
+    ],
+    "riders": [
+     {
+      "car": 1,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 10,
+    "name": "S級予選",
+    "field_size": 7,
+    "lines": [
+     [
+      3,
+      7,
+      1
+     ],
+     [
+      4
+     ],
+     [
+      5,
+      2,
+      6
+     ]
+    ],
+    "winners": [
+     7
+    ],
+    "riders": [
+     {
+      "car": 1,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 1,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 11,
+    "name": "S級予選",
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      5
+     ],
+     [
+      7,
+      4,
+      2
+     ],
+     [
+      6,
+      3
+     ]
+    ],
+    "winners": [
+     4
+    ],
+    "riders": [
+     {
+      "car": 1,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 5,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S1",
+      "finish": 1,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S2",
+      "finish": 2,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "exacta": null,
+    "trifecta": null
+   },
+   {
+    "race": 12,
+    "name": "S級初特選",
+    "field_size": 7,
+    "lines": [
+     [
+      1,
+      5
+     ],
+     [
+      6,
+      2
+     ],
+     [
+      4,
+      3
+     ],
+     [
+      7
+     ]
+    ],
+    "winners": [
+     6
+    ],
+    "riders": [
+     {
+      "car": 1,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 2,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S1",
+      "finish": 2,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 3,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S1",
+      "finish": 4,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 4,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S1",
+      "finish": 7,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 5,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S1",
+      "finish": 3,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 6,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S1",
+      "finish": 1,
+      "kimarite": null,
+      "sb": null
+     },
+     {
+      "car": 7,
+      "name": "",
+      "age": 0,
+      "pref": "",
+      "term": 0,
+      "grade": "S1",
+      "finish": 6,
+      "kimarite": null,
+      "sb": null
+     }
+    ],
+    "exacta": null,
+    "trifecta": null
+   }
+  ],
+  "chariloto5": {
+   "carryover_in": 1650,
+   "sold_units": 19,
+   "sales": 1900,
+   "hit_units": 0,
+   "carryover_out": 3075,
+   "winning_numbers": [
+    7,
+    3,
+    7,
+    4,
+    6
+   ],
+   "payout": null
+  },
+  "source": "https://www.chariloto.com/keirin/results/53/2026-10-23"
  }
 ]

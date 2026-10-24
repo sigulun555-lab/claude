@@ -1,101 +1,101 @@
 {
  "method": "1日抜き交差検証(予想する日のデータは学習に使っていない)",
- "days": 25,
- "races": 125,
- "race_top1_accuracy": 0.28,
- "avg_race_winner_prob_model": 0.1692,
- "avg_race_winner_prob_uniform": 0.1372,
- "uniform_1ticket_hit_prob": 5.268878939295566e-05,
+ "days": 26,
+ "races": 130,
+ "race_top1_accuracy": 0.2846,
+ "avg_race_winner_prob_model": 0.1678,
+ "avg_race_winner_prob_uniform": 0.1374,
+ "uniform_1ticket_hit_prob": 5.295072127269578e-05,
  "by_budget": [
   {
    "budget": 1,
    "avg_tickets": 1.0,
-   "pred_hit_rate": 0.003,
+   "pred_hit_rate": 0.002,
    "actual_hits": 0,
-   "days": 25,
-   "total_cost": 2500,
+   "days": 26,
+   "total_cost": 2600,
    "total_payout_est": 0
   },
   {
    "budget": 4,
    "avg_tickets": 4.0,
-   "pred_hit_rate": 0.0103,
+   "pred_hit_rate": 0.0068,
    "actual_hits": 0,
-   "days": 25,
-   "total_cost": 10000,
+   "days": 26,
+   "total_cost": 10400,
    "total_payout_est": 0
   },
   {
    "budget": 16,
    "avg_tickets": 16.0,
-   "pred_hit_rate": 0.0295,
-   "actual_hits": 0,
-   "days": 25,
-   "total_cost": 39900,
-   "total_payout_est": 0
+   "pred_hit_rate": 0.0209,
+   "actual_hits": 1,
+   "days": 26,
+   "total_cost": 41600,
+   "total_payout_est": 2850
   },
   {
    "budget": 32,
-   "avg_tickets": 31.8,
-   "pred_hit_rate": 0.0484,
-   "actual_hits": 0,
-   "days": 25,
-   "total_cost": 79600,
-   "total_payout_est": 0
+   "avg_tickets": 31.7,
+   "pred_hit_rate": 0.0353,
+   "actual_hits": 1,
+   "days": 26,
+   "total_cost": 82500,
+   "total_payout_est": 4050
   },
   {
    "budget": 64,
-   "avg_tickets": 62.6,
-   "pred_hit_rate": 0.0774,
+   "avg_tickets": 62.7,
+   "pred_hit_rate": 0.0577,
    "actual_hits": 1,
-   "days": 25,
-   "total_cost": 156600,
+   "days": 26,
+   "total_cost": 163000,
    "total_payout_est": 6450
   },
   {
    "budget": 128,
-   "avg_tickets": 124.8,
-   "pred_hit_rate": 0.1196,
+   "avg_tickets": 125.7,
+   "pred_hit_rate": 0.0922,
    "actual_hits": 1,
-   "days": 25,
-   "total_cost": 312000,
+   "days": 26,
+   "total_cost": 326700,
    "total_payout_est": 11250
   },
   {
    "budget": 243,
-   "avg_tickets": 240.2,
-   "pred_hit_rate": 0.1792,
-   "actual_hits": 3,
-   "days": 25,
-   "total_cost": 600600,
-   "total_payout_est": 42212
+   "avg_tickets": 239.3,
+   "pred_hit_rate": 0.1428,
+   "actual_hits": 1,
+   "days": 26,
+   "total_cost": 622200,
+   "total_payout_est": 19650
   },
   {
    "budget": 500,
-   "avg_tickets": 485.8,
-   "pred_hit_rate": 0.2644,
-   "actual_hits": 7,
-   "days": 25,
-   "total_cost": 1214400,
-   "total_payout_est": 383212
+   "avg_tickets": 485.1,
+   "pred_hit_rate": 0.2202,
+   "actual_hits": 5,
+   "days": 26,
+   "total_cost": 1261200,
+   "total_payout_est": 201612
   },
   {
    "budget": 1000,
-   "avg_tickets": 968.6,
-   "pred_hit_rate": 0.3798,
-   "actual_hits": 9,
-   "days": 25,
-   "total_cost": 2421600,
-   "total_payout_est": 608562
+   "avg_tickets": 968.8,
+   "pred_hit_rate": 0.3223,
+   "actual_hits": 8,
+   "days": 26,
+   "total_cost": 2518800,
+   "total_payout_est": 561887
   },
   {
    "budget": 3000,
-   "avg_tickets": 2964.5,
-   "pred_hit_rate": 0.6403,
-   "actual_hits": 18,
-   "days": 25,
-   "total_cost": 7411200,
-   "total_payout_est": 3364329
+   "avg_tickets": 2958.9,
+   "pred_hit_rate": 0.5667,
+   "actual_hits": 17,
+   "days": 26,
+   "total_cost": 7693200,
+   "total_payout_est": 3144954
   }
  ],
  "per_day": [
@@ -106,7 +106,7 @@
     {
      "budget": 1,
      "tickets": 1,
-     "pred_hit_prob": 0.0028,
+     "pred_hit_prob": 0.0023,
      "hit": false,
      "cost": 100,
      "payout_est": 0
@@ -114,7 +114,7 @@
     {
      "budget": 4,
      "tickets": 4,
-     "pred_hit_prob": 0.011,
+     "pred_hit_prob": 0.009,
      "hit": false,
      "cost": 400,
      "payout_est": 0
@@ -122,7 +122,7 @@
     {
      "budget": 16,
      "tickets": 16,
-     "pred_hit_prob": 0.0374,
+     "pred_hit_prob": 0.0284,
      "hit": false,
      "cost": 1600,
      "payout_est": 0
@@ -130,7 +130,7 @@
     {
      "budget": 32,
      "tickets": 30,
-     "pred_hit_prob": 0.0639,
+     "pred_hit_prob": 0.0461,
      "hit": false,
      "cost": 3000,
      "payout_est": 0
@@ -138,7 +138,7 @@
     {
      "budget": 64,
      "tickets": 60,
-     "pred_hit_prob": 0.1039,
+     "pred_hit_prob": 0.0725,
      "hit": false,
      "cost": 6000,
      "payout_est": 0
@@ -146,7 +146,7 @@
     {
      "budget": 128,
      "tickets": 120,
-     "pred_hit_prob": 0.1468,
+     "pred_hit_prob": 0.1061,
      "hit": false,
      "cost": 12000,
      "payout_est": 0
@@ -154,7 +154,7 @@
     {
      "budget": 243,
      "tickets": 240,
-     "pred_hit_prob": 0.2061,
+     "pred_hit_prob": 0.1567,
      "hit": false,
      "cost": 24000,
      "payout_est": 0
@@ -162,23 +162,23 @@
     {
      "budget": 500,
      "tickets": 480,
-     "pred_hit_prob": 0.2911,
-     "hit": true,
+     "pred_hit_prob": 0.2294,
+     "hit": false,
      "cost": 48000,
-     "payout_est": 144425
+     "payout_est": 0
     },
     {
      "budget": 1000,
-     "tickets": 960,
-     "pred_hit_prob": 0.3939,
+     "tickets": 1000,
+     "pred_hit_prob": 0.3341,
      "hit": true,
-     "cost": 96000,
-     "payout_est": 156425
+     "cost": 100000,
+     "payout_est": 157425
     },
     {
      "budget": 3000,
      "tickets": 3000,
-     "pred_hit_prob": 0.6704,
+     "pred_hit_prob": 0.593,
      "hit": true,
      "cost": 300000,
      "payout_est": 207425
@@ -192,7 +192,7 @@
     {
      "budget": 1,
      "tickets": 1,
-     "pred_hit_prob": 0.0015,
+     "pred_hit_prob": 0.0012,
      "hit": false,
      "cost": 100,
      "payout_est": 0
@@ -200,7 +200,7 @@
     {
      "budget": 4,
      "tickets": 4,
-     "pred_hit_prob": 0.0058,
+     "pred_hit_prob": 0.0046,
      "hit": false,
      "cost": 400,
      "payout_est": 0
@@ -208,7 +208,7 @@
     {
      "budget": 16,
      "tickets": 16,
-     "pred_hit_prob": 0.02,
+     "pred_hit_prob": 0.0159,
      "hit": false,
      "cost": 1600,
      "payout_est": 0
@@ -216,7 +216,7 @@
     {
      "budget": 32,
      "tickets": 32,
-     "pred_hit_prob": 0.0341,
+     "pred_hit_prob": 0.0284,
      "hit": false,
      "cost": 3200,
      "payout_est": 0
@@ -224,7 +224,7 @@
     {
      "budget": 64,
      "tickets": 64,
-     "pred_hit_prob": 0.0539,
+     "pred_hit_prob": 0.0453,
      "hit": false,
      "cost": 6400,
      "payout_est": 0
@@ -232,7 +232,7 @@
     {
      "budget": 128,
      "tickets": 128,
-     "pred_hit_prob": 0.0896,
+     "pred_hit_prob": 0.0725,
      "hit": false,
      "cost": 12800,
      "payout_est": 0
@@ -240,7 +240,7 @@
     {
      "budget": 243,
      "tickets": 240,
-     "pred_hit_prob": 0.1319,
+     "pred_hit_prob": 0.1074,
      "hit": false,
      "cost": 24000,
      "payout_est": 0
@@ -248,23 +248,23 @@
     {
      "budget": 500,
      "tickets": 480,
-     "pred_hit_prob": 0.2037,
+     "pred_hit_prob": 0.1729,
      "hit": false,
      "cost": 48000,
      "payout_est": 0
     },
     {
      "budget": 1000,
-     "tickets": 1000,
-     "pred_hit_prob": 0.3043,
+     "tickets": 960,
+     "pred_hit_prob": 0.2695,
      "hit": false,
-     "cost": 100000,
+     "cost": 96000,
      "payout_est": 0
     },
     {
      "budget": 3000,
      "tickets": 3000,
-     "pred_hit_prob": 0.5728,
+     "pred_hit_prob": 0.5189,
      "hit": true,
      "cost": 300000,
      "payout_est": 225375
@@ -286,7 +286,7 @@
     {
      "budget": 4,
      "tickets": 4,
-     "pred_hit_prob": 0.0047,
+     "pred_hit_prob": 0.0042,
      "hit": false,
      "cost": 400,
      "payout_est": 0
@@ -294,7 +294,7 @@
     {
      "budget": 16,
      "tickets": 16,
-     "pred_hit_prob": 0.0162,
+     "pred_hit_prob": 0.014,
      "hit": false,
      "cost": 1600,
      "payout_est": 0
@@ -302,7 +302,7 @@
     {
      "budget": 32,
      "tickets": 32,
-     "pred_hit_prob": 0.0291,
+     "pred_hit_prob": 0.0249,
      "hit": false,
      "cost": 3200,
      "payout_est": 0
@@ -310,7 +310,7 @@
     {
      "budget": 64,
      "tickets": 64,
-     "pred_hit_prob": 0.0516,
+     "pred_hit_prob": 0.0435,
      "hit": false,
      "cost": 6400,
      "payout_est": 0
@@ -318,7 +318,7 @@
     {
      "budget": 128,
      "tickets": 128,
-     "pred_hit_prob": 0.086,
+     "pred_hit_prob": 0.0757,
      "hit": false,
      "cost": 12800,
      "payout_est": 0
@@ -326,7 +326,7 @@
     {
      "budget": 243,
      "tickets": 240,
-     "pred_hit_prob": 0.1388,
+     "pred_hit_prob": 0.1279,
      "hit": false,
      "cost": 24000,
      "payout_est": 0
@@ -334,7 +334,7 @@
     {
      "budget": 500,
      "tickets": 500,
-     "pred_hit_prob": 0.2197,
+     "pred_hit_prob": 0.2056,
      "hit": false,
      "cost": 50000,
      "payout_est": 0
@@ -342,18 +342,18 @@
     {
      "budget": 1000,
      "tickets": 1000,
-     "pred_hit_prob": 0.3423,
+     "pred_hit_prob": 0.2958,
      "hit": false,
      "cost": 100000,
      "payout_est": 0
     },
     {
      "budget": 3000,
-     "tickets": 3000,
-     "pred_hit_prob": 0.5783,
-     "hit": true,
-     "cost": 300000,
-     "payout_est": 226875
+     "tickets": 2940,
+     "pred_hit_prob": 0.5198,
+     "hit": false,
+     "cost": 294000,
+     "payout_est": 0
     }
    ]
   },
@@ -364,1038 +364,6 @@
     {
      "budget": 1,
      "tickets": 1,
-     "pred_hit_prob": 0.0037,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0128,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.0353,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0572,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 64,
-     "pred_hit_prob": 0.0914,
-     "hit": false,
-     "cost": 6400,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 120,
-     "pred_hit_prob": 0.1403,
-     "hit": false,
-     "cost": 12000,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.2043,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 500,
-     "pred_hit_prob": 0.2952,
-     "hit": false,
-     "cost": 50000,
-     "payout_est": 0
-    },
-    {
-     "budget": 1000,
-     "tickets": 960,
-     "pred_hit_prob": 0.4268,
-     "hit": true,
-     "cost": 96000,
-     "payout_est": 78375
-    },
-    {
-     "budget": 3000,
-     "tickets": 3000,
-     "pred_hit_prob": 0.7508,
-     "hit": true,
-     "cost": 300000,
-     "payout_est": 231375
-    }
-   ]
-  },
-  {
-   "date": "2026-09-25",
-   "velodrome": "奈良",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0016,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0064,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.021,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0367,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 64,
-     "pred_hit_prob": 0.0634,
-     "hit": false,
-     "cost": 6400,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 128,
-     "pred_hit_prob": 0.1066,
-     "hit": false,
-     "cost": 12800,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.162,
-     "hit": true,
-     "cost": 24000,
-     "payout_est": 6737
-    },
-    {
-     "budget": 500,
-     "tickets": 500,
-     "pred_hit_prob": 0.2482,
-     "hit": true,
-     "cost": 50000,
-     "payout_est": 9987
-    },
-    {
-     "budget": 1000,
-     "tickets": 1000,
-     "pred_hit_prob": 0.3578,
-     "hit": true,
-     "cost": 100000,
-     "payout_est": 16237
-    },
-    {
-     "budget": 3000,
-     "tickets": 3000,
-     "pred_hit_prob": 0.608,
-     "hit": true,
-     "cost": 300000,
-     "payout_est": 41237
-    }
-   ]
-  },
-  {
-   "date": "2026-09-26",
-   "velodrome": "奈良",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.002,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0073,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.0232,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.04,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 64,
-     "pred_hit_prob": 0.0668,
-     "hit": false,
-     "cost": 6400,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 128,
-     "pred_hit_prob": 0.1103,
-     "hit": false,
-     "cost": 12800,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 243,
-     "pred_hit_prob": 0.176,
-     "hit": false,
-     "cost": 24300,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 480,
-     "pred_hit_prob": 0.2676,
-     "hit": false,
-     "cost": 48000,
-     "payout_est": 0
-    },
-    {
-     "budget": 1000,
-     "tickets": 960,
-     "pred_hit_prob": 0.4134,
-     "hit": false,
-     "cost": 96000,
-     "payout_est": 0
-    },
-    {
-     "budget": 3000,
-     "tickets": 3000,
-     "pred_hit_prob": 0.6751,
-     "hit": true,
-     "cost": 300000,
-     "payout_est": 225075
-    }
-   ]
-  },
-  {
-   "date": "2026-09-30",
-   "velodrome": "奈良",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0063,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0188,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.0448,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0685,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 64,
-     "pred_hit_prob": 0.1035,
-     "hit": false,
-     "cost": 6400,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 128,
-     "pred_hit_prob": 0.1499,
-     "hit": false,
-     "cost": 12800,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.2135,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 480,
-     "pred_hit_prob": 0.3077,
-     "hit": true,
-     "cost": 48000,
-     "payout_est": 36225
-    },
-    {
-     "budget": 1000,
-     "tickets": 960,
-     "pred_hit_prob": 0.4457,
-     "hit": true,
-     "cost": 96000,
-     "payout_est": 72225
-    },
-    {
-     "budget": 3000,
-     "tickets": 2880,
-     "pred_hit_prob": 0.7081,
-     "hit": true,
-     "cost": 288000,
-     "payout_est": 216225
-    }
-   ]
-  },
-  {
-   "date": "2026-10-01",
-   "velodrome": "松阪",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0008,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0028,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.01,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0182,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 64,
-     "pred_hit_prob": 0.0332,
-     "hit": false,
-     "cost": 6400,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 128,
-     "pred_hit_prob": 0.057,
-     "hit": false,
-     "cost": 12800,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.0947,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 480,
-     "pred_hit_prob": 0.1581,
-     "hit": false,
-     "cost": 48000,
-     "payout_est": 0
-    },
-    {
-     "budget": 1000,
-     "tickets": 960,
-     "pred_hit_prob": 0.2606,
-     "hit": false,
-     "cost": 96000,
-     "payout_est": 0
-    },
-    {
-     "budget": 3000,
-     "tickets": 3000,
-     "pred_hit_prob": 0.4884,
-     "hit": false,
-     "cost": 300000,
-     "payout_est": 0
-    }
-   ]
-  },
-  {
-   "date": "2026-10-01",
-   "velodrome": "奈良",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0051,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0171,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.0432,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0662,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 64,
-     "pred_hit_prob": 0.1047,
-     "hit": false,
-     "cost": 6400,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 128,
-     "pred_hit_prob": 0.1605,
-     "hit": false,
-     "cost": 12800,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.2389,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 480,
-     "pred_hit_prob": 0.3324,
-     "hit": false,
-     "cost": 48000,
-     "payout_est": 0
-    },
-    {
-     "budget": 1000,
-     "tickets": 960,
-     "pred_hit_prob": 0.4739,
-     "hit": false,
-     "cost": 96000,
-     "payout_est": 0
-    },
-    {
-     "budget": 3000,
-     "tickets": 2940,
-     "pred_hit_prob": 0.7264,
-     "hit": false,
-     "cost": 294000,
-     "payout_est": 0
-    }
-   ]
-  },
-  {
-   "date": "2026-10-02",
-   "velodrome": "松阪",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0021,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0078,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.0265,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0449,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 60,
-     "pred_hit_prob": 0.0722,
-     "hit": false,
-     "cost": 6000,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 120,
-     "pred_hit_prob": 0.1094,
-     "hit": false,
-     "cost": 12000,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.1642,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 432,
-     "pred_hit_prob": 0.2247,
-     "hit": false,
-     "cost": 43200,
-     "payout_est": 0
-    },
-    {
-     "budget": 1000,
-     "tickets": 960,
-     "pred_hit_prob": 0.304,
-     "hit": false,
-     "cost": 96000,
-     "payout_est": 0
-    },
-    {
-     "budget": 3000,
-     "tickets": 2592,
-     "pred_hit_prob": 0.5135,
-     "hit": false,
-     "cost": 259200,
-     "payout_est": 0
-    }
-   ]
-  },
-  {
-   "date": "2026-10-02",
-   "velodrome": "奈良",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0052,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0138,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.0357,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0558,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 64,
-     "pred_hit_prob": 0.0901,
-     "hit": false,
-     "cost": 6400,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 120,
-     "pred_hit_prob": 0.1341,
-     "hit": false,
-     "cost": 12000,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.1962,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 480,
-     "pred_hit_prob": 0.2872,
-     "hit": false,
-     "cost": 48000,
-     "payout_est": 0
-    },
-    {
-     "budget": 1000,
-     "tickets": 960,
-     "pred_hit_prob": 0.4062,
-     "hit": false,
-     "cost": 96000,
-     "payout_est": 0
-    },
-    {
-     "budget": 3000,
-     "tickets": 2880,
-     "pred_hit_prob": 0.6858,
-     "hit": false,
-     "cost": 288000,
-     "payout_est": 0
-    }
-   ]
-  },
-  {
-   "date": "2026-10-03",
-   "velodrome": "松阪",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0051,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0159,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.0401,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0602,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 64,
-     "pred_hit_prob": 0.0889,
-     "hit": false,
-     "cost": 6400,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 128,
-     "pred_hit_prob": 0.1298,
-     "hit": false,
-     "cost": 12800,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.189,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 500,
-     "pred_hit_prob": 0.2561,
-     "hit": false,
-     "cost": 50000,
-     "payout_est": 0
-    },
-    {
-     "budget": 1000,
-     "tickets": 980,
-     "pred_hit_prob": 0.3219,
-     "hit": false,
-     "cost": 98000,
-     "payout_est": 0
-    },
-    {
-     "budget": 3000,
-     "tickets": 3000,
-     "pred_hit_prob": 0.4892,
-     "hit": true,
-     "cost": 300000,
-     "payout_est": 14067
-    }
-   ]
-  },
-  {
-   "date": "2026-10-04",
-   "velodrome": "松阪",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0014,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0049,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.0152,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0252,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 64,
-     "pred_hit_prob": 0.0425,
-     "hit": false,
-     "cost": 6400,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 128,
-     "pred_hit_prob": 0.0671,
-     "hit": false,
-     "cost": 12800,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.1026,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 500,
-     "pred_hit_prob": 0.1601,
-     "hit": false,
-     "cost": 50000,
-     "payout_est": 0
-    },
-    {
-     "budget": 1000,
-     "tickets": 980,
-     "pred_hit_prob": 0.2341,
-     "hit": false,
-     "cost": 98000,
-     "payout_est": 0
-    },
-    {
-     "budget": 3000,
-     "tickets": 2940,
-     "pred_hit_prob": 0.4148,
-     "hit": true,
-     "cost": 294000,
-     "payout_est": 263925
-    }
-   ]
-  },
-  {
-   "date": "2026-10-05",
-   "velodrome": "奈良",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0024,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0087,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.0292,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0507,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 60,
-     "pred_hit_prob": 0.082,
-     "hit": false,
-     "cost": 6000,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 120,
-     "pred_hit_prob": 0.1248,
-     "hit": false,
-     "cost": 12000,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.1865,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 486,
-     "pred_hit_prob": 0.2724,
-     "hit": false,
-     "cost": 48600,
-     "payout_est": 0
-    },
-    {
-     "budget": 1000,
-     "tickets": 972,
-     "pred_hit_prob": 0.3865,
-     "hit": false,
-     "cost": 97200,
-     "payout_est": 0
-    },
-    {
-     "budget": 3000,
-     "tickets": 3000,
-     "pred_hit_prob": 0.669,
-     "hit": false,
-     "cost": 300000,
-     "payout_est": 0
-    }
-   ]
-  },
-  {
-   "date": "2026-10-06",
-   "velodrome": "奈良",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0031,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0104,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.0294,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0489,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 60,
-     "pred_hit_prob": 0.0763,
-     "hit": false,
-     "cost": 6000,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 120,
-     "pred_hit_prob": 0.1169,
-     "hit": false,
-     "cost": 12000,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.1667,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 480,
-     "pred_hit_prob": 0.236,
-     "hit": false,
-     "cost": 48000,
-     "payout_est": 0
-    },
-    {
-     "budget": 1000,
-     "tickets": 900,
-     "pred_hit_prob": 0.3336,
-     "hit": false,
-     "cost": 90000,
-     "payout_est": 0
-    },
-    {
-     "budget": 3000,
-     "tickets": 3000,
-     "pred_hit_prob": 0.5876,
-     "hit": true,
-     "cost": 300000,
-     "payout_est": 286500
-    }
-   ]
-  },
-  {
-   "date": "2026-10-07",
-   "velodrome": "静岡",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
      "pred_hit_prob": 0.0026,
      "hit": false,
      "cost": 100,
@@ -1404,179 +372,7 @@
     {
      "budget": 4,
      "tickets": 4,
-     "pred_hit_prob": 0.0094,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.0285,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0495,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 64,
-     "pred_hit_prob": 0.0776,
-     "hit": false,
-     "cost": 6400,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 128,
-     "pred_hit_prob": 0.1206,
-     "hit": false,
-     "cost": 12800,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.1831,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 500,
-     "pred_hit_prob": 0.2797,
-     "hit": true,
-     "cost": 50000,
-     "payout_est": 38625
-    },
-    {
-     "budget": 1000,
-     "tickets": 1000,
-     "pred_hit_prob": 0.395,
-     "hit": true,
-     "cost": 100000,
-     "payout_est": 76125
-    },
-    {
-     "budget": 3000,
-     "tickets": 3000,
-     "pred_hit_prob": 0.6733,
-     "hit": true,
-     "cost": 300000,
-     "payout_est": 226125
-    }
-   ]
-  },
-  {
-   "date": "2026-10-07",
-   "velodrome": "奈良",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0028,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0096,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.028,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0465,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 64,
-     "pred_hit_prob": 0.0762,
-     "hit": false,
-     "cost": 6400,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 128,
-     "pred_hit_prob": 0.1232,
-     "hit": false,
-     "cost": 12800,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.1897,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 500,
-     "pred_hit_prob": 0.2742,
-     "hit": true,
-     "cost": 50000,
-     "payout_est": 96875
-    },
-    {
-     "budget": 1000,
-     "tickets": 960,
-     "pred_hit_prob": 0.3733,
-     "hit": false,
-     "cost": 96000,
-     "payout_est": 0
-    },
-    {
-     "budget": 3000,
-     "tickets": 3000,
-     "pred_hit_prob": 0.661,
-     "hit": true,
-     "cost": 300000,
-     "payout_est": 159375
-    }
-   ]
-  },
-  {
-   "date": "2026-10-08",
-   "velodrome": "静岡",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0026,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0088,
+     "pred_hit_prob": 0.0086,
      "hit": false,
      "cost": 400,
      "payout_est": 0
@@ -1592,7 +388,7 @@
     {
      "budget": 32,
      "tickets": 32,
-     "pred_hit_prob": 0.0431,
+     "pred_hit_prob": 0.0432,
      "hit": false,
      "cost": 3200,
      "payout_est": 0
@@ -1600,61 +396,147 @@
     {
      "budget": 64,
      "tickets": 64,
-     "pred_hit_prob": 0.0693,
-     "hit": true,
+     "pred_hit_prob": 0.0685,
+     "hit": false,
      "cost": 6400,
-     "payout_est": 6450
+     "payout_est": 0
     },
     {
      "budget": 128,
      "tickets": 128,
-     "pred_hit_prob": 0.1071,
-     "hit": true,
+     "pred_hit_prob": 0.108,
+     "hit": false,
      "cost": 12800,
-     "payout_est": 11250
+     "payout_est": 0
     },
     {
      "budget": 243,
      "tickets": 240,
-     "pred_hit_prob": 0.1601,
-     "hit": true,
+     "pred_hit_prob": 0.1612,
+     "hit": false,
      "cost": 24000,
-     "payout_est": 19650
+     "payout_est": 0
     },
     {
      "budget": 500,
      "tickets": 480,
-     "pred_hit_prob": 0.2387,
+     "pred_hit_prob": 0.2438,
+     "hit": false,
+     "cost": 48000,
+     "payout_est": 0
+    },
+    {
+     "budget": 1000,
+     "tickets": 1000,
+     "pred_hit_prob": 0.367,
+     "hit": false,
+     "cost": 100000,
+     "payout_est": 0
+    },
+    {
+     "budget": 3000,
+     "tickets": 3000,
+     "pred_hit_prob": 0.6825,
+     "hit": true,
+     "cost": 300000,
+     "payout_est": 231375
+    }
+   ]
+  },
+  {
+   "date": "2026-09-25",
+   "velodrome": "奈良",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0011,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.0041,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0143,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0259,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 64,
+     "pred_hit_prob": 0.0463,
+     "hit": false,
+     "cost": 6400,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 128,
+     "pred_hit_prob": 0.08,
+     "hit": false,
+     "cost": 12800,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.1274,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 480,
+     "pred_hit_prob": 0.2049,
      "hit": true,
      "cost": 48000,
-     "payout_est": 37650
+     "payout_est": 9737
     },
     {
      "budget": 1000,
      "tickets": 960,
-     "pred_hit_prob": 0.3726,
+     "pred_hit_prob": 0.3083,
      "hit": true,
      "cost": 96000,
-     "payout_est": 73650
+     "payout_est": 15737
     },
     {
      "budget": 3000,
-     "tickets": 3000,
-     "pred_hit_prob": 0.6592,
+     "tickets": 2880,
+     "pred_hit_prob": 0.5522,
      "hit": true,
-     "cost": 300000,
-     "payout_est": 226650
+     "cost": 288000,
+     "payout_est": 39737
     }
    ]
   },
   {
-   "date": "2026-10-09",
-   "velodrome": "静岡",
+   "date": "2026-09-26",
+   "velodrome": "奈良",
    "plans": [
     {
      "budget": 1,
      "tickets": 1,
-     "pred_hit_prob": 0.0024,
+     "pred_hit_prob": 0.0013,
      "hit": false,
      "cost": 100,
      "payout_est": 0
@@ -1662,7 +544,7 @@
     {
      "budget": 4,
      "tickets": 4,
-     "pred_hit_prob": 0.0084,
+     "pred_hit_prob": 0.0048,
      "hit": false,
      "cost": 400,
      "payout_est": 0
@@ -1670,7 +552,7 @@
     {
      "budget": 16,
      "tickets": 16,
-     "pred_hit_prob": 0.0271,
+     "pred_hit_prob": 0.0161,
      "hit": false,
      "cost": 1600,
      "payout_est": 0
@@ -1678,7 +560,7 @@
     {
      "budget": 32,
      "tickets": 32,
-     "pred_hit_prob": 0.0461,
+     "pred_hit_prob": 0.0294,
      "hit": false,
      "cost": 3200,
      "payout_est": 0
@@ -1686,7 +568,7 @@
     {
      "budget": 64,
      "tickets": 64,
-     "pred_hit_prob": 0.0748,
+     "pred_hit_prob": 0.0502,
      "hit": false,
      "cost": 6400,
      "payout_est": 0
@@ -1694,211 +576,39 @@
     {
      "budget": 128,
      "tickets": 128,
-     "pred_hit_prob": 0.1188,
+     "pred_hit_prob": 0.0848,
      "hit": false,
      "cost": 12800,
      "payout_est": 0
     },
     {
      "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.1789,
+     "tickets": 243,
+     "pred_hit_prob": 0.1381,
      "hit": false,
-     "cost": 24000,
+     "cost": 24300,
      "payout_est": 0
     },
     {
      "budget": 500,
      "tickets": 480,
-     "pred_hit_prob": 0.2637,
+     "pred_hit_prob": 0.2136,
      "hit": false,
      "cost": 48000,
      "payout_est": 0
     },
     {
      "budget": 1000,
-     "tickets": 1000,
-     "pred_hit_prob": 0.4094,
+     "tickets": 960,
+     "pred_hit_prob": 0.3368,
      "hit": false,
-     "cost": 100000,
+     "cost": 96000,
      "payout_est": 0
     },
     {
      "budget": 3000,
      "tickets": 3000,
-     "pred_hit_prob": 0.6543,
-     "hit": true,
-     "cost": 300000,
-     "payout_est": 229425
-    }
-   ]
-  },
-  {
-   "date": "2026-10-09",
-   "velodrome": "奈良",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0044,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0137,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 15,
-     "pred_hit_prob": 0.0341,
-     "hit": false,
-     "cost": 1500,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 30,
-     "pred_hit_prob": 0.0534,
-     "hit": false,
-     "cost": 3000,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 60,
-     "pred_hit_prob": 0.0833,
-     "hit": false,
-     "cost": 6000,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 120,
-     "pred_hit_prob": 0.1286,
-     "hit": false,
-     "cost": 12000,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.1948,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 480,
-     "pred_hit_prob": 0.2839,
-     "hit": false,
-     "cost": 48000,
-     "payout_est": 0
-    },
-    {
-     "budget": 1000,
-     "tickets": 1000,
-     "pred_hit_prob": 0.4153,
-     "hit": true,
-     "cost": 100000,
-     "payout_est": 33225
-    },
-    {
-     "budget": 3000,
-     "tickets": 3000,
-     "pred_hit_prob": 0.7281,
-     "hit": true,
-     "cost": 300000,
-     "payout_est": 83225
-    }
-   ]
-  },
-  {
-   "date": "2026-10-10",
-   "velodrome": "奈良",
-   "plans": [
-    {
-     "budget": 1,
-     "tickets": 1,
-     "pred_hit_prob": 0.0024,
-     "hit": false,
-     "cost": 100,
-     "payout_est": 0
-    },
-    {
-     "budget": 4,
-     "tickets": 4,
-     "pred_hit_prob": 0.0095,
-     "hit": false,
-     "cost": 400,
-     "payout_est": 0
-    },
-    {
-     "budget": 16,
-     "tickets": 16,
-     "pred_hit_prob": 0.0302,
-     "hit": false,
-     "cost": 1600,
-     "payout_est": 0
-    },
-    {
-     "budget": 32,
-     "tickets": 32,
-     "pred_hit_prob": 0.0513,
-     "hit": false,
-     "cost": 3200,
-     "payout_est": 0
-    },
-    {
-     "budget": 64,
-     "tickets": 54,
-     "pred_hit_prob": 0.0862,
-     "hit": false,
-     "cost": 5400,
-     "payout_est": 0
-    },
-    {
-     "budget": 128,
-     "tickets": 120,
-     "pred_hit_prob": 0.1365,
-     "hit": false,
-     "cost": 12000,
-     "payout_est": 0
-    },
-    {
-     "budget": 243,
-     "tickets": 240,
-     "pred_hit_prob": 0.2109,
-     "hit": false,
-     "cost": 24000,
-     "payout_est": 0
-    },
-    {
-     "budget": 500,
-     "tickets": 480,
-     "pred_hit_prob": 0.3287,
-     "hit": false,
-     "cost": 48000,
-     "payout_est": 0
-    },
-    {
-     "budget": 1000,
-     "tickets": 1000,
-     "pred_hit_prob": 0.4602,
-     "hit": true,
-     "cost": 100000,
-     "payout_est": 75075
-    },
-    {
-     "budget": 3000,
-     "tickets": 3000,
-     "pred_hit_prob": 0.7369,
+     "pred_hit_prob": 0.5875,
      "hit": true,
      "cost": 300000,
      "payout_est": 225075
@@ -1906,13 +616,873 @@
    ]
   },
   {
-   "date": "2026-10-11",
+   "date": "2026-09-30",
    "velodrome": "奈良",
    "plans": [
     {
      "budget": 1,
      "tickets": 1,
-     "pred_hit_prob": 0.003,
+     "pred_hit_prob": 0.0039,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.0117,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.03,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.046,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 64,
+     "pred_hit_prob": 0.0702,
+     "hit": false,
+     "cost": 6400,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 128,
+     "pred_hit_prob": 0.1074,
+     "hit": false,
+     "cost": 12800,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.1608,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 480,
+     "pred_hit_prob": 0.2442,
+     "hit": false,
+     "cost": 48000,
+     "payout_est": 0
+    },
+    {
+     "budget": 1000,
+     "tickets": 960,
+     "pred_hit_prob": 0.3683,
+     "hit": true,
+     "cost": 96000,
+     "payout_est": 72225
+    },
+    {
+     "budget": 3000,
+     "tickets": 3000,
+     "pred_hit_prob": 0.617,
+     "hit": true,
+     "cost": 300000,
+     "payout_est": 225225
+    }
+   ]
+  },
+  {
+   "date": "2026-10-01",
+   "velodrome": "松阪",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0006,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.0023,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0086,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0166,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 64,
+     "pred_hit_prob": 0.0296,
+     "hit": false,
+     "cost": 6400,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 128,
+     "pred_hit_prob": 0.0516,
+     "hit": false,
+     "cost": 12800,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.086,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 480,
+     "pred_hit_prob": 0.141,
+     "hit": false,
+     "cost": 48000,
+     "payout_est": 0
+    },
+    {
+     "budget": 1000,
+     "tickets": 960,
+     "pred_hit_prob": 0.225,
+     "hit": false,
+     "cost": 96000,
+     "payout_est": 0
+    },
+    {
+     "budget": 3000,
+     "tickets": 3000,
+     "pred_hit_prob": 0.4195,
+     "hit": false,
+     "cost": 300000,
+     "payout_est": 0
+    }
+   ]
+  },
+  {
+   "date": "2026-10-01",
+   "velodrome": "奈良",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0025,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.009,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0249,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0412,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 64,
+     "pred_hit_prob": 0.0671,
+     "hit": false,
+     "cost": 6400,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 128,
+     "pred_hit_prob": 0.1089,
+     "hit": false,
+     "cost": 12800,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.1694,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 480,
+     "pred_hit_prob": 0.2505,
+     "hit": false,
+     "cost": 48000,
+     "payout_est": 0
+    },
+    {
+     "budget": 1000,
+     "tickets": 960,
+     "pred_hit_prob": 0.3679,
+     "hit": false,
+     "cost": 96000,
+     "payout_est": 0
+    },
+    {
+     "budget": 3000,
+     "tickets": 2940,
+     "pred_hit_prob": 0.6396,
+     "hit": false,
+     "cost": 294000,
+     "payout_est": 0
+    }
+   ]
+  },
+  {
+   "date": "2026-10-02",
+   "velodrome": "松阪",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0013,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.005,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.018,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0298,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 60,
+     "pred_hit_prob": 0.0492,
+     "hit": false,
+     "cost": 6000,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 120,
+     "pred_hit_prob": 0.0798,
+     "hit": false,
+     "cost": 12000,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.1197,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 480,
+     "pred_hit_prob": 0.1773,
+     "hit": false,
+     "cost": 48000,
+     "payout_est": 0
+    },
+    {
+     "budget": 1000,
+     "tickets": 960,
+     "pred_hit_prob": 0.2619,
+     "hit": false,
+     "cost": 96000,
+     "payout_est": 0
+    },
+    {
+     "budget": 3000,
+     "tickets": 2592,
+     "pred_hit_prob": 0.4506,
+     "hit": false,
+     "cost": 259200,
+     "payout_est": 0
+    }
+   ]
+  },
+  {
+   "date": "2026-10-02",
+   "velodrome": "奈良",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0029,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.0086,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0239,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0378,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 64,
+     "pred_hit_prob": 0.0619,
+     "hit": false,
+     "cost": 6400,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 125,
+     "pred_hit_prob": 0.0958,
+     "hit": false,
+     "cost": 12500,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.1474,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 500,
+     "pred_hit_prob": 0.2295,
+     "hit": false,
+     "cost": 50000,
+     "payout_est": 0
+    },
+    {
+     "budget": 1000,
+     "tickets": 1000,
+     "pred_hit_prob": 0.3329,
+     "hit": false,
+     "cost": 100000,
+     "payout_est": 0
+    },
+    {
+     "budget": 3000,
+     "tickets": 2880,
+     "pred_hit_prob": 0.604,
+     "hit": false,
+     "cost": 288000,
+     "payout_est": 0
+    }
+   ]
+  },
+  {
+   "date": "2026-10-03",
+   "velodrome": "松阪",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0021,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.0066,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0196,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0316,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 64,
+     "pred_hit_prob": 0.05,
+     "hit": false,
+     "cost": 6400,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 128,
+     "pred_hit_prob": 0.0761,
+     "hit": false,
+     "cost": 12800,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.1186,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 500,
+     "pred_hit_prob": 0.1799,
+     "hit": false,
+     "cost": 50000,
+     "payout_est": 0
+    },
+    {
+     "budget": 1000,
+     "tickets": 1000,
+     "pred_hit_prob": 0.236,
+     "hit": false,
+     "cost": 100000,
+     "payout_est": 0
+    },
+    {
+     "budget": 3000,
+     "tickets": 3000,
+     "pred_hit_prob": 0.3888,
+     "hit": true,
+     "cost": 300000,
+     "payout_est": 14067
+    }
+   ]
+  },
+  {
+   "date": "2026-10-04",
+   "velodrome": "松阪",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0007,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.0027,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0097,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0176,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 64,
+     "pred_hit_prob": 0.0319,
+     "hit": false,
+     "cost": 6400,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 128,
+     "pred_hit_prob": 0.0524,
+     "hit": false,
+     "cost": 12800,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.0821,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 500,
+     "pred_hit_prob": 0.1326,
+     "hit": false,
+     "cost": 50000,
+     "payout_est": 0
+    },
+    {
+     "budget": 1000,
+     "tickets": 1000,
+     "pred_hit_prob": 0.2016,
+     "hit": false,
+     "cost": 100000,
+     "payout_est": 0
+    },
+    {
+     "budget": 3000,
+     "tickets": 2940,
+     "pred_hit_prob": 0.3715,
+     "hit": true,
+     "cost": 294000,
+     "payout_est": 263925
+    }
+   ]
+  },
+  {
+   "date": "2026-10-05",
+   "velodrome": "奈良",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0015,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.0055,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0195,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0349,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 60,
+     "pred_hit_prob": 0.0569,
+     "hit": false,
+     "cost": 6000,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 126,
+     "pred_hit_prob": 0.092,
+     "hit": false,
+     "cost": 12600,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.1393,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 486,
+     "pred_hit_prob": 0.2162,
+     "hit": false,
+     "cost": 48600,
+     "payout_est": 0
+    },
+    {
+     "budget": 1000,
+     "tickets": 972,
+     "pred_hit_prob": 0.3188,
+     "hit": false,
+     "cost": 97200,
+     "payout_est": 0
+    },
+    {
+     "budget": 3000,
+     "tickets": 3000,
+     "pred_hit_prob": 0.5669,
+     "hit": false,
+     "cost": 300000,
+     "payout_est": 0
+    }
+   ]
+  },
+  {
+   "date": "2026-10-06",
+   "velodrome": "奈良",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.002,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.007,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0214,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0347,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 60,
+     "pred_hit_prob": 0.0559,
+     "hit": false,
+     "cost": 6000,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 120,
+     "pred_hit_prob": 0.0888,
+     "hit": false,
+     "cost": 12000,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.1357,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 480,
+     "pred_hit_prob": 0.1991,
+     "hit": false,
+     "cost": 48000,
+     "payout_est": 0
+    },
+    {
+     "budget": 1000,
+     "tickets": 900,
+     "pred_hit_prob": 0.2809,
+     "hit": false,
+     "cost": 90000,
+     "payout_est": 0
+    },
+    {
+     "budget": 3000,
+     "tickets": 3000,
+     "pred_hit_prob": 0.5327,
+     "hit": true,
+     "cost": 300000,
+     "payout_est": 286500
+    }
+   ]
+  },
+  {
+   "date": "2026-10-07",
+   "velodrome": "静岡",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0016,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.006,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0202,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0365,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 64,
+     "pred_hit_prob": 0.0632,
+     "hit": false,
+     "cost": 6400,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 128,
+     "pred_hit_prob": 0.1017,
+     "hit": false,
+     "cost": 12800,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.16,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 480,
+     "pred_hit_prob": 0.245,
+     "hit": true,
+     "cost": 48000,
+     "payout_est": 37125
+    },
+    {
+     "budget": 1000,
+     "tickets": 972,
+     "pred_hit_prob": 0.3523,
+     "hit": true,
+     "cost": 97200,
+     "payout_est": 74025
+    },
+    {
+     "budget": 3000,
+     "tickets": 3000,
+     "pred_hit_prob": 0.597,
+     "hit": true,
+     "cost": 300000,
+     "payout_est": 226125
+    }
+   ]
+  },
+  {
+   "date": "2026-10-07",
+   "velodrome": "奈良",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0031,
      "hit": false,
      "cost": 100,
      "payout_est": 0
@@ -1928,7 +1498,7 @@
     {
      "budget": 16,
      "tickets": 16,
-     "pred_hit_prob": 0.0281,
+     "pred_hit_prob": 0.0258,
      "hit": false,
      "cost": 1600,
      "payout_est": 0
@@ -1936,7 +1506,7 @@
     {
      "budget": 32,
      "tickets": 32,
-     "pred_hit_prob": 0.0468,
+     "pred_hit_prob": 0.0416,
      "hit": false,
      "cost": 3200,
      "payout_est": 0
@@ -1944,7 +1514,7 @@
     {
      "budget": 64,
      "tickets": 64,
-     "pred_hit_prob": 0.0753,
+     "pred_hit_prob": 0.0662,
      "hit": false,
      "cost": 6400,
      "payout_est": 0
@@ -1952,7 +1522,7 @@
     {
      "budget": 128,
      "tickets": 128,
-     "pred_hit_prob": 0.118,
+     "pred_hit_prob": 0.1037,
      "hit": false,
      "cost": 12800,
      "payout_est": 0
@@ -1960,7 +1530,265 @@
     {
      "budget": 243,
      "tickets": 240,
-     "pred_hit_prob": 0.1778,
+     "pred_hit_prob": 0.161,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 480,
+     "pred_hit_prob": 0.2355,
+     "hit": true,
+     "cost": 48000,
+     "payout_est": 96375
+    },
+    {
+     "budget": 1000,
+     "tickets": 960,
+     "pred_hit_prob": 0.3188,
+     "hit": true,
+     "cost": 96000,
+     "payout_est": 108375
+    },
+    {
+     "budget": 3000,
+     "tickets": 3000,
+     "pred_hit_prob": 0.5719,
+     "hit": true,
+     "cost": 300000,
+     "payout_est": 159375
+    }
+   ]
+  },
+  {
+   "date": "2026-10-08",
+   "velodrome": "静岡",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0015,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.0053,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0164,
+     "hit": true,
+     "cost": 1600,
+     "payout_est": 2850
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0276,
+     "hit": true,
+     "cost": 3200,
+     "payout_est": 4050
+    },
+    {
+     "budget": 64,
+     "tickets": 64,
+     "pred_hit_prob": 0.0457,
+     "hit": true,
+     "cost": 6400,
+     "payout_est": 6450
+    },
+    {
+     "budget": 128,
+     "tickets": 128,
+     "pred_hit_prob": 0.0749,
+     "hit": true,
+     "cost": 12800,
+     "payout_est": 11250
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.1182,
+     "hit": true,
+     "cost": 24000,
+     "payout_est": 19650
+    },
+    {
+     "budget": 500,
+     "tickets": 480,
+     "pred_hit_prob": 0.1956,
+     "hit": true,
+     "cost": 48000,
+     "payout_est": 37650
+    },
+    {
+     "budget": 1000,
+     "tickets": 960,
+     "pred_hit_prob": 0.3104,
+     "hit": true,
+     "cost": 96000,
+     "payout_est": 73650
+    },
+    {
+     "budget": 3000,
+     "tickets": 3000,
+     "pred_hit_prob": 0.59,
+     "hit": true,
+     "cost": 300000,
+     "payout_est": 226650
+    }
+   ]
+  },
+  {
+   "date": "2026-10-09",
+   "velodrome": "静岡",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0015,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.006,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0201,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0359,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 60,
+     "pred_hit_prob": 0.0594,
+     "hit": false,
+     "cost": 6000,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 120,
+     "pred_hit_prob": 0.0964,
+     "hit": false,
+     "cost": 12000,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.1457,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 480,
+     "pred_hit_prob": 0.2175,
+     "hit": false,
+     "cost": 48000,
+     "payout_est": 0
+    },
+    {
+     "budget": 1000,
+     "tickets": 1000,
+     "pred_hit_prob": 0.3377,
+     "hit": false,
+     "cost": 100000,
+     "payout_est": 0
+    },
+    {
+     "budget": 3000,
+     "tickets": 3000,
+     "pred_hit_prob": 0.5704,
+     "hit": true,
+     "cost": 300000,
+     "payout_est": 229425
+    }
+   ]
+  },
+  {
+   "date": "2026-10-09",
+   "velodrome": "奈良",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0031,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.011,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0293,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0472,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 60,
+     "pred_hit_prob": 0.0732,
+     "hit": false,
+     "cost": 6000,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 128,
+     "pred_hit_prob": 0.1147,
+     "hit": false,
+     "cost": 12800,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.178,
      "hit": false,
      "cost": 24000,
      "payout_est": 0
@@ -1968,15 +1796,187 @@
     {
      "budget": 500,
      "tickets": 500,
-     "pred_hit_prob": 0.2642,
-     "hit": false,
+     "pred_hit_prob": 0.2601,
+     "hit": true,
      "cost": 50000,
+     "payout_est": 20725
+    },
+    {
+     "budget": 1000,
+     "tickets": 1000,
+     "pred_hit_prob": 0.3729,
+     "hit": true,
+     "cost": 100000,
+     "payout_est": 33225
+    },
+    {
+     "budget": 3000,
+     "tickets": 3000,
+     "pred_hit_prob": 0.6491,
+     "hit": true,
+     "cost": 300000,
+     "payout_est": 83225
+    }
+   ]
+  },
+  {
+   "date": "2026-10-10",
+   "velodrome": "奈良",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0021,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.008,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0262,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 27,
+     "pred_hit_prob": 0.0463,
+     "hit": false,
+     "cost": 2700,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 54,
+     "pred_hit_prob": 0.0772,
+     "hit": false,
+     "cost": 5400,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 120,
+     "pred_hit_prob": 0.1222,
+     "hit": false,
+     "cost": 12000,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 216,
+     "pred_hit_prob": 0.1877,
+     "hit": false,
+     "cost": 21600,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 480,
+     "pred_hit_prob": 0.2973,
+     "hit": false,
+     "cost": 48000,
      "payout_est": 0
     },
     {
      "budget": 1000,
      "tickets": 960,
-     "pred_hit_prob": 0.3879,
+     "pred_hit_prob": 0.4085,
+     "hit": false,
+     "cost": 96000,
+     "payout_est": 0
+    },
+    {
+     "budget": 3000,
+     "tickets": 3000,
+     "pred_hit_prob": 0.677,
+     "hit": true,
+     "cost": 300000,
+     "payout_est": 225075
+    }
+   ]
+  },
+  {
+   "date": "2026-10-11",
+   "velodrome": "奈良",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0019,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.0066,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0202,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0344,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 64,
+     "pred_hit_prob": 0.0583,
+     "hit": false,
+     "cost": 6400,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 128,
+     "pred_hit_prob": 0.0944,
+     "hit": false,
+     "cost": 12800,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.1473,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 480,
+     "pred_hit_prob": 0.2239,
+     "hit": false,
+     "cost": 48000,
+     "payout_est": 0
+    },
+    {
+     "budget": 1000,
+     "tickets": 960,
+     "pred_hit_prob": 0.3375,
      "hit": false,
      "cost": 96000,
      "payout_est": 0
@@ -1984,7 +1984,7 @@
     {
      "budget": 3000,
      "tickets": 2880,
-     "pred_hit_prob": 0.6833,
+     "pred_hit_prob": 0.6022,
      "hit": true,
      "cost": 288000,
      "payout_est": 219150
@@ -1998,7 +1998,7 @@
     {
      "budget": 1,
      "tickets": 1,
-     "pred_hit_prob": 0.0059,
+     "pred_hit_prob": 0.0043,
      "hit": false,
      "cost": 100,
      "payout_est": 0
@@ -2006,7 +2006,7 @@
     {
      "budget": 4,
      "tickets": 4,
-     "pred_hit_prob": 0.0198,
+     "pred_hit_prob": 0.0141,
      "hit": false,
      "cost": 400,
      "payout_est": 0
@@ -2014,7 +2014,7 @@
     {
      "budget": 16,
      "tickets": 16,
-     "pred_hit_prob": 0.0514,
+     "pred_hit_prob": 0.0388,
      "hit": false,
      "cost": 1600,
      "payout_est": 0
@@ -2022,23 +2022,23 @@
     {
      "budget": 32,
      "tickets": 32,
-     "pred_hit_prob": 0.0799,
+     "pred_hit_prob": 0.0621,
      "hit": false,
      "cost": 3200,
      "payout_est": 0
     },
     {
      "budget": 64,
-     "tickets": 60,
-     "pred_hit_prob": 0.1201,
+     "tickets": 64,
+     "pred_hit_prob": 0.0975,
      "hit": false,
-     "cost": 6000,
+     "cost": 6400,
      "payout_est": 0
     },
     {
      "budget": 128,
      "tickets": 120,
-     "pred_hit_prob": 0.1784,
+     "pred_hit_prob": 0.1514,
      "hit": false,
      "cost": 12000,
      "payout_est": 0
@@ -2046,23 +2046,23 @@
     {
      "budget": 243,
      "tickets": 240,
-     "pred_hit_prob": 0.2614,
-     "hit": true,
+     "pred_hit_prob": 0.2273,
+     "hit": false,
      "cost": 24000,
-     "payout_est": 15825
+     "payout_est": 0
     },
     {
      "budget": 500,
      "tickets": 480,
-     "pred_hit_prob": 0.3692,
-     "hit": true,
+     "pred_hit_prob": 0.34,
+     "hit": false,
      "cost": 48000,
-     "payout_est": 19425
+     "payout_est": 0
     },
     {
      "budget": 1000,
      "tickets": 1000,
-     "pred_hit_prob": 0.5191,
+     "pred_hit_prob": 0.4747,
      "hit": true,
      "cost": 100000,
      "payout_est": 27225
@@ -2070,7 +2070,7 @@
     {
      "budget": 3000,
      "tickets": 3000,
-     "pred_hit_prob": 0.7606,
+     "pred_hit_prob": 0.7004,
      "hit": true,
      "cost": 300000,
      "payout_est": 57225
@@ -2084,7 +2084,7 @@
     {
      "budget": 1,
      "tickets": 1,
-     "pred_hit_prob": 0.0044,
+     "pred_hit_prob": 0.0024,
      "hit": false,
      "cost": 100,
      "payout_est": 0
@@ -2092,7 +2092,7 @@
     {
      "budget": 4,
      "tickets": 4,
-     "pred_hit_prob": 0.0164,
+     "pred_hit_prob": 0.0089,
      "hit": false,
      "cost": 400,
      "payout_est": 0
@@ -2100,7 +2100,7 @@
     {
      "budget": 16,
      "tickets": 16,
-     "pred_hit_prob": 0.0437,
+     "pred_hit_prob": 0.03,
      "hit": false,
      "cost": 1600,
      "payout_est": 0
@@ -2108,7 +2108,7 @@
     {
      "budget": 32,
      "tickets": 32,
-     "pred_hit_prob": 0.069,
+     "pred_hit_prob": 0.0511,
      "hit": false,
      "cost": 3200,
      "payout_est": 0
@@ -2116,7 +2116,7 @@
     {
      "budget": 64,
      "tickets": 64,
-     "pred_hit_prob": 0.1037,
+     "pred_hit_prob": 0.0786,
      "hit": false,
      "cost": 6400,
      "payout_est": 0
@@ -2124,7 +2124,7 @@
     {
      "budget": 128,
      "tickets": 120,
-     "pred_hit_prob": 0.1533,
+     "pred_hit_prob": 0.1203,
      "hit": false,
      "cost": 12000,
      "payout_est": 0
@@ -2132,7 +2132,7 @@
     {
      "budget": 243,
      "tickets": 243,
-     "pred_hit_prob": 0.2293,
+     "pred_hit_prob": 0.185,
      "hit": false,
      "cost": 24300,
      "payout_est": 0
@@ -2140,7 +2140,7 @@
     {
      "budget": 500,
      "tickets": 486,
-     "pred_hit_prob": 0.3466,
+     "pred_hit_prob": 0.2915,
      "hit": false,
      "cost": 48600,
      "payout_est": 0
@@ -2148,7 +2148,7 @@
     {
      "budget": 1000,
      "tickets": 960,
-     "pred_hit_prob": 0.4655,
+     "pred_hit_prob": 0.4059,
      "hit": false,
      "cost": 96000,
      "payout_est": 0
@@ -2156,7 +2156,7 @@
     {
      "budget": 3000,
      "tickets": 3000,
-     "pred_hit_prob": 0.7687,
+     "pred_hit_prob": 0.6892,
      "hit": false,
      "cost": 300000,
      "payout_est": 0
@@ -2170,7 +2170,7 @@
     {
      "budget": 1,
      "tickets": 1,
-     "pred_hit_prob": 0.0011,
+     "pred_hit_prob": 0.0008,
      "hit": false,
      "cost": 100,
      "payout_est": 0
@@ -2178,7 +2178,7 @@
     {
      "budget": 4,
      "tickets": 4,
-     "pred_hit_prob": 0.0042,
+     "pred_hit_prob": 0.003,
      "hit": false,
      "cost": 400,
      "payout_est": 0
@@ -2186,7 +2186,7 @@
     {
      "budget": 16,
      "tickets": 16,
-     "pred_hit_prob": 0.0138,
+     "pred_hit_prob": 0.0104,
      "hit": false,
      "cost": 1600,
      "payout_est": 0
@@ -2194,7 +2194,7 @@
     {
      "budget": 32,
      "tickets": 32,
-     "pred_hit_prob": 0.0246,
+     "pred_hit_prob": 0.0191,
      "hit": false,
      "cost": 3200,
      "payout_est": 0
@@ -2202,7 +2202,7 @@
     {
      "budget": 64,
      "tickets": 64,
-     "pred_hit_prob": 0.0436,
+     "pred_hit_prob": 0.034,
      "hit": false,
      "cost": 6400,
      "payout_est": 0
@@ -2210,7 +2210,7 @@
     {
      "budget": 128,
      "tickets": 128,
-     "pred_hit_prob": 0.0762,
+     "pred_hit_prob": 0.059,
      "hit": false,
      "cost": 12800,
      "payout_est": 0
@@ -2218,7 +2218,7 @@
     {
      "budget": 243,
      "tickets": 240,
-     "pred_hit_prob": 0.1234,
+     "pred_hit_prob": 0.0995,
      "hit": false,
      "cost": 24000,
      "payout_est": 0
@@ -2226,7 +2226,7 @@
     {
      "budget": 500,
      "tickets": 500,
-     "pred_hit_prob": 0.2019,
+     "pred_hit_prob": 0.1687,
      "hit": false,
      "cost": 50000,
      "payout_est": 0
@@ -2234,15 +2234,101 @@
     {
      "budget": 1000,
      "tickets": 864,
-     "pred_hit_prob": 0.2906,
+     "pred_hit_prob": 0.2483,
      "hit": false,
      "cost": 86400,
      "payout_est": 0
     },
     {
      "budget": 3000,
+     "tickets": 2880,
+     "pred_hit_prob": 0.4717,
+     "hit": false,
+     "cost": 288000,
+     "payout_est": 0
+    }
+   ]
+  },
+  {
+   "date": "2026-10-23",
+   "velodrome": "奈良",
+   "plans": [
+    {
+     "budget": 1,
+     "tickets": 1,
+     "pred_hit_prob": 0.0012,
+     "hit": false,
+     "cost": 100,
+     "payout_est": 0
+    },
+    {
+     "budget": 4,
+     "tickets": 4,
+     "pred_hit_prob": 0.0046,
+     "hit": false,
+     "cost": 400,
+     "payout_est": 0
+    },
+    {
+     "budget": 16,
+     "tickets": 16,
+     "pred_hit_prob": 0.0162,
+     "hit": false,
+     "cost": 1600,
+     "payout_est": 0
+    },
+    {
+     "budget": 32,
+     "tickets": 32,
+     "pred_hit_prob": 0.0287,
+     "hit": false,
+     "cost": 3200,
+     "payout_est": 0
+    },
+    {
+     "budget": 64,
+     "tickets": 64,
+     "pred_hit_prob": 0.0474,
+     "hit": false,
+     "cost": 6400,
+     "payout_est": 0
+    },
+    {
+     "budget": 128,
+     "tickets": 128,
+     "pred_hit_prob": 0.0783,
+     "hit": false,
+     "cost": 12800,
+     "payout_est": 0
+    },
+    {
+     "budget": 243,
+     "tickets": 240,
+     "pred_hit_prob": 0.1267,
+     "hit": false,
+     "cost": 24000,
+     "payout_est": 0
+    },
+    {
+     "budget": 500,
+     "tickets": 480,
+     "pred_hit_prob": 0.2096,
+     "hit": false,
+     "cost": 48000,
+     "payout_est": 0
+    },
+    {
+     "budget": 1000,
+     "tickets": 960,
+     "pred_hit_prob": 0.3076,
+     "hit": false,
+     "cost": 96000,
+     "payout_est": 0
+    },
+    {
+     "budget": 3000,
      "tickets": 3000,
-     "pred_hit_prob": 0.5435,
+     "pred_hit_prob": 0.5718,
      "hit": false,
      "cost": 300000,
      "payout_est": 0

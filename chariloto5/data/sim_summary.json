@@ -1,0 +1,33 @@
+{
+ "variant": "base",
+ "l2": 0.01,
+ "days": 18,
+ "races": 90,
+ "mean_loglik": -1.8267,
+ "geo_mean_winner_prob": 0.1609,
+ "top1_acc": 0.2556,
+ "budget_1": {
+  "hit_days": 0,
+  "cost": 1800,
+  "payout_est": 0,
+  "recovery": 0.0
+ },
+ "budget_16": {
+  "hit_days": 0,
+  "cost": 28800,
+  "payout_est": 0,
+  "recovery": 0.0
+ },
+ "budget_243": {
+  "hit_days": 1,
+  "cost": 432600,
+  "payout_est": 19650,
+  "recovery": 0.045
+ },
+ "budget_1000": {
+  "hit_days": 4,
+  "cost": 1754400,
+  "payout_est": 210225,
+  "recovery": 0.12
+ }
+}
