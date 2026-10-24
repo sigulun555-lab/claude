@@ -1,33 +1,33 @@
 {
  "variant": "base",
  "l2": 0.01,
- "days": 85,
- "races": 425,
- "mean_loglik": -1.708,
- "geo_mean_winner_prob": 0.1812,
- "top1_acc": 0.3365,
+ "days": 95,
+ "races": 475,
+ "mean_loglik": -1.7138,
+ "geo_mean_winner_prob": 0.1802,
+ "top1_acc": 0.3242,
  "budget_1": {
   "hit_days": 1,
-  "cost": 8500,
+  "cost": 9500,
   "payout_est": 1477,
-  "recovery": 0.174
+  "recovery": 0.155
  },
  "budget_16": {
   "hit_days": 3,
-  "cost": 135700,
+  "cost": 151900,
   "payout_est": 6090,
-  "recovery": 0.045
+  "recovery": 0.04
  },
  "budget_243": {
-  "hit_days": 19,
-  "cost": 2035200,
-  "payout_est": 272319,
-  "recovery": 0.134
+  "hit_days": 17,
+  "cost": 2277300,
+  "payout_est": 215769,
+  "recovery": 0.095
  },
  "budget_1000": {
-  "hit_days": 34,
-  "cost": 8215800,
-  "payout_est": 2291683,
-  "recovery": 0.279
+  "hit_days": 36,
+  "cost": 9169100,
+  "payout_est": 2626547,
+  "recovery": 0.286
  }
 }
