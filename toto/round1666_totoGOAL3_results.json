@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "round": 1666,
+  "marketType": "totoGOAL3",
+  "note": "totoGOAL3は90分終了時点の得点で判定。名古屋vs浦和は延長戦で1-2だが、90分スコアは1-1。",
+  "matches": [
+    {"matchNumber": 1, "homeTeam": "水戸ホーリーホック", "awayTeam": "セレッソ大阪", "homeGoals": 1, "awayGoals": 3, "competition": "LEVAIN_CUP"},
+    {"matchNumber": 2, "homeTeam": "横浜Ｆ・マリノス", "awayTeam": "サンフレッチェ広島", "homeGoals": 4, "awayGoals": 3, "competition": "LEVAIN_CUP"},
+    {"matchNumber": 3, "homeTeam": "名古屋グランパス", "awayTeam": "浦和レッズ", "homeGoals": 1, "awayGoals": 1, "competition": "LEVAIN_CUP"}
+  ],
+  "sources": [
+    "https://www.jleague.jp/news/article/35220/",
+    "https://www.urawa-reds.co.jp/topteamtopics/9029897.html"
+  ],
+  "details": "検証済みの正本は sigulun555-lab/toto-lab の results/round_1666.jsonl。採点は reports/score_round_1666_goal3.json。"
+}
