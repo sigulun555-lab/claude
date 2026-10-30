@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 2,
+  "generatedBy": "Claude (totoGOAL 究極予想エンジン・手動配信)",
+  "modelName": "Claude-totoGOAL3アプリ実ロジック再現版（predictScore + calculateOutcomeProbabilitiesCore V2）",
+  "generatedAt": "2026-10-30T14:50:35Z",
+  "round": 1668,
+  "marketType": "toto13(1X2)",
+  "deadlineAt": "2026-10-31T04:50:00Z",
+  "matchCount": 13,
+  "warnings": [
+    "このJSONは本番アプリ（Artifact）の予測モデル・補正ロジックを一切変更せず、ページ内のpredictScore()をそのまま呼び出して計算したものです。",
+    "本来は締切前日22時の自動配信タスクが担当する内容ですが、別タスク（totoGOAL3新開催回チェック）の実行未完了により対戦カードが未反映だったため、ユーザー依頼による手動実行で生成しました。"
+  ],
+  "predictions": [
+    {
+      "round": 1668,
+      "matchNumber": 1,
+      "homeTeam": "ファジアーノ岡山",
+      "awayTeam": "FC東京",
+      "probabilities": {
+        "0": 0.3229,
+        "1": 0.2674,
+        "2": 0.4096
+      },
+      "predictedAt": "2026-10-30T14:50:35Z"
+    },
+    {
+      "round": 1668,
+      "matchNumber": 2,
+      "homeTeam": "水戸ホーリーホック",
+      "awayTeam": "サンフレッチェ広島",
+      "probabilities": {
+        "0": 0.3285,
+        "1": 0.2657,
+        "2": 0.4058
+      },
+      "predictedAt": "2026-10-30T14:50:35Z"
+    },
+    {
+      "round": 1668,
+      "matchNumber": 3,
+      "homeTeam": "ヴィッセル神戸",
+      "awayTeam": "名古屋グランパス",
+      "probabilities": {
+        "0": 0.1721,
+        "1": 0.688,
+        "2": 0.1399
+      },
+      "predictedAt": "2026-10-30T14:50:35Z"
+    },
+    {
+      "round": 1668,
+      "matchNumber": 4,
+      "homeTeam": "鹿島アントラーズ",
+      "awayTeam": "セレッソ大阪",
+      "probabilities": {
+        "0": 0.1278,
+        "1": 0.7985,
+        "2": 0.0737
+      },
+      "predictedAt": "2026-10-30T14:50:35Z"
+    },
+    {
+      "round": 1668,
+      "matchNumber": 5,
+      "homeTeam": "柏レイソル",
+      "awayTeam": "浦和レッズ",
+      "probabilities": {
+        "0": 0.1956,
+        "1": 0.5972,
+        "2": 0.2072
+      },
+      "predictedAt": "2026-10-30T14:50:35Z"
+    },
+    {
+      "round": 1668,
+      "matchNumber": 6,
+      "homeTeam": "京都サンガ",
+      "awayTeam": "清水エスパルス",
+      "probabilities": {
+        "0": 0.3677,
+        "1": 0.3787,
+        "2": 0.2536
+      },
+      "predictedAt": "2026-10-30T14:50:35Z"
+    },
+    {
+      "round": 1668,
+      "matchNumber": 7,
+      "homeTeam": "ジェフユナイテッド千葉",
+      "awayTeam": "アビスパ福岡",
+      "probabilities": {
+        "0": 0.4765,
+        "1": 0.3103,
+        "2": 0.2133
+      },
+      "predictedAt": "2026-10-30T14:50:35Z"
+    },
+    {
+      "round": 1668,
+      "matchNumber": 8,
+      "homeTeam": "V・ファーレン長崎",
+      "awayTeam": "東京ヴェルディ",
+      "probabilities": {
+        "0": 0.186,
+        "1": 0.7351,
+        "2": 0.0788
+      },
+      "predictedAt": "2026-10-30T14:50:35Z"
+    },
+    {
+      "round": 1668,
+      "matchNumber": 9,
+      "homeTeam": "FC町田ゼルビア",
+      "awayTeam": "ガンバ大阪",
+      "probabilities": {
+        "0": 0.1686,
+        "1": 0.6769,
+        "2": 0.1545
+      },
+      "predictedAt": "2026-10-30T14:50:35Z"
+    },
+    {
+      "round": 1668,
+      "matchNumber": 10,
+      "homeTeam": "横浜F・マリノス",
+      "awayTeam": "川崎フロンターレ",
+      "probabilities": {
+        "0": 0.3113,
+        "1": 0.4136,
+        "2": 0.2751
+      },
+      "predictedAt": "2026-10-30T14:50:35Z"
+    },
+    {
+      "round": 1668,
+      "matchNumber": 11,
+      "homeTeam": "ベガルタ仙台",
+      "awayTeam": "RB大宮アルディージャ",
+      "probabilities": {
+        "0": 0.2489,
+        "1": 0.5017,
+        "2": 0.2493
+      },
+      "predictedAt": "2026-10-30T14:50:35Z"
+    },
+    {
+      "round": 1668,
+      "matchNumber": 12,
+      "homeTeam": "アルビレックス新潟",
+      "awayTeam": "カターレ富山",
+      "probabilities": {
+        "0": 0.2838,
+        "1": 0.4754,
+        "2": 0.2408
+      },
+      "predictedAt": "2026-10-30T14:50:35Z"
+    },
+    {
+      "round": 1668,
+      "matchNumber": 13,
+      "homeTeam": "テゲバジャーロ宮崎",
+      "awayTeam": "大分トリニータ",
+      "probabilities": {
+        "0": 0.3717,
+        "1": 0.3787,
+        "2": 0.2495
+      },
+      "predictedAt": "2026-10-30T14:50:35Z"
+    }
+  ]
+}
