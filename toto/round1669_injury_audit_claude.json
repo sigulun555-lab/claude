@@ -1,0 +1,109 @@
+{
+  "round": 1669,
+  "ledger": "Claude側 負傷・欠場・出場停止の監査台帳（append-only）",
+  "entries": [
+    {
+      "round": 1669,
+      "match": 7,
+      "team": "藤枝MYFC",
+      "person": "槙野智章",
+      "role": "監督",
+      "status": "出場停止確定",
+      "detail": "J2(b) 2試合停止（対象: 10/31 J2第14節第1日、11/3 J2第15節第1日）",
+      "source": "https://www.jleague.jp/news/article/35233/ (2026/10/29付・公式)",
+      "also_checked": "https://www.jleague.jp/news/article/35271/ (2026/11/02付・公式)",
+      "verified_by": "Claude",
+      "verified_at_jst": "2026-11-02T22:20",
+      "numeric_adjustment": "なし（合意どおり）"
+    },
+    {
+      "round": 1669,
+      "match": 6,
+      "team": "ヴァンフォーレ甲府",
+      "person": "遠藤光",
+      "role": "選手",
+      "status": "出場停止確定",
+      "detail": "J2(f) 警告累積による1試合停止（対象: 11/3 J2第15節第1日）",
+      "source": "https://www.jleague.jp/news/article/35271/ (2026/11/02付・公式)",
+      "verified_by": "Claude",
+      "verified_at_jst": "2026-11-02T22:20",
+      "numeric_adjustment": "なし（合意どおり）"
+    },
+    {
+      "round": 1669,
+      "match": 13,
+      "team": "カマタマーレ讃岐",
+      "person": "禹相皓",
+      "role": "選手",
+      "status": "出場停止確定",
+      "detail": "J3(f) 警告累積による1試合停止（対象: 11/3 J3第15節第1日）",
+      "source": "https://www.jleague.jp/news/article/35271/ (2026/11/02付・公式)",
+      "verified_by": "Claude",
+      "verified_at_jst": "2026-11-02T22:20",
+      "numeric_adjustment": "なし（合意どおり）"
+    },
+    {
+      "round": 1669,
+      "match": 1,
+      "team": "カターレ富山",
+      "person": "岡本將成",
+      "role": "選手",
+      "status": "公式負傷交代確認・出場可否未確定",
+      "detail": "前節（10/31新潟戦）後半途中に負傷で交代（富山公式プレビュー）。10/31は63分出場。11/3は中2日で、出場可否の記載なし。",
+      "source": "https://www.jleague.jp/sp/match/j2/2026/110307/preview （11/3富山－仙台の公式プレビュー）、https://www.jleague.jp/player/1618570/ （公式選手ページ）",
+      "verified_by": "Claude",
+      "verified_at_jst": "2026-11-02T22:20",
+      "numeric_adjustment": "なし（欠場確定とはしない）",
+      "note": "GPT案内の『10/31試合記録URL 110307』は11/3の富山－仙台ページで、誤り。正しい10/31試合記録はhttps://www.jleague.jp/match/j2/2026/103119/（Claude側では未確認）。"
+    },
+    {
+      "round": 1669,
+      "match": 6,
+      "team": "アルビレックス新潟",
+      "person": "マテウス モラエス",
+      "role": "選手",
+      "status": "二次情報のみ・出場可否未確認",
+      "detail": "10/31富山戦で28分に交代（公式選手記録で先発28分出場を確認）。公式記録に負傷・交代理由の記載なし。報道（FNN等）では負傷交代とされるが、公式診断は未確認。5月の負傷（クラブ公式発表）後は10/3〜10/25に出場を重ねている。",
+      "source": "https://www.jleague.jp/player/1653072/?mode=pc （公式選手ページ）",
+      "verified_by": "Claude",
+      "verified_at_jst": "2026-11-02T22:20",
+      "numeric_adjustment": "なし"
+    },
+    {
+      "round": 1669,
+      "match": 5,
+      "team": "湘南ベルマーレ",
+      "person": "堂鼻起暉",
+      "role": "選手",
+      "status": "Football LAB欠場欄の誤り（GPT確認）・Claude未確認",
+      "detail": "GPT確認：10/31札幌戦に90分出場。Claude側では未確認。",
+      "source": "GPT側の公式選手履歴 https://www.jleague.jp/player/1602932/",
+      "verified_by": "GPT（Claude未確認）",
+      "numeric_adjustment": "なし"
+    },
+    {
+      "round": 1669,
+      "match": 6,
+      "team": "ヴァンフォーレ甲府",
+      "person": "藤井一志",
+      "role": "選手",
+      "status": "Football LAB欠場欄の誤り（GPT確認）・Claude未確認",
+      "detail": "GPT確認：10/31今治戦に13分出場。Claude側では未確認。",
+      "source": "GPT側の公式選手履歴 https://www.jleague.jp/player/1641522/",
+      "verified_by": "GPT（Claude未確認）",
+      "numeric_adjustment": "なし"
+    },
+    {
+      "round": 1669,
+      "match": 9,
+      "team": "FC今治",
+      "person": "土屋巧",
+      "role": "選手",
+      "status": "Football LAB欠場欄の誤り（GPT確認）・Claude未確認",
+      "detail": "GPT確認：10/31甲府戦に86分出場。Claude側では未確認。",
+      "source": "GPT側の公式選手履歴 https://www.jleague.jp/player/1636246/",
+      "verified_by": "GPT（Claude未確認）",
+      "numeric_adjustment": "なし"
+    }
+  ]
+}
