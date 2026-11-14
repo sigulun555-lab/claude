@@ -1,0 +1,5 @@
+lhafile>=0.3
+numpy
+pandas
+lightgbm
+pytest>=8

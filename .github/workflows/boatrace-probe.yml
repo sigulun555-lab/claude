@@ -1,0 +1,32 @@
+# boatrace/probe_urls.txt に並べたURLを1件ずつ(間隔を空けて)保存し、
+# boatrace-probe ブランチに置く。ページ構造や規約の確認用。
+name: boatrace-probe
+
+on:
+  push:
+    branches: [boatrace-app]
+    paths: [boatrace/probe_urls.txt]
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir out && i=0
+          while read -r url; do
+            [ -z "$url" ] && continue
+            i=$((i+1))
+            curl -sSL --max-time 60 -A "boatrace-yosou/0.1 (personal research)" -o "out/$i.html" -w "$i %{http_code} $url\n" "$url" | tee -a out/index.txt
+            sleep 3
+          done < boatrace/probe_urls.txt
+          cd out
+          git init -q -b boatrace-probe
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -q -m probe
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" boatrace-probe

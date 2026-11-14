@@ -1,0 +1,68 @@
+# boatrace/fetch_range.txt ("開始日 終了日") を書き換えてプッシュすると、GitHub上で
+# 公式データを月ごとに並行して取得し、boatrace-data ブランチに生データ(LZH)と
+# 集計結果を保存する。DB は100MBを超えるので保存せず、生データから作り直す。
+# ここではダウンロードだけ行い、まとめる処理は boatrace-merge.yml で行う
+# (boatrace/merge_run.txt にこのワークフローの run id を書いてプッシュする)。
+name: boatrace-fetch
+
+on:
+  push:
+    branches: [boatrace-app]
+    paths: [boatrace/fetch_range.txt]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      months: ${{ steps.m.outputs.months }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: m
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from datetime import date, timedelta
+          start, end = map(date.fromisoformat, open("boatrace/fetch_range.txt").read().split())
+          out, d = [], start
+          while d <= end:
+              nxt = (d.replace(day=1) + timedelta(days=32)).replace(day=1)
+              out.append({"start": str(d), "end": str(min(end, nxt - timedelta(days=1))), "name": d.strftime("%y%m")})
+              d = nxt
+          print("months=" + json.dumps(out))
+          PY
+
+  fetch:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        month: ${{ fromJson(needs.plan.outputs.months) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 取得済みのファイルを復元
+        run: |
+          mkdir -p boatrace/data/raw
+          if git fetch -q origin boatrace-data; then
+            git archive FETCH_HEAD raw | tar -x -C boatrace/data || true
+          fi
+      - name: ダウンロード
+        working-directory: boatrace
+        run: |
+          pip install -q lhafile
+          python -m boatrace.cli fetch ${{ matrix.month.start }} ${{ matrix.month.end }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: raw-${{ matrix.month.name }}
+          path: boatrace/data/raw/[bk]${{ matrix.month.name }}??.lzh
+          if-no-files-found: ignore
+          retention-days: 7
+

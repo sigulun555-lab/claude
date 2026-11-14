@@ -1,0 +1,42 @@
+# 毎時のオッズ取得: boatrace/live_request.txt を書き換えてプッシュすると、朝の予想表
+# (boatrace-data の yosou/latest.json) のうち、これから75分以内に締切になるレースの
+# 今の単勝オッズを公式サイトから1件ずつ(1.5秒間隔)取り、boatrace-data の live/latest.json に保存する。
+# 時刻の決まった自動実行(schedule)は GitHub の都合で数時間遅れることがあるため、
+# 実行の合図は Claude 側の定時トリガーから出す。
+name: boatrace-live
+
+on:
+  push:
+    branches: [boatrace-app]
+    paths: [boatrace/live_request.txt]
+
+permissions:
+  contents: write
+
+concurrency: boatrace-data
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: boatrace-data を取得
+        run: git clone -q --branch boatrace-data --depth 1 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" boatrace/data
+      - name: オッズ取得
+        working-directory: boatrace
+        run: |
+          pip install -q lhafile
+          python -m boatrace.cli live --sheet data/yosou/latest.json --out data/live/latest.json
+      - name: 保存
+        if: always()
+        working-directory: boatrace/data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add live
+          git commit -q -m "live $(TZ=Asia/Tokyo date +%F\ %H:%M)" || exit 0
+          git push -q origin HEAD:boatrace-data
