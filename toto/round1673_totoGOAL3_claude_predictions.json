@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "generatedBy": "Claude (totoGOAL 究極予想エンジン・自動配信)",
+  "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust)",
+  "generatedAt": "2026-11-20T13:06:33Z",
+  "round": 1673,
+  "marketType": "totoGOAL3",
+  "deadlineAt": "2026-11-21T04:50:00Z",
+  "matchCount": 3,
+  "warnings": [
+    "このJSONは本番アプリ（Artifact）の予測モデル・補正ロジックを一切変更せず、ページ内のpredictScore()をそのまま呼び出して計算したものです。",
+    "締切前日22時の自動配信タスクによる生成です。",
+    "アプリ内部のroundsData（通常toto13試合・miniToto）側の現在表示ラウンドは第1672回（開催11/14・15、既に締切済み）のままで、今回このタスクでは更新していません。totoGOAL3の第1673回は通常toto13試合側とは別回・別締切として公式サイト（store.toto-dream.com、holdCntId=1673）で確認し、teamDatabase内の既存6クラブ登録データのみを使って計算しました。"
+  ],
+  "predictions": [
+    {
+      "round": 1673,
+      "matchNumber": 1,
+      "team": "FC町田ゼルビア",
+      "opponent": "V・ファーレン長崎",
+      "isHome": true,
+      "probabilities": {
+        "0": 0.1195,
+        "1": 0.2412,
+        "2": 0.2570,
+        "3": 0.3823
+      },
+      "predictedAt": "2026-11-20T13:06:33Z"
+    },
+    {
+      "round": 1673,
+      "matchNumber": 1,
+      "team": "V・ファーレン長崎",
+      "opponent": "FC町田ゼルビア",
+      "isHome": false,
+      "probabilities": {
+        "0": 0.2766,
+        "1": 0.3433,
+        "2": 0.2303,
+        "3": 0.1497
+      },
+      "predictedAt": "2026-11-20T13:06:33Z"
+    },
+    {
+      "round": 1673,
+      "matchNumber": 2,
+      "team": "サンフレッチェ広島",
+      "opponent": "横浜F・マリノス",
+      "isHome": true,
+      "probabilities": {
+        "0": 0.1044,
+        "1": 0.1844,
+        "2": 0.2040,
+        "3": 0.5072
+      },
+      "predictedAt": "2026-11-20T13:06:33Z"
+    },
+    {
+      "round": 1673,
+      "matchNumber": 2,
+      "team": "横浜F・マリノス",
+      "opponent": "サンフレッチェ広島",
+      "isHome": false,
+      "probabilities": {
+        "0": 0.2970,
+        "1": 0.3614,
+        "2": 0.2168,
+        "3": 0.1248
+      },
+      "predictedAt": "2026-11-20T13:06:33Z"
+    },
+    {
+      "round": 1673,
+      "matchNumber": 3,
+      "team": "ガンバ大阪",
+      "opponent": "ファジアーノ岡山",
+      "isHome": true,
+      "probabilities": {
+        "0": 0.2325,
+        "1": 0.3374,
+        "2": 0.2462,
+        "3": 0.1839
+      },
+      "predictedAt": "2026-11-20T13:06:33Z"
+    },
+    {
+      "round": 1673,
+      "matchNumber": 3,
+      "team": "ファジアーノ岡山",
+      "opponent": "ガンバ大阪",
+      "isHome": false,
+      "probabilities": {
+        "0": 0.2881,
+        "1": 0.3508,
+        "2": 0.2220,
+        "3": 0.1391
+      },
+      "predictedAt": "2026-11-20T13:06:33Z"
+    }
+  ]
+}
