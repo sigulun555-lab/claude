@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "generatedBy": "Claude (totoGOAL 究極予想エンジン・自動配信)",
+  "modelName": "Claude-totoGOAL3-Engine v1 (poisson base + goalDist blend + consistency spread adjust)",
+  "generatedAt": "2026-11-27T13:05:51Z",
+  "round": 1675,
+  "marketType": "totoGOAL3",
+  "deadlineAt": "2026-11-28T04:50:00Z",
+  "matchCount": 3,
+  "warnings": [
+    "このJSONは本番アプリ（Artifact）の予測モデル・補正ロジックを一切変更せず、ページ内のpredictScore()をそのまま呼び出して計算したものです。",
+    "締切前日22時の自動配信タスクによる生成です。"
+  ],
+  "predictions": [
+    {
+      "round": 1675,
+      "matchNumber": 1,
+      "team": "京都サンガ",
+      "opponent": "セレッソ大阪",
+      "isHome": true,
+      "probabilities": {
+        "0": 0.1576,
+        "1": 0.2883,
+        "2": 0.2674,
+        "3": 0.2867
+      },
+      "predictedAt": "2026-11-27T13:05:51Z"
+    },
+    {
+      "round": 1675,
+      "matchNumber": 1,
+      "team": "セレッソ大阪",
+      "opponent": "京都サンガ",
+      "isHome": false,
+      "probabilities": {
+        "0": 0.2813,
+        "1": 0.3529,
+        "2": 0.2246,
+        "3": 0.1412
+      },
+      "predictedAt": "2026-11-27T13:05:51Z"
+    },
+    {
+      "round": 1675,
+      "matchNumber": 2,
+      "team": "横浜F・マリノス",
+      "opponent": "FC東京",
+      "isHome": true,
+      "probabilities": {
+        "0": 0.1356,
+        "1": 0.2425,
+        "2": 0.2414,
+        "3": 0.3806
+      },
+      "predictedAt": "2026-11-27T13:05:51Z"
+    },
+    {
+      "round": 1675,
+      "matchNumber": 2,
+      "team": "FC東京",
+      "opponent": "横浜F・マリノス",
+      "isHome": false,
+      "probabilities": {
+        "0": 0.1582,
+        "1": 0.2627,
+        "2": 0.2467,
+        "3": 0.3324
+      },
+      "predictedAt": "2026-11-27T13:05:51Z"
+    },
+    {
+      "round": 1675,
+      "matchNumber": 3,
+      "team": "名古屋グランパス",
+      "opponent": "アビスパ福岡",
+      "isHome": true,
+      "probabilities": {
+        "0": 0.2317,
+        "1": 0.3316,
+        "2": 0.2448,
+        "3": 0.1919
+      },
+      "predictedAt": "2026-11-27T13:05:51Z"
+    },
+    {
+      "round": 1675,
+      "matchNumber": 3,
+      "team": "アビスパ福岡",
+      "opponent": "名古屋グランパス",
+      "isHome": false,
+      "probabilities": {
+        "0": 0.4197,
+        "1": 0.3628,
+        "2": 0.159,
+        "3": 0.0585
+      },
+      "predictedAt": "2026-11-27T13:05:51Z"
+    }
+  ]
+}
